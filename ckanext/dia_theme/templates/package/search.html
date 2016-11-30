@@ -1,0 +1,15 @@
+{% ckan_extends %}
+{% block secondary_content %}
+
+{% snippet "spatial/snippets/spatial_query.html", default_extent="[[-35, 167], [-47, 180]]" %}
+
+<div class="filters">
+  <div>
+    {% for facet in c.facet_titles %}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
+    {% endfor %}
+  </div>
+  <a class="close no-text hide-filters"><i class="icon-remove-sign"></i><span class="text">close</span></a>
+</div>
+{% endblock %}
+

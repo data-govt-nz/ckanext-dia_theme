@@ -1,0 +1,26 @@
+{% extends "header_base.html" %}
+  {% block header_account_logged %}
+      <li class="feedback"><a href="https://www.surveymonkey.com/r/betadatagovtnz">Feedback</a></li>
+      {{ super() }}
+  {% endblock %}
+
+  {% block header_account_notlogged %}
+      <li class="feedback"><a href="https://www.surveymonkey.com/r/betadatagovtnz">Feedback</a></li>
+      <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
+  {% endblock %}
+
+  {% block header_site_navigation_tabs %}
+      {{ h.build_nav_main(
+          ('search', _('Datasets')),
+          ('organizations_index', _('Organizations')),
+          ('group_index', _('Groups')),
+          ('about', _('About')),
+      ) }}
+      {#
+      These need extra modules that aren't enabled yet
+      ('stats', _('Stats')),
+      ('reports', _('Reports')),
+      ('blog_index', _('Blog')),
+      #}
+{% endblock %}
+

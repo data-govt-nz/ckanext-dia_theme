@@ -7,12 +7,7 @@
 
 {% block resource_content %}
     {{ super() }}
-    {% if pkg.rights %}
-        <h3>Rights</h3>
-        {{ pkg.rights }}
-    {% endif %}
-
-    
+    {% snippet 'snippets/rights.html', pkg=pkg %}
 {% endblock %}
 
 {% block resource_format %}

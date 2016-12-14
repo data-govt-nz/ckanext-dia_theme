@@ -12,15 +12,12 @@
   {% block header_site_navigation_tabs %}
       {{ h.build_nav_main(
           ('search', _('Datasets')),
-          ('organizations_index', _('Organizations')),
+          ('organizations_index', _('Organizations')),     
           ('group_index', _('Groups')),
+          ('stats', _('Stats')),
+          ('reports', _('Reports')),
+          ('blog_index', _('Blog')),
           ('about', _('About')),
       ) }}
-      {#
-      These need extra modules that aren't enabled yet
-      ('stats', _('Stats')),
-      ('reports', _('Reports')),
-      ('blog_index', _('Blog')),
-      #}
 {% endblock %}
 

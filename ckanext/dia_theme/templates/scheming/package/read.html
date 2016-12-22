@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% block package_notes %}
+    {{ super() }}
+    {% snippet 'snippets/rights.html', pkg=pkg %}
+{% endblock %}
+
+{% block package_additional_info %}
+    {{ super() }}
+    {% snippet 'snippets/metadata_created.html', pkg=pkg %}
+{% endblock %}

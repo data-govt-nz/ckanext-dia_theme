@@ -10776,3 +10776,6 @@ form.section.site-search.simple-input{
 .header{
   background: red
 }
+.footer {
+    font-style: italic;
+}

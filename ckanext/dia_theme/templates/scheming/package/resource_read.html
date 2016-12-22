@@ -1,0 +1,51 @@
+{% ckan_extends %}
+
+{% set parent_fields = [
+    'frequency_of_update'
+]
+%}
+
+{% block resource_content %}
+    {{ super() }}
+    {% snippet 'snippets/rights.html', pkg=pkg %}
+{% endblock %}
+
+{% block resource_format %}
+    {% if res.mimetype_inner or res.mimetype or res.format %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+
+{%- block resource_last_updated -%}
+    <tr>
+        <th scope="row">{{ _('Last updated') }}</th>
+        <td>{{ h.render_datetime(res.last_modified) or h.render_datetime(res.resource_created) or _('unknown') }}</td>
+    </tr>
+{% endblock %}
+
+{%- block resource_created -%}
+    <tr>
+        <th scope="row">{{ _('Created') }}</th>
+        <td>{{ h.render_datetime(res.created) or h.render_datetime(res.resource_created) or _('unknown') }}</td>
+    </tr>
+{%- endblock -%}
+
+{% block resource_fields %}
+    {{ super() }}
+    {% if res.Size %}
+        <tr>
+            <th scope="row">
+                Size
+            </th>
+            <td>
+                {{ res.Size }}
+            </td>
+        </tr>
+    {% endif %}
+    
+{% endblock %}
+
+{% block primary_content %}
+    {{ super() }}
+    {% snippet 'snippets/metadata_created.html', pkg=pkg %}
+{% endblock %}

@@ -1,0 +1,59 @@
+{% ckan_extends %}
+
+{%- set field_defaults = {
+    'issued': 'Unknown',
+    'modified': 'Unknown',
+    'language': 'English',
+    'jurisdiction': 'New Zealand'
+} %}
+
+{% set suppress_if_blank = [
+    'temporal',
+    'maintainer_email',
+    'cost',
+    'frequency_of_update',
+    'maintainer_phone'
+]
+%}
+
+{% set suppress = [
+    'author_email',
+    'rights'
+]
+%}
+
+{% block package_additional_info %}
+    {%- for field in schema.dataset_fields -%}
+        
+        {%- if field.field_name not in exclude_fields
+        and field.display_snippet is not none
+        and field.field_name not in suppress
+        and (pkg_dict.get(field.field_name, None)
+            or field.field_name not in suppress_if_blank)
+        
+        -%}
+            <tr>
+                <th scope="row" class="dataset-label">{{h.scheming_language_text(field.label) }}</th>
+                {% if pkg_dict.get(field.field_name, None) or field.field_name not in field_defaults%}
+
+                <td class="dataset-details"{% if field.display_property %}
+                    property="{{ field.display_property }}"{% endif %}>
+                    {%- snippet 'scheming/snippets/display_field.html',
+                    field=field, data=pkg_dict, schema=schema -%}</td>
+                {% elif field.field_name in field_defaults %}
+                <td class="dataset-details"{% if field.display_property %}
+                    property="{{ field.display_property }}"{% endif %}>
+                    {%- snippet 'scheming/snippets/display_field.html',
+                    field=field, data={field.field_name: field_defaults.get(field.field_name)}, schema=schema -%}</td>
+                {% else %}
+                {% endif %}
+            </tr>
+        {%- endif -%}
+    {%- endfor -%}
+    {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
+        <tr>
+            <th scope="row" class="dataset-label">{{ _("State") }}</th>
+            <td class="dataset-details">{{ _(pkg_dict.state) }}</td>
+        </tr>
+    {% endif %}
+{% endblock %}

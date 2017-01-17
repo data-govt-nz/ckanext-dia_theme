@@ -7007,7 +7007,7 @@ textarea {
   display: inline;
 }
 .dataset-resources li a {
-  background-color: #aaaaaa;
+  background-color: #117799;
 }
 .dataset-heading .popular {
   top: 0;
@@ -7152,6 +7152,33 @@ textarea {
 .label[data-format*=ntriples],
 .label[data-format*=turtle] {
   background-color: #117799;
+}
+.label[data-format=wfs] {
+    background-color: #117799;
+}
+.label[data-format=wms],
+.label[data-format*=wms] {
+    background-color: #117799;
+}
+.label[data-format=gml],
+.label[data-format*=gml] {
+    background-color: #117799;
+}
+.label[data-format=kml],
+.label[data-format*=kml] {
+    background-color: #117799;
+}
+.label[data-format=geojson],
+.label[data-format*=geojson] {
+    background-color: #117799;
+}
+.label[data-format=wmts],
+.label[data-format*=wmts] {
+    background-color: #117799;
+}
+.label[data-format=arcgis_rest],
+.label[data-format*=arcgis_rest] {
+    background-color: #117799;
 }
 .view-list {
   margin: 0;

@@ -3776,14 +3776,14 @@ input[type="submit"].btn.btn-mini {
 }
 .pagination ul > .active > a,
 .pagination ul > .active > span {
-  color: #999999;
+  color: #333;
   cursor: default;
 }
 .pagination ul > .disabled > span,
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover,
 .pagination ul > .disabled > a:focus {
-  color: #999999;
+  color: #333;
   background-color: transparent;
   cursor: default;
 }
@@ -7112,46 +7112,46 @@ textarea {
 }
 .label[data-format=html],
 .label[data-format*=html] {
-  background-color: #55a1ce;
+  background-color: #117799;
 }
 .label[data-format=json],
 .label[data-format*=json] {
-  background-color: #ef7100;
+  background-color: #117799;
 }
 .label[data-format=xml],
 .label[data-format*=xml] {
-  background-color: #ef7100;
+  background-color: #117799;
 }
 .label[data-format=text],
 .label[data-format*=text] {
-  background-color: #74cbec;
+  background-color: #117799;
 }
 .label[data-format=csv],
 .label[data-format*=csv] {
-  background-color: #dfb100;
+  background-color: #117799;
 }
 .label[data-format=xls],
 .label[data-format*=xls] {
-  background-color: #2db55d;
+  background-color: #117799;
 }
 .label[data-format=zip],
 .label[data-format*=zip] {
-  background-color: #686868;
+  background-color: #117799;
 }
 .label[data-format=api],
 .label[data-format*=api] {
-  background-color: #ec96be;
+  background-color: #117799;
 }
 .label[data-format=pdf],
 .label[data-format*=pdf] {
-  background-color: #e0051e;
+  background-color: #117799;
 }
 .label[data-format=rdf],
 .label[data-format*=rdf],
 .label[data-format*=nquad],
 .label[data-format*=ntriples],
 .label[data-format*=turtle] {
-  background-color: #0b4498;
+  background-color: #117799;
 }
 .view-list {
   margin: 0;
@@ -7411,6 +7411,7 @@ textarea {
   position: relative;
   margin-bottom: 10px;
   padding: 5px 0;
+  background-color: #0c536b;
 }
 .toolbar:before,
 .toolbar:after {
@@ -8731,7 +8732,7 @@ a:focus { outline: thin dotted; }
   color: #ccdee3;
 }
 .site-footer a {
-  color: #ccdee3;
+  color: #fff;
 }
 .footer-links ul li {
   margin-bottom: 5px;
@@ -10035,7 +10036,7 @@ header.account-masthead .account ul li a:hover {
   font-size: 16px;
 }
 .homepage .stats ul li:nth-child(1) a {
-  background-color: #0084a0;
+  background-color: #0e6481;
 }
 .homepage .stats ul li:nth-child(2) a {
   background-color: #005e7a;
@@ -10068,7 +10069,7 @@ header.account-masthead .account ul li a:hover {
 
 }
 .toolbar {
-  background-color: #529db6;
+  background-color: #0C536B;
   color: #ffffff;
   /* add back negative margin value */
   padding: 0.25rem 9999rem;
@@ -10116,7 +10117,7 @@ header.account-masthead .account ul li a:hover {
   }
 }
 .primary header.module-content.page-header {
-  border-bottom: 1px solid #ffb100;
+  border-bottom: 1px solid #117799;
   background-color: #eeeeee;
   margin-left: 0;
 }
@@ -10133,8 +10134,8 @@ header.account-masthead .account ul li a:hover {
   border: 1px solid #ffb100;
 }
 .primary .nav-tabs > li > a:hover {
-  color: #333333;
-  background-color: #ffb100;
+  color: #fff;
+  background-color: #117799;
 }
 .primary .nav-tabs {
   border-bottom: 1px solid #ffb100;
@@ -10301,7 +10302,7 @@ aside.secondary .module.module-narrow img {
 aside.secondary .module.module-narrow .nums {
   margin-top: 0;
   border-top: 0;
-  background-color: #badae2;
+  background-color: #EDF9FD;
   padding: 15px;
 }
 aside.secondary .module.module-narrow .nums dl {
@@ -10778,4 +10779,31 @@ form.section.site-search.simple-input{
 }
 .footer {
     font-style: italic;
+}
+.module-heading.action {
+  color: #333;
+}
+.module-content.empty {
+  color: #333;
+}
+div .nums {
+  background-color: #EDF9FD;
+}
+.primary .nav-tabs {
+    border-bottom: 1px solid #117799;
+}
+.primary .page-header .nav-tabs li.active a,
+.primary .page-header .nav-tabs a:active {
+    color: #fff;
+    background-color: #117799;
+    border: 1px solid #117799;
+}
+.primary .nav-tabs > li > a {
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    color: #117799;
+}
+aside.secondary .empty {
+  color: #666;
 }

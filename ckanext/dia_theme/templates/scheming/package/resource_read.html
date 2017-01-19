@@ -19,14 +19,14 @@
 {%- block resource_last_updated -%}
     <tr>
         <th scope="row">{{ _('Last updated') }}</th>
-        <td>{{ h.render_datetime(res.last_modified) or h.render_datetime(res.resource_created) or _('unknown') }}</td>
+        <td>{{ h.render_datetime(res.last_modified) or h.render_datetime(res.resource_created) or pkg.modified or pkg.issued or _('unknown') }}</td>
     </tr>
 {% endblock %}
 
 {%- block resource_created -%}
     <tr>
         <th scope="row">{{ _('Created') }}</th>
-        <td>{{ h.render_datetime(res.created) or h.render_datetime(res.resource_created) or _('unknown') }}</td>
+        <td>{{ h.render_datetime(res.created) or h.render_datetime(res.resource_created) or pkg.issued or _('unknown') }}</td>
     </tr>
 {%- endblock -%}
 

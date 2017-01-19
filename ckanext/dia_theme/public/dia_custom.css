@@ -8527,6 +8527,7 @@ body {
 }
 .masthead .nav-collapse {
   padding-top: 15px;
+  width: 100%;
   float: left
 }
 .masthead .section {
@@ -8756,7 +8757,7 @@ a:focus { outline: thin dotted; }
 .site-footer,
 .site-footer label,
 .site-footer small {
-  color: #ccdee3;
+  color: #fff;
 }
 .site-footer a {
   color: #fff;
@@ -10833,4 +10834,7 @@ div .nums {
 }
 aside.secondary .empty {
   color: #666;
+}
+.module-heading .action {
+  color: #333;
 }

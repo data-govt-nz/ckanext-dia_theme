@@ -8,14 +8,13 @@
   {% endblock %}
 
   {% block header_site_navigation_tabs %}
+      <li><a href="https://www.data.govt.nz">Home</a></li>
       {{ h.build_nav_main(
           ('search', _('Datasets')),
-          ('organizations_index', _('Organizations')),     
-          ('group_index', _('Groups')),
-          ('stats', _('Stats')),
-          ('reports', _('Reports')),
-          ('blog_index', _('Blog')),
-          ('about', _('About')),
       ) }}
+      <li><a href="https://www.data.govt.nz/toolkit">Toolkit</a></li>
+      <li><a href="https://www.data.govt.nz/case-studies">Case Studies</a></li>
+      <li><a href="https://www.data.govt.nz/community">Community</a></li>
+      <li><a href="https://www.data.govt.nz/blog">Blog</a></li>
 {% endblock %}
 

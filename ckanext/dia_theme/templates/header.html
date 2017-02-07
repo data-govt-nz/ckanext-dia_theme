@@ -1,6 +1,7 @@
 {% extends "header_base.html" %}
   {% block header_account_logged %}
       {% snippet "snippets/topbar_links.html" %}
+      {{ super() }}
   {% endblock %}
 
   {% block header_account_notlogged %}
@@ -8,13 +9,12 @@
   {% endblock %}
 
   {% block header_site_navigation_tabs %}
-      <li><a href="https://www.data.govt.nz">Home</a></li>
+      <li><a href="{{ h.parent_site_url() }}">Home</a></li>
       {{ h.build_nav_main(
           ('search', _('Datasets')),
       ) }}
-      <li><a href="https://www.data.govt.nz/toolkit">Toolkit</a></li>
-      <li><a href="https://www.data.govt.nz/case-studies">Case Studies</a></li>
-      <li><a href="https://www.data.govt.nz/community">Community</a></li>
-      <li><a href="https://www.data.govt.nz/blog">Blog</a></li>
+      <li><a href="{{ h.parent_site_url() }}/toolkit">Toolkit</a></li>
+      <li><a href="{{ h.parent_site_url() }}/case-studies">Case Studies</a></li>
+      <li><a href="{{ h.parent_site_url() }}/community">Community</a></li>
+      <li><a href="{{ h.parent_site_url() }}/blog">Blog</a></li>
 {% endblock %}
-

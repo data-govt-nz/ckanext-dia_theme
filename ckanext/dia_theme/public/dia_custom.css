@@ -8623,12 +8623,12 @@ body {
   }
 }
 .site-footer {
-  *zoom: 1;
-  color: #ffffff;
-  background: #117799 url("../../../base/images/bg.png");
-  background-image: none;
-  min-height: 55px;
-  padding: 20px 0;
+    background-color:#0c536b; !important
+    box-shadow: 0px 500px 0px 500px #0c536b;
+    clear:both;
+    color:#fff;
+    height:auto;
+    padding: 20px 0;
 }
 .site-footer:before,
 .site-footer:after {
@@ -8761,6 +8761,53 @@ a:focus { outline: thin dotted; }
 }
 .site-footer a {
   color: #fff;
+}
+.site-footer .footsub {
+    font-size:0.85em;
+    padding:32px 0;
+}
+.site-footer .footsubcol01 p {
+    margin-top: 16px;
+    padding: 0px;
+}
+.site-footer .footsubcol02 {
+}
+.site-footer .footsubcol02 img {
+    width: 102px;
+}
+.site-footer .footsubcol03 {
+    text-align:right;
+}
+.site-footer .footsubcol03 p {
+    text-align: left;
+    padding: 0px;
+}
+.site-footer h2 {
+    left:0;
+    border-top:1px solid #fff;
+    font-size:1.2rem;
+    margin:0;
+    padding:16px 0 8px;
+    position:relative;
+    color: #fff;
+}
+.site-footer .footlink {
+    margin:8px 0;
+}
+.site-footer .footlink.footlink50 {
+    float:left;
+    margin-bottom:0;
+    width:50%;
+}
+.site-footer .footright{
+    border-bottom:1px solid #fff;
+    clear:both;
+    padding:32px 0;
+    text-align:right;
+}
+.site-footer .footright a:hover{
+    border-bottom:1px solid #fff;
+    text-decoration:none;
 }
 .footer-links ul li {
   margin-bottom: 5px;
@@ -9631,9 +9678,6 @@ header.account-masthead .account ul li a:hover {
 .homepage .hero .module-search .tags h3 {
   color: #ffffff;
   float: none;
-}
-.site-footer {
-  background: #117799;
 }
 @media (max-width: 768px) {
   .site-footer {

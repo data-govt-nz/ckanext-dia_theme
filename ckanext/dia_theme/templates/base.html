@@ -1,6 +1,6 @@
 {% ckan_extends %}
 
 {% block styles %}
-  {{ super()  }}
-  <link rel="stylesheet" href="/dia_custom.css" />
+    {{ super()  }}
+    {% resource 'dia_theme/dia_custom.css' %}
 {% endblock %}

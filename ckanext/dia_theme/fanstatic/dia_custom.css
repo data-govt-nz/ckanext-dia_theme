@@ -8623,7 +8623,7 @@ body {
   }
 }
 .site-footer {
-    background-color:#0c536b; !important
+    background:#0c536b; !important;
     box-shadow: 0px 500px 0px 500px #0c536b;
     clear:both;
     color:#fff;

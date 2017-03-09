@@ -164,3 +164,10 @@ To publish a new version to PyPI follow these steps:
 
        git tag 0.0.2
        git push --tags
+
+       
+----------------------------------------
+CSS Styling of dia_theme
+----------------------------------------
+
+Refer to this wiki page: https://gitlab.catalyst.net.nz/DIA/ckan-dia/wikis/styling

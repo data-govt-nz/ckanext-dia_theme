@@ -1,6 +1,77 @@
 .site-footer {
   .masthead();
   padding: 20px 0;
+
+  a:hover {
+    color: @white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    [class*="span"] {
+      clear: both;
+    }
+  }
+
+  .span3,
+  .span6 {
+    padding-top: 15px;
+  }
+
+  h2.footcolheader {
+    left: 0;
+    border-top: 1px solid @white;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 16px 0 8px;
+    position: relative;
+    color: @white;
+  }
+
+
+  .footlink {
+    margin: 8px 0;
+
+    &.footlink50 {
+      float: left;
+      margin-bottom: 0;
+      width: 100%;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+      }
+    }
+  }
+
+  .footsub p {
+    color: @white;
+  }
+
+  .footsubcol01 p {
+    margin-top: 16px;
+    padding: 0;
+  }
+
+  .footsubcol02 img {
+    width: 102px;
+  }
+
+  .footsubcol03 p {
+    text-align: left;
+    padding: 0;
+  }
+
+  .footright {
+    border-bottom: 1px solid @white;
+    clear: both;
+    padding: 32px 0;
+    text-align: right;
+  }
+
+  .footsub {
+    font-size: 0.85em;
+    padding: 32px 0;
+  }
+
 }
 
 .site-footer,

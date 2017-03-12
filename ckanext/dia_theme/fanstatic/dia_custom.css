@@ -8489,6 +8489,7 @@ h4 small {
 }
 .masthead .nav-collapse {
   padding-top: 10px;
+  width: 100%;
 }
 .masthead .section {
   float: left;
@@ -8555,7 +8556,8 @@ h4 small {
 }
 @media (min-width: 980px) {
   .masthead .nav-collapse {
-    float: right;
+    float: left;
+    padding-top: 15px;
   }
 }
 @media (max-width: 767px) {
@@ -8627,6 +8629,7 @@ h4 small {
 }
 .site-footer .nav-collapse {
   padding-top: 10px;
+  width: 100%;
 }
 .site-footer .section {
   float: left;
@@ -8700,6 +8703,8 @@ h4 small {
 }
 .site-footer .simple-input {
   height: 30px;
+  float: right;
+  margin-top: 15px;
 }
 .site-footer .site-search input {
   height: 28px;
@@ -9509,6 +9514,8 @@ header.account-masthead .account ul li a:hover {
 }
 .masthead .simple-input {
   height: 30px;
+  float: right;
+  margin-top: 15px;
 }
 .masthead .site-search input {
   height: 28px;
@@ -9540,7 +9547,7 @@ header.account-masthead .account ul li a:hover {
   z-index: 1;
   border: none;
   border-radius: 0;
-  background-color: #a50400;
+  background-color: #004a61;
   width: 85%;
   padding: 0;
 }
@@ -9621,7 +9628,7 @@ header.account-masthead .account ul li a:hover {
 }
 .homepage .hero .module-search .module-content,
 .homepage .hero .module-search .tags {
-  background-color: #a50400;
+  background-color: #004a61;
 }
 .homepage .hero .module-search .module-content .heading,
 .homepage .hero .module-search .tags .heading {
@@ -10070,7 +10077,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
 }
 .simple-input .field .btn-search {
-  background-color: #a50400;
+  background-color: #004a61;
   box-shadow: none;
   color: #fff;
   height: 36px;
@@ -10082,7 +10089,7 @@ header.account-masthead .account ul li a:hover {
   width: 36px;
 }
 .toolbar {
-  background-color: #529db6;
+  background-color: #0c536b;
   color: #ffffff;
   /* add back negative margin value */
   padding: 0.25rem 9999rem;

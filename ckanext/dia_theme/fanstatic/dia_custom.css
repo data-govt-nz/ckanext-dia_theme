@@ -8699,7 +8699,7 @@ h4 small {
   height: 20px;
 }
 .site-footer .nav > li > a:hover {
-  background-color: #0c536b;
+  background-color: #529db6;
 }
 .site-footer .simple-input {
   height: 30px;
@@ -9499,7 +9499,7 @@ header.account-masthead .account ul li a {
   padding: 5px 15px;
 }
 header.account-masthead .account ul li a:hover {
-  background-color: #0c536b;
+  background-color: #529db6;
 }
 .masthead {
   background-image: none;
@@ -9510,7 +9510,7 @@ header.account-masthead .account ul li a:hover {
   height: 20px;
 }
 .masthead .nav > li > a:hover {
-  background-color: #0c536b;
+  background-color: #529db6;
 }
 .masthead .simple-input {
   height: 30px;
@@ -10089,7 +10089,7 @@ header.account-masthead .account ul li a:hover {
   width: 36px;
 }
 .toolbar {
-  background-color: #0c536b;
+  background-color: #529db6;
   color: #ffffff;
   /* add back negative margin value */
   padding: 0.25rem 9999rem;

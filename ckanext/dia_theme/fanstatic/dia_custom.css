@@ -8590,6 +8590,7 @@ h4 small {
   background-image: none;
   min-height: 55px;
   padding: 20px 0;
+  box-shadow: 0 500px 0 500px #0c536b;
 }
 .site-footer:before,
 .site-footer:after {

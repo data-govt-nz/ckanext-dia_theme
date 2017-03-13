@@ -41,6 +41,8 @@
 
 //Tab Navigation
 @tabBackgroundColor: #117799;
+@tabTextColor: #117799;
+@tabHoverTextColor: #FFFFFF;
 
 // Table
 @chunkyTableHeaderTextColor: #FFFFFF;
@@ -718,13 +720,17 @@ header.account-masthead {
 
   // Styling of tab navigation
   .page-header .nav-tabs li.active a, .page-header .nav-tabs a:active {
-    color: @layoutTextColor;
+    color: @tabHoverTextColor;
     background-color: @tabBackgroundColor;
     border: 1px solid @tabBackgroundColor;
   }
 
+  .nav-tabs > li > a {
+    color: @tabTextColor;
+  }
+
   .nav-tabs > li > a:hover {
-    color: @layoutTextColor;
+    color: @tabHoverTextColor;
     background-color: @tabBackgroundColor;
   }
 
@@ -740,7 +746,7 @@ header.account-masthead {
     -webkit-border-radius: 0 0 0 0;
     -moz-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0;
-    color: #9d7628;
+    color: @tabTextColor;
   }
 
   .nav-tabs>li>a:hover {

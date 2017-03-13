@@ -8737,6 +8737,8 @@ h4 small {
 }
 .site-footer .footlink {
   margin: 8px 0;
+  font-size: 18px;
+  line-height: 1.5;
 }
 .site-footer .footlink.footlink50 {
   float: left;

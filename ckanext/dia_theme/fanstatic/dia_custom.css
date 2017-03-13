@@ -10137,7 +10137,7 @@ header.account-masthead .account ul li a:hover {
   }
 }
 .primary header.module-content.page-header {
-  border-bottom: 1px solid #ffb100;
+  border-bottom: 1px solid #117799;
   background-color: #eeeeee;
   margin-left: 0;
 }
@@ -10150,15 +10150,15 @@ header.account-masthead .account ul li a:hover {
 .primary .page-header .nav-tabs li.active a,
 .primary .page-header .nav-tabs a:active {
   color: #333333;
-  background-color: #ffb100;
-  border: 1px solid #ffb100;
+  background-color: #117799;
+  border: 1px solid #117799;
 }
 .primary .nav-tabs > li > a:hover {
   color: #333333;
-  background-color: #ffb100;
+  background-color: #117799;
 }
 .primary .nav-tabs {
-  border-bottom: 1px solid #ffb100;
+  border-bottom: 1px solid #117799;
 }
 @media (max-width: 768px) {
   .primary .nav-tabs {

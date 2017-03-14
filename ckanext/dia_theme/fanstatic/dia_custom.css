@@ -5671,6 +5671,7 @@ a.tag:hover {
 .module .pagination li.active a {
   border-left-width: 1px;
   border-right-width: 1px;
+  color: #333333;
 }
 .module-content-shallow {
   padding: 0;

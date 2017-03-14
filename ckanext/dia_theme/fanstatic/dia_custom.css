@@ -5465,7 +5465,7 @@ a.badge:focus {
 .tag {
   display: inline-block;
   margin-bottom: 4px;
-  color: #111111;
+  color: #117799;
   background-color: #f6f6f6;
   padding: 1px 10px;
   border: 1px solid #dddddd;
@@ -10152,12 +10152,15 @@ header.account-masthead .account ul li a:hover {
 }
 .primary .page-header .nav-tabs li.active a,
 .primary .page-header .nav-tabs a:active {
-  color: #333333;
+  color: #ffffff;
   background-color: #117799;
   border: 1px solid #117799;
 }
+.primary .nav-tabs > li > a {
+  color: #117799;
+}
 .primary .nav-tabs > li > a:hover {
-  color: #333333;
+  color: #ffffff;
   background-color: #117799;
 }
 .primary .nav-tabs {
@@ -10173,7 +10176,7 @@ header.account-masthead .account ul li a:hover {
   -webkit-border-radius: 0 0 0 0;
   -moz-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
-  color: #9d7628;
+  color: #117799;
 }
 .primary .nav-tabs > li > a:hover {
   border: none;

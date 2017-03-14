@@ -5671,6 +5671,7 @@ a.tag:hover {
 .module .pagination li.active a {
   border-left-width: 1px;
   border-right-width: 1px;
+  color: #333333;
 }
 .module-content-shallow {
   padding: 0;
@@ -7141,6 +7142,14 @@ textarea {
 }
 .label[data-format=pdf],
 .label[data-format*=pdf] {
+  background-color: #117799;
+}
+.label[data-format=kml],
+.label[data-format*=kml] {
+  background-color: #117799;
+}
+.label[data-format=esri],
+.label[data-format*=esri] {
   background-color: #117799;
 }
 .label[data-format=rdf],

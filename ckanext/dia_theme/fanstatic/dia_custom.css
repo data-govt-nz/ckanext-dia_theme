@@ -10202,6 +10202,9 @@ header.account-masthead .account ul li a:hover {
   border-bottom: 1px solid #cccccc;
   border-radius: 0;
 }
+.primary .dataset-resources li a {
+  background: #117799;
+}
 .primary .btn.btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);

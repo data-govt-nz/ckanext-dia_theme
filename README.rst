@@ -2,11 +2,11 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. image:: https://travis-ci.org/grantps/ckanext-dia_theme.svg?branch=master
-    :target: https://travis-ci.org/grantps/ckanext-dia_theme
+.. image:: https://travis-ci.org/data-govt-nz/ckanext-dia_theme.svg?branch=master
+    :target: https://travis-ci.org/data-govt-nz/ckanext-dia_theme
 
-.. image:: https://coveralls.io/repos/grantps/ckanext-dia_theme/badge.svg
-  :target: https://coveralls.io/r/grantps/ckanext-dia_theme
+.. image:: https://coveralls.io/repos/data-govt-nz/ckanext-dia_theme/badge.svg
+  :target: https://coveralls.io/r/data-govt-nz/ckanext-dia_theme
 
 .. image:: https://pypip.in/download/ckanext-dia_theme/badge.svg
     :target: https://pypi.python.org/pypi//ckanext-dia_theme/
@@ -32,26 +32,19 @@
 ckanext-dia_theme
 =============
 
-.. Put a description of your extension here:
-   What does it do? What features does it have?
-   Consider including some screenshots or embedding a video!
+Frontend theme for data.govt.nz
 
 
 ------------
 Requirements
 ------------
 
-For example, you might want to mention here which versions of CKAN this
-extension works with.
+CKAN 2.6.x
 
 
 ------------
 Installation
 ------------
-
-.. Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
 
 To install ckanext-dia_theme:
 
@@ -170,4 +163,13 @@ To publish a new version to PyPI follow these steps:
 CSS Styling of dia_theme
 ----------------------------------------
 
-Refer to this wiki page: https://gitlab.catalyst.net.nz/DIA/ckan-dia/wikis/styling
+Any CSS styling changes to the dia_theme should be done in the LESS files and NOT directly in the CSS files.
+
+Follow these steps:
+
+ - Install LESS Compiler
+ - Make changes in LESS files as required
+ - Open console and cd to /path/to/ckanext-dia_theme
+ - Compile the LESS files by running " lessc less/main.less fanstatic/dia_custom.css "
+ - The CSS changes will now show up in the browser
+ 

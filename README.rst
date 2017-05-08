@@ -1,46 +1,14 @@
-.. You should enable this project on travis-ci.org and coveralls.io to make
-   these badges work. The necessary Travis and Coverage config files have been
-   generated for you.
-
-.. image:: https://travis-ci.org/data-govt-nz/ckanext-dia_theme.svg?branch=master
-    :target: https://travis-ci.org/data-govt-nz/ckanext-dia_theme
-
-.. image:: https://coveralls.io/repos/data-govt-nz/ckanext-dia_theme/badge.svg
-  :target: https://coveralls.io/r/data-govt-nz/ckanext-dia_theme
-
-.. image:: https://pypip.in/download/ckanext-dia_theme/badge.svg
-    :target: https://pypi.python.org/pypi//ckanext-dia_theme/
-    :alt: Downloads
-
-.. image:: https://pypip.in/version/ckanext-dia_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-dia_theme/
-    :alt: Latest Version
-
-.. image:: https://pypip.in/py_versions/ckanext-dia_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-dia_theme/
-    :alt: Supported Python versions
-
-.. image:: https://pypip.in/status/ckanext-dia_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-dia_theme/
-    :alt: Development Status
-
-.. image:: https://pypip.in/license/ckanext-dia_theme/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-dia_theme/
-    :alt: License
-
 =============
 ckanext-dia_theme
 =============
 
-Frontend theme for data.govt.nz
-
+Frontend CKAN theme for data.govt.nz written in LESS
 
 ------------
 Requirements
 ------------
 
 CKAN 2.6.x
-
 
 ------------
 Installation
@@ -60,9 +28,9 @@ To install ckanext-dia_theme:
    config file (by default the config file is located at
    ``/etc/ckan/default/production.ini``).
 
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
+4. Restart CKAN. For example if you've deployed CKAN with Nginx on Ubuntu::
 
-     sudo service apache2 reload
+     sudo service nginx restart
 
 
 ---------------
@@ -73,6 +41,7 @@ Document any optional config settings here. For example::
 
     # The minimum number of hours to wait before re-checking a resource
     # (optional, default: 24).
+    #TODO - provide config values
     ckanext.dia_theme.some_setting = some_default_value
 
 
@@ -83,7 +52,7 @@ Development Installation
 To install ckanext-dia_theme for development, activate your CKAN virtualenv and
 do::
 
-    git clone https://github.com/grantps/ckanext-dia_theme.git
+    git clone https://github.com/data-govt-nz/ckanext-dia_theme.git
     cd ckanext-dia_theme
     python setup.py develop
     pip install -r dev-requirements.txt

@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0
+## 1.0.0
  - Production version (FOSS'd)
 
 ## 0.0.1

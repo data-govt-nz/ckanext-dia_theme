@@ -30,7 +30,7 @@ Please don't file security related issues in the bug tracker or publicly disclos
 You can communicate securely with us by PGP encrypting your email to info@data.govt.nz.
 
 Our public key is below if you wish to ensure only we can read your communucations.
-
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 mQINBFkP69QBEAC78OtAt9OMQSqviqZ3YXdQnBN04TY57bd6uH8gPrvP0VUhs9Wg
 4JHX/JPsKnkkKYwjvQCvuPMsbzCgUqrHFsGwD2t+kIi3oEgvBk1BnISvIWYp4Ibr
@@ -82,5 +82,5 @@ cMAR/CBxmudwxE8bNAaUEsifLkEGwIpsKoBqL86iFPF5OxXqwJ+VyVttanwZBMwp
 FxBLVzGYNUqqpIPTIIOsc1vCtr4ZmKcjUnmZE5+YYmu0m0o=
 =MrsK
 -----END PGP PUBLIC KEY BLOCK-----
-
+```
 

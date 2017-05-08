@@ -21,11 +21,11 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/grantps/ckanext-dia_theme',
+    url='https://github.com/data-govt-nz/ckanext-dia_theme',
 
     # Author details
-    author='''Catalyst Design Team''',
-    author_email='''grantps@catalyst.net.nz''',
+    author='''Data.govt.nz''',
+    author_email='''info@data.govt.nz''',
 
     # Choose your license
     license='AGPL',

@@ -8,6 +8,9 @@
 @import "../../../../../core/ckan/public/base/vendor/bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "../../../../../core/ckan/public/base/vendor/bootstrap/less/mixins.less";
 
+// Mixin to fix issue of less 2 compile fail on bootstrap 2. See https://stackoverflow.com/questions/26628309/less-v2-does-not-compile-twitters-bootstrap-2-x
+@import "fix.less";
+
 // Grid system and page structure
 @import "../../../../../core/ckan/public/base/vendor/bootstrap/less/scaffolding.less";
 @import "../../../../../core/ckan/public/base/vendor/bootstrap/less/grid.less";

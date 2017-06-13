@@ -145,6 +145,12 @@
   .ckan-icon-background-position(9, "formatMedium");
 }
 
+//Fix to display geojson icon
+.format-label[data-format=geojson],
+.format-label[data-format*=geojson] {
+  background-position: -128px -62px;
+}
+
 .format-label[data-format=html],
 .format-label[data-format*=html] {
   .ckan-icon-background-position(10, "formatMedium");

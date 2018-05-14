@@ -11,7 +11,7 @@
                                     {% if c.userobj.sysadmin %}
                                         <li>
                                             <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
-                                                <i class="icon-legal" aria-hidden="true"></i>
+                                                <i class="fa fa-gavel" aria-hidden="true"></i>
                                                 <span class="text">{{ _('Admin') }}</span>
                                             </a>
                                         </li>
@@ -26,7 +26,7 @@
                                     <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
                                         {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
                                         <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
-                                            <i class="icon-dashboard" aria-hidden="true"></i>
+                                            <i class="fa fa-dashboard" aria-hidden="true"></i>
                                             <span class="text">{{ _('Dashboard') }}</span>
                                             <span class="badge">{{ new_activities }}</span>
                                         </a>
@@ -34,7 +34,7 @@
                                     {% block header_account_settings_link %}
                                         <li>
                                             <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
-                                                <i class="icon-cog" aria-hidden="true"></i>
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
                                                 <span class="text">{{ _('Settings') }}</span>
                                             </a>
                                         </li>
@@ -42,7 +42,7 @@
                                     {% block header_account_log_out_link %}
                                         <li>
                                             <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
-                                                <i class="icon-signout" aria-hidden="true"></i>
+                                                <i class="fa fa-sign-out" aria-hidden="true"></i>
                                                 <span class="text">{{ _('Log out') }}</span>
                                             </a>
                                         </li>
@@ -74,9 +74,9 @@
         {% endblock %}
         <div class="container">
             <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button" role="presentation" tabindex="-1">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="fa fa-bar"></span>
+                <span class="fa fa-bar"></span>
+                <span class="fa fa-bar"></span>
             </button>
             {# The .header-image class hides the main text and uses image replacement for the title #}
             <hgroup class="{{ g.header_class }} pull-left">
@@ -95,24 +95,11 @@
             </hgroup>
 
             {% block header_site_search %}
-                <div class="site-search-wrap">
-                    <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
-                        <div class="field">
-                            <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
-                            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" class="search" />
-                            <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-                            <button class="btn-search" type="submit" role="presentation" tabindex="-1"><i class="fa fa-search icon-search"></i></button>
-                        </div>
-                    </form>
-                    <div class="context-switch">
-                        <label for="search-for-website-content">
-                            <input type="radio" class="search-form-context" name="header-search-context" value="content" id="search-for-website-content">
-                            Website
-                        </label>
-                        <label for="search-for-datasets">
-                            <input type="radio" class="search-form-context" name="header-search-context" value="datasets" checked="checked" id="search-for-datasets">
-                            Datasets
-                        </label>
+                <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
+                    <div class="field">
+                        <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" />
+                        <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
+                        <button class="btn-search" type="submit" role="presentation" tabindex="-1"><i class="fa fa-icon-search"></i></button>
                     </div>
                 </div>
             {% endblock %}

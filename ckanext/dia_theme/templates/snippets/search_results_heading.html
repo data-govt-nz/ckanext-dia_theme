@@ -1,0 +1,25 @@
+{#
+
+Displays a heading for the search page and a link to content website.
+
+query        - The text that was searched for
+type         - Search result type (dataset, group, organization)
+
+Example:
+
+  {% snippet 'snippets/search_results_heading.html', query=query, type='dataset' %}
+
+#}
+
+{% if query == '' %}
+  {% set text_heading = _('Search {type}s').format(type=type) %}
+{%- else -%}
+  {% set text_heading = _('Search {type}s for "{query}"').format(type=type, query=query) %}
+{%- endif -%}
+
+{% set link_href = _('{site}/search/SearchForm?Search={query}') %}
+
+<div class="search-result-heading">
+  <h1>{{ text_heading }}</h1>
+  <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}">Are you looking for website content?</a>
+</div>

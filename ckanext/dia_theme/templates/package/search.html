@@ -1,4 +1,14 @@
 {% ckan_extends %}
+
+{# Override form to prepend a heading: #}
+{% block form %}
+  {% block search_results_heading %}
+    {% snippet 'snippets/search_results_heading.html', type='dataset', query=c.q %}
+  {% endblock %}
+
+  {{ super() }}
+{% endblock %}
+
 {% block secondary_content %}
 
 {% snippet "spatial/snippets/spatial_query.html", default_extent="[[-35, 167], [-47, 180]]" %}

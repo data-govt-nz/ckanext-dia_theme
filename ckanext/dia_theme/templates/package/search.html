@@ -1,13 +1,80 @@
 {% ckan_extends %}
 
-{# Override form to prepend a heading: #}
+
+{# Show the search form at the very top instead (with a heading added) #}
+{% block pre_primary %}
+  <section>
+    {% block search_results_heading %}
+      {% snippet 'snippets/search_results_heading.html', type='dataset', query=c.q %}
+    {% endblock %}
+
+    {% set facets = {
+      'fields': c.fields_grouped,
+      'search': c.search_facets,
+      'titles': c.facet_titles,
+      'translated_fields': c.translated_fields,
+      'remove_field': c.remove_field }
+    %}
+    {% set sorting = [
+      (_('Relevance'), 'score desc, metadata_modified desc'),
+      (_('Name Ascending'), 'title_string asc'),
+      (_('Name Descending'), 'title_string desc'),
+      (_('Last Modified'), 'metadata_modified desc'),
+      (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
+    %}
+    {% snippet 'snippets/search_form.html', form_id='dataset-search-form', type='dataset', query=c.q, sorting=sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, show_empty=request.params, error=c.query_error, fields=c.fields %}
+  </section>
+{% endblock %}
+
+
+{# Override where the form was to just show the result count part #}
 {% block form %}
-  {% block search_results_heading %}
-    {% snippet 'snippets/search_results_heading.html', type='dataset', query=c.q %}
+
+  {% block search_title %}
+    {% if not c.query_error %}
+      <h2>{% snippet 'snippets/search_result_text.html', query=c.q, count=c.page.item_count, type='dataset' %}</h2>
+    {% else %}
+      <h2>Error</h2>
+    {% endif %}
   {% endblock %}
 
-  {{ super() }}
+  {% block search_facets %}
+    {% if facets %}
+      <p class="filter-list">
+        {% for field in facets.fields %}
+          {% set search_facets_items = facets.search.get(field)['items'] %}
+          <span class="facet">{{ facets.titles.get(field) }}:</span>
+          {% for value in facets.fields[field] %}
+            <span class="filtered pill">
+              {%- if facets.translated_fields and facets.translated_fields.has_key((field,value)) -%}
+                {{ facets.translated_fields[(field,value)] }}
+              {%- else -%}
+                {{ h.list_dict_filter(search_facets_items, 'name', 'display_name', value) }}
+              {%- endif %}
+              <a href="{{ facets.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><i class="fa fa-times"></i></a>
+            </span>
+          {% endfor %}
+        {% endfor %}
+      </p>
+      <a class="show-filters btn">{{ _('Filter Results') }}</a>
+    {% endif %}
+  {% endblock %}
+
+
+  {% if show_empty and count == 0 and not error %}
+    {% trans %}
+      <p class="extra">Please try another search.</p>
+    {% endtrans %}
+  {% endif %}
+
+  {% if error %}
+    {% trans %}
+      <p id="search-error"><strong>There was an error while searching.</strong> Please try again.</p>
+    {% endtrans %}
+  {% endif %}
+
 {% endblock %}
+
 
 {% block secondary_content %}
 

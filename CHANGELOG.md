@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.0
+ - Update the search header layout
+ - Add one click jump to other search
+
+## 1.1.0
+ - Replace add dataset button when logged in to actuall add datasets in CKAN
+
 ## 1.0.0
  - Production version (FOSS'd)
 

@@ -1,0 +1,51 @@
+{% import 'macros/form.html' as form %}
+
+{% set placeholder = placeholder if placeholder else _('Search datasets...') %}
+{% set sorting = sorting if sorting else [(_('Name Ascending'), 'name asc'), (_('Name Descending'), 'name desc')] %}
+{% set search_class = search_class if search_class else 'search-giant' %}
+{% set no_bottom_border = no_bottom_border if no_bottom_border else false %}
+{% set form_id = form_id if form_id else false %}
+
+<form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %}" method="get" data-module="select-switch">
+
+  {% block search_input %}
+    <div class="search-input control-group {{ search_class }}">
+      <input type="text" class="search" name="q" value="{{ query }}" autocomplete="off" placeholder="{{ placeholder }}">
+      {% block search_input_button %}
+      <button type="submit" value="search">
+        <i class="fa fa-search"></i>
+        <span>{{ _('Submit') }}</span>
+      </button>
+      {% endblock %}
+    </div>
+  {% endblock %}
+
+  {% block search_search_fields %}
+    {% if fields -%}
+      <span>{{ form.hidden_from_list(fields=fields) }}</span>
+    {%- endif %}
+  {% endblock %}
+
+  {% block search_sortby %}
+    {% if sorting %}
+      <div class="form-select control-group control-order-by">
+        <label for="field-order-by">{{ _('Order by') }}</label>
+        <select id="field-order-by" name="sort">
+          {% for label, value in sorting %}
+            {% if label and value %}
+              <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+        {% block search_sortby_button %}
+        <button class="btn js-hide" type="submit">{{ _('Go') }}</button>
+        {% endblock %}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% if query %}
+    {% set link_href = _('{site}/search/SearchForm?Search={query}') %}
+    <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}" title="Search for website content instead" id="search-context-switch" class="search-context-switch">Were you looking for website content?</a>
+  {%- endif -%}
+</form>

@@ -3956,10 +3956,10 @@ input[type="submit"].btn.btn-mini {
   outline: none;
 }
 .modal.fade {
-  -webkit-transition: opacity .3s linear, top .3s ease-out;
-  -moz-transition: opacity .3s linear, top .3s ease-out;
-  -o-transition: opacity .3s linear, top .3s ease-out;
-  transition: opacity .3s linear, top .3s ease-out;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, top 0.3s ease-out;
+  transition: opacity 0.3s linear, top 0.3s ease-out;
   top: -25%;
 }
 .modal.fade.in {
@@ -5446,7 +5446,7 @@ a.badge:focus {
     padding-right: 10px;
   }
 }
-@media (min-width: 979px + 1) {
+@media (min-width: 980px) {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
@@ -7334,6 +7334,19 @@ textarea {
     float: none;
     margin: 0;
   }
+}
+a.search-context-switch {
+  margin-bottom: 20px;
+  display: inline-block;
+  font-family: "Fira-Bold", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border-bottom: 2px solid #dddddd;
+  color: #333;
+}
+a.search-context-switch:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #333;
+  color: #333;
 }
 .group .media-vertical .image {
   margin: 0 -5px 5px;

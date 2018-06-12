@@ -32,6 +32,7 @@
 @masterheadFeedbackTextColor: @layoutTextColor;
 @masterheadFeedbackBackgroundColor: #FFB100;
 @masterheadSeachIconBackgroundColor: #004a61;
+@masterheadSearchButtonBackgroundColor: #349eb7;
 @masterheadSearchBoxColor: #FFFFFF;
 @masterheadStripBackgroundColor: #349EB7;
 @masterheadInfoBackgroundColor: #E8E8E8;
@@ -358,14 +359,23 @@ header.account-masthead {
   .simple-input {
     height: 30px;
     float: right;
-    margin-top: 15px;
+    margin: 8px 2px 7px 2px;
   }
 
   .site-search input {
-    height: 28px;
-    margin-top: -5px;
     font-size: 16px;
-    border-radius: 0;
+    height: 38px;
+    padding: 4px 10px;
+    width: 260px;
+    border-radius: 3px;
+    line-height: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
+    vertical-align: middle;
+    margin: 0;
+    box-sizing: border-box;
+    margin-top: -5px;
+    border: none;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
@@ -637,16 +647,24 @@ header.account-masthead {
 
 // Primary
 .simple-input .field .btn-search {
-  background-color: @masterheadSeachIconBackgroundColor;
+  background-color: @masterheadSearchButtonBackgroundColor;
+  border: none;
   box-shadow: none;
   color: #fff;
-  height: 36px;
-  left: 84%;
-  margin-left: 5px;
-  margin-top: -10px;
+  cursor: pointer;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  padding: 0;
   position: absolute;
-  top: 17%;
-  width: 36px;
+  right: 0;
+  top: -5px;
+  transition: color 0.2s ease-in 0s;
+  vertical-align: middle;
+  width: 55px;
+  border-radius: 0 3px 3px 0;
+  margin: 0;
+  font-size: 20px;
 }
 
 .toolbar {

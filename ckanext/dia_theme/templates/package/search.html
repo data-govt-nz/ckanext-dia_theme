@@ -3,7 +3,7 @@
 
 {# Show the search form at the very top instead (with a heading added) #}
 {% block pre_primary %}
-  <section>
+  <section class="search-result-heading">
     {% block search_results_heading %}
       {% snippet 'snippets/search_results_heading.html', type='dataset', query=c.q %}
     {% endblock %}

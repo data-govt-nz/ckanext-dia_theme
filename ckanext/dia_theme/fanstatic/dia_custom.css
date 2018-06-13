@@ -7325,6 +7325,11 @@ textarea {
 .tertiary .search-input {
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .search-result-heading {
+    margin: 0 20px;
+  }
+}
 @media (min-width: 980px) {
   .search-form .control-order-by {
     float: right;
@@ -10147,6 +10152,9 @@ header.account-masthead .account ul li a:hover {
   width: 55px;
   border-radius: 0 3px 3px 0;
   margin: 0;
+  font-size: 20px;
+}
+.simple-input .field .btn-search .icon-search {
   font-size: 20px;
 }
 .toolbar {

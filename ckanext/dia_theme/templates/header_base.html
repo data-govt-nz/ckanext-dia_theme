@@ -89,11 +89,25 @@
             </div>
 
             {% block header_site_search %}
-                <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
-                    <div class="field">
-                        <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" />
-                        <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-                        <button class="btn-search" type="submit" role="presentation" tabindex="-1"><i class="fa fa-icon-search"></i></button>
+
+                <div class="site-search-wrap">
+                    <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
+                        <div class="field">
+                            <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
+                            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" class="search" />
+                            <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
+                            <button class="btn-search" type="submit" role="presentation" tabindex="-1"><i class="fa fa-search icon-search"></i></button>
+                        </div>
+                    </form>
+                    <div class="context-switch">
+                        <label for="search-for-website-content">
+                            <input type="radio" class="search-form-context" name="header-search-context" value="content" id="search-for-website-content">
+                            Website
+                        </label>
+                        <label for="search-for-datasets">
+                            <input type="radio" class="search-form-context" name="header-search-context" value="datasets" checked="checked" id="search-for-datasets">
+                            Datasets
+                        </label>
                     </div>
                 </div>
             {% endblock %}

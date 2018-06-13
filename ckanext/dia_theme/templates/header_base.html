@@ -96,6 +96,7 @@
                     <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
                         <div class="field">
                             <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
+
                             <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('E.g. environment') }}" class="search" aria-label="Search term"/>
                             <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
                             <button class="btn-search" type="submit">

@@ -10154,6 +10154,9 @@ header.account-masthead .account ul li a:hover {
   margin: 0;
   font-size: 20px;
 }
+.simple-input .field .btn-search .icon-search {
+  font-size: 20px;
+}
 .toolbar {
   background-color: #0c536b;
   color: #FFFFFF;

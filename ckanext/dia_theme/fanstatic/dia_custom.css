@@ -10475,43 +10475,43 @@ aside.secondary .module.module-narrow .nav-aside li a {
 aside.secondary .module.module-narrow.social [class^="icon-"]:before {
   display: inline;
 }
-aside.secondary .module.module-narrow.social .icon-google-plus-sign {
+aside.secondary .module.module-narrow.social .fa-google-plus-square {
   border-radius: 100%;
   padding: 12px;
   font-size: 20px;
   color: #FFFFFF;
   background-color: #117799;
 }
-aside.secondary .module.module-narrow.social .icon-google-plus-sign:before {
+aside.secondary .module.module-narrow.social .fa-google-plus-square:before {
   content: "\f0d5";
 }
-aside.secondary .module.module-narrow.social .icon-google-plus-sign:hover {
+aside.secondary .module.module-narrow.social .fa-google-plus-square:hover {
   background-color: #075D79;
 }
-aside.secondary .module.module-narrow.social .icon-twitter-sign {
+aside.secondary .module.module-narrow.social .fa-twitter-square {
   border-radius: 100%;
   padding: 12px;
   font-size: 20px;
   color: #FFFFFF;
   background-color: #117799;
 }
-aside.secondary .module.module-narrow.social .icon-twitter-sign:before {
+aside.secondary .module.module-narrow.social .fa-twitter-square:before {
   content: "\f099";
 }
-aside.secondary .module.module-narrow.social .icon-twitter-sign:hover {
+aside.secondary .module.module-narrow.social .fa-twitter-square:hover {
   background-color: #075D79;
 }
-aside.secondary .module.module-narrow.social .icon-facebook-sign {
+aside.secondary .module.module-narrow.social .fa-facebook-square {
   border-radius: 100%;
   padding: 12px;
   font-size: 20px;
   color: #FFFFFF;
   background-color: #117799;
 }
-aside.secondary .module.module-narrow.social .icon-facebook-sign:before {
+aside.secondary .module.module-narrow.social .fa-facebook-square:before {
   content: "\f082";
 }
-aside.secondary .module.module-narrow.social .icon-facebook-sign:hover {
+aside.secondary .module.module-narrow.social .fa-facebook-square:hover {
   background-color: #075D79;
 }
 aside.secondary .module.module-narrow.social .nav-simple {

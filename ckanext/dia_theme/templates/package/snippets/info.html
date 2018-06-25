@@ -1,6 +1,8 @@
 {% ckan_extends %}
-
     {% block nums %}
+        {%if pkg.spatial %}
+            {% snippet "spatial/snippets/dataset_map_base.html", extent=pkg.spatial %}
+        {% endif %}
     {% endblock %}
     
     {% block follow_button %}

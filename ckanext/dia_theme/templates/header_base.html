@@ -1,11 +1,11 @@
 {# This is copied from the CKAN source, with header_site_search moved outside .nav-collapse, and accessibility changes as per wr267900 #}
 {% block header_wrapper %}
     {% block header_account %}
-        <header class="account-masthead">
+        <header class="account-masthead" role="banner">
             <div class="container">
                 {% block header_account_container_content %}
                     {% if c.userobj %}
-                        <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+                        <nav class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" role="navigation" aria-label="Add/request dataset">
                             <ul class="unstyled">
                                 {% block header_account_logged %}
                                     {% if c.userobj.sysadmin %}
@@ -49,9 +49,9 @@
                                     {% endblock %}
                                 {% endblock %}
                             </ul>
-                        </div>
+                        </nav>
                     {% else %}
-                        <nav class="account not-authed">
+                        <nav class="account not-authed" role="navigation" aria-label="Login/Register">
                             <ul class="unstyled">
                                 {% block header_account_notlogged %}
                                     <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
@@ -64,9 +64,8 @@
                     {% endif %}
                 {% endblock %}
             </div>
-        </header>
     {% endblock %}
-    <header class="navbar navbar-static-top masthead">
+    <div class="navbar navbar-static-top masthead">
         {% block header_debug %}
             {% if g.debug and not g.debug_supress_header %}
                 <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
@@ -79,7 +78,7 @@
                 <span class="icon-bar"></span>
             </button>
             {# The .header-image class hides the main text and uses image replacement for the title #}
-            <hgroup class="{{ g.header_class }} pull-left">
+            <div class="{{ g.header_class }} pull-left">
 
                 {% block header_logo %}
                     {% if g.site_logo %}
@@ -92,7 +91,7 @@
                     {% endif %}
                 {% endblock %}
 
-            </hgroup>
+            </div>
 
             {% block header_site_search %}
                 <div class="site-search-wrap">
@@ -117,7 +116,7 @@
                 </div>
             {% endblock %}
 
-            <div class="nav-collapse collapse">
+            <div class="nav-collapse collapse" role="navigation" aria-label="Main menu">
 
                 {% block header_site_navigation %}
                     <nav class="section navigation">
@@ -136,5 +135,6 @@
 
             </div>
         </div>
-    </header>
+    </div>
+</header>
 {% endblock %}

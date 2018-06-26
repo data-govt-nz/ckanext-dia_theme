@@ -1,5 +1,27 @@
 @notificationsBg: #C9403A;
 
+div {
+  &.masthead {
+    background-color:#117799;
+    background-image: none;
+    color:#fff;
+    min-height: 55px;
+    margin-top: 20px;
+    a {
+      border-bottom:none;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .container{
+      position: relative;
+      width:940px;
+    }
+  }
+  &.not-authored {
+    width: 500px;
+  }
+}
+
 .account-masthead {
   .clearfix();
   min-height: 30px;
@@ -250,6 +272,7 @@
     .container {
       padding-left:20px;
       padding-right:20px;
+      width: 92% !important;
     }
     .site-search-wrap {
       display:none;

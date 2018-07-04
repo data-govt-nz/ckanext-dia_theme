@@ -8330,6 +8330,9 @@ h4 small {
     right: 0;
   }
 }
+.nav > li > a:focus {
+  background-color: #0c536b !important;
+}
 div.masthead {
   background-color: #117799;
   background-image: none;
@@ -8586,6 +8589,24 @@ div.not-authored {
     padding-top: 15px;
   }
 }
+@media only screen and (min-width: 760px) {
+  .nav-collapse {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 979px) {
+  #collapseDiv {
+    display: none;
+  }
+  .navbar .container {
+    width: 92%;
+  }
+  .navbar .container .btn-navbar {
+    position: absolute;
+    right: 15px;
+    margin-top: 15px;
+  }
+}
 @media (max-width: 767px) {
   .account-masthead {
     margin-left: -20px;
@@ -8608,6 +8629,15 @@ div.not-authored {
   }
   .masthead .site-search-wrap {
     display: none;
+  }
+  .masthead .header-image {
+    padding-bottom: 5px;
+  }
+}
+@media (max-width: 570px) {
+  .header-image {
+    margin-top: 45px !important;
+    padding-bottom: 15px !important;
   }
 }
 .site-footer {

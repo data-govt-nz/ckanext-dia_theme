@@ -18,5 +18,18 @@
         $('.site-search-wrap').each(function () {
             updateSearchContext($(this))
         })
+
+
+        $( "#buttonCollapse" ).on( "click", function() {
+            if( $('#buttonCollapse').hasClass('js-nav-open') ) {
+                $('#buttonCollapse').removeClass('js-nav-open')
+                $('#collapseDiv').css("display", "none");
+            } else {
+                $('#buttonCollapse').addClass('js-nav-open')
+                $('#collapseDiv').css("display", "block");
+                $('#collapseDiv').css("height", "auto");
+            }
+        });
+
     });
 }(jQuery));

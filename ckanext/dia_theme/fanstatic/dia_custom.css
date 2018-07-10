@@ -3737,11 +3737,6 @@ input[type="submit"].btn.btn-mini {
 .breadcrumb > .active {
   color: #999999;
 }
-.breadcrumb a:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 2px #f5f3f3 !important;
-  text-decoration: none !important;
-}
 .pagination {
   margin: 20px 0;
 }
@@ -8335,68 +8330,6 @@ h4 small {
     right: 0;
   }
 }
-header a:focus,
-.account-masthead a:focus,
-#bcwrapper a:focus,
-#footer a:focus,
-header .accordion-expand:focus,
-.account-masthead .accordion-expand:focus,
-#bcwrapper .accordion-expand:focus,
-#footer .accordion-expand:focus,
-header input:focus,
-.account-masthead input:focus,
-#bcwrapper input:focus,
-#footer input:focus,
-header input.form-control:focus,
-.account-masthead input.form-control:focus,
-#bcwrapper input.form-control:focus,
-#footer input.form-control:focus,
-header input[type="checkbox"]:focus,
-.account-masthead input[type="checkbox"]:focus,
-#bcwrapper input[type="checkbox"]:focus,
-#footer input[type="checkbox"]:focus,
-header input[type="text"]:focus,
-.account-masthead input[type="text"]:focus,
-#bcwrapper input[type="text"]:focus,
-#footer input[type="text"]:focus,
-header input[type="email"]:focus,
-.account-masthead input[type="email"]:focus,
-#bcwrapper input[type="email"]:focus,
-#footer input[type="email"]:focus,
-header input[type="radio"]:focus,
-.account-masthead input[type="radio"]:focus,
-#bcwrapper input[type="radio"]:focus,
-#footer input[type="radio"]:focus,
-header input[type="password"]:focus,
-.account-masthead input[type="password"]:focus,
-#bcwrapper input[type="password"]:focus,
-#footer input[type="password"]:focus,
-header .btn:focus,
-.account-masthead .btn:focus,
-#bcwrapper .btn:focus,
-#footer .btn:focus,
-header button:focus,
-.account-masthead button:focus,
-#bcwrapper button:focus,
-#footer button:focus,
-header select:focus,
-.account-masthead select:focus,
-#bcwrapper select:focus,
-#footer select:focus,
-header summary:focus,
-.account-masthead summary:focus,
-#bcwrapper summary:focus,
-#footer summary:focus,
-header textarea:focus,
-.account-masthead textarea:focus,
-#bcwrapper textarea:focus,
-#footer textarea:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 2px #f5f3f3 !important;
-}
-#field-sitewide-search:focus {
-  box-shadow: 0 0 0 3px white !important;
-}
 div.masthead {
   background-color: #117799;
   background-image: none;
@@ -8406,6 +8339,7 @@ div.masthead {
 }
 div.masthead a {
   border-bottom: none;
+  color: #ffffff;
   text-decoration: none;
 }
 div.masthead .container {
@@ -8524,6 +8458,9 @@ div.not-authored {
 }
 .masthead .container {
   position: relative;
+}
+.masthead a {
+  color: #ffffff;
 }
 .masthead hgroup h1,
 .masthead hgroup h2 {
@@ -8696,9 +8633,6 @@ div.not-authored {
   .masthead .navigation {
     margin: 2px;
   }
-  .masthead .nav > li > a:focus {
-    background-color: #117799;
-  }
 }
 @media (max-width: 570px) {
   .header-image {
@@ -8726,6 +8660,9 @@ div.not-authored {
 }
 .site-footer .container {
   position: relative;
+}
+.site-footer a {
+  color: #ffffff;
 }
 .site-footer hgroup h1,
 .site-footer hgroup h2 {
@@ -8875,11 +8812,6 @@ div.not-authored {
 .site-footer a:hover {
   color: #ffffff;
   text-decoration: underline;
-}
-.site-footer a:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 2px #f5f3f3 !important;
-  text-decoration: none !important;
 }
 @media (max-width: 767px) {
   .site-footer [class*="span"] {
@@ -9654,6 +9586,9 @@ header.account-masthead .account li.feedback a {
   color: #333333;
   font-weight: normal;
 }
+header.account-masthead .account li.feedback a:hover {
+  color: #ffffff;
+}
 header.account-masthead .account ul li {
   border: none;
   background: #004a61;
@@ -10340,6 +10275,7 @@ header.account-masthead .account ul li a:hover {
   color: #117799;
 }
 .primary .nav-tabs > li > a:hover {
+  color: #ffffff;
   background-color: #117799;
 }
 .primary .nav-tabs {
@@ -10653,6 +10589,74 @@ aside.secondary .module.module-narrow.social .nav-simple > li > a:hover {
 }
 aside.secondary .module.module-narrow.license a {
   font-size: 13px;
+}
+header a:focus,
+.account-masthead a:focus,
+.breadcrumb a:focus,
+.site-footer a:focus,
+header .accordion-expand:focus,
+.account-masthead .accordion-expand:focus,
+.breadcrumb .accordion-expand:focus,
+.site-footer .accordion-expand:focus,
+header input:focus,
+.account-masthead input:focus,
+.breadcrumb input:focus,
+.site-footer input:focus,
+header input.form-control:focus,
+.account-masthead input.form-control:focus,
+.breadcrumb input.form-control:focus,
+.site-footer input.form-control:focus,
+header input[type="checkbox"]:focus,
+.account-masthead input[type="checkbox"]:focus,
+.breadcrumb input[type="checkbox"]:focus,
+.site-footer input[type="checkbox"]:focus,
+header input[type="text"]:focus,
+.account-masthead input[type="text"]:focus,
+.breadcrumb input[type="text"]:focus,
+.site-footer input[type="text"]:focus,
+header input[type="email"]:focus,
+.account-masthead input[type="email"]:focus,
+.breadcrumb input[type="email"]:focus,
+.site-footer input[type="email"]:focus,
+header input[type="radio"]:focus,
+.account-masthead input[type="radio"]:focus,
+.breadcrumb input[type="radio"]:focus,
+.site-footer input[type="radio"]:focus,
+header input[type="password"]:focus,
+.account-masthead input[type="password"]:focus,
+.breadcrumb input[type="password"]:focus,
+.site-footer input[type="password"]:focus,
+header .btn:focus,
+.account-masthead .btn:focus,
+.breadcrumb .btn:focus,
+.site-footer .btn:focus,
+header button:focus,
+.account-masthead button:focus,
+.breadcrumb button:focus,
+.site-footer button:focus,
+header select:focus,
+.account-masthead select:focus,
+.breadcrumb select:focus,
+.site-footer select:focus,
+header summary:focus,
+.account-masthead summary:focus,
+.breadcrumb summary:focus,
+.site-footer summary:focus,
+header textarea:focus,
+.account-masthead textarea:focus,
+.breadcrumb textarea:focus,
+.site-footer textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #f5f3f3 !important;
+  text-decoration: none !important;
+}
+#field-sitewide-search:focus {
+  box-shadow: 0 0 0 3px white !important;
+}
+@media (max-width: 979px) {
+  .masthead .nav > li > a:focus {
+    background-color: #117799;
+  }
 }
 body {
   background: #117799 url("../../../base/images/bg.png");

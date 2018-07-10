@@ -1,0 +1,39 @@
+header,
+.account-masthead, // Note: header fallback for browsers that don't support semantic elements (https://caniuse.com/#search=html5)
+.breadcrumb,
+.site-footer {
+  a,
+  .accordion-expand,
+  input,
+  input.form-control,
+  input[type="checkbox"],
+  input[type="text"],
+  input[type="email"],
+  input[type="radio"],
+  input[type="password"],
+  .btn,
+  button,
+  select,
+  summary,
+  textarea {
+    &:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 2px @focusOnBlueBg!important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+#field-sitewide-search {
+  &:focus {
+    box-shadow: 0 0 0 3px white !important;
+  }
+}
+
+@media (max-width: 979px) {
+  .masthead {
+    .nav > li > a:focus {
+      background-color: @tabBackgroundColor;
+    }
+  }
+}

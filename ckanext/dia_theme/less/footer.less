@@ -8,6 +8,12 @@
     text-decoration: underline;
   }
 
+  a:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px @focusOnBlueBg !important;
+    text-decoration: none !important;
+  }
+
   @media (max-width: 767px) {
     [class*="span"] {
       clear: both;

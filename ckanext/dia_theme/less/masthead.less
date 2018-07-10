@@ -1,7 +1,41 @@
 @notificationsBg: #C9403A;
 
-.nav > li > a:focus {
-  background-color: #0c536b !important;
+
+header,
+.account-masthead, // Note: header fallback for browsers that don't support semantic elements (https://caniuse.com/#search=html5)
+#bcwrapper,
+#footer {
+  a,
+  .accordion-expand,
+  input,
+  input.form-control,
+  input[type="checkbox"],
+  input[type="text"],
+  input[type="email"],
+  input[type="radio"],
+  input[type="password"],
+  .btn,
+  button,
+  select,
+  summary,
+  textarea {
+    &:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 2px @focusOnBlueBg!important;
+
+      // note: Flying focus removed at this time.
+      //&.flying-focus_target {
+      //	box-shadow: 0 0 0 2px $focus-indicator_on-blue-bg !important;
+      //}
+
+    }
+  }
+}
+
+#field-sitewide-search {
+  &:focus {
+    box-shadow: 0 0 0 3px white !important;
+  }
 }
 
 div {
@@ -306,6 +340,13 @@ div {
     }
     .header-image {
       padding-bottom: 5px;
+    }
+    .navigation {
+      margin: 2px;
+    }
+
+    .nav > li > a:focus {
+      background-color: #117799;
     }
   }
 }

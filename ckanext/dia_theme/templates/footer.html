@@ -1,53 +1,53 @@
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
     <div class="container">
         <div class="row">
 	    <div class="span3">
 		<h2 class="footcolheader">About us</h2>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/contact-us/" class="link">Contact us</a></div>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/about-this-site/" class="link">About data.govt.nz</a></div>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/feedback/" class="link">Give us feedback</a></div>
-		
-		<div class="footlink"><a href="{{ h.url_for(controller="ckanext.stats.controller:StatsController", action="index") }}#total-datasets" class="link">Statistics</a></div>
-		
+			<ul>
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/contact-us/" class="link">Contact us</a></li>
+
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/about-this-site/" class="link">About data.govt.nz</a></li>
+
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/feedback/" class="link">Give us feedback</a></li>
+
+				<li class="footlink"><a href="{{ h.url_for(controller="ckanext.stats.controller:StatsController", action="index") }}#total-datasets" class="link">Statistics</a></li>
+			</ul>
 	    </div>
 	    <div class="span6">
 		<h2 class="footcolheader">Sitemap</h2>
 		<div class="footcol02A">
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}" class="link">Home</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}/community/" class="link">Community</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.url_for(controller="package", action="search") }}" class="link">Datasets</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}/blog/" class="link">Blog</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}/standards-and-guidance/" class="link">Standards &amp; guidance</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}/request-data/" class="link">Request dataset</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}/case-studies/" class="link">Case studies</a></div>
-		    
-		    <div class="footlink footlink50"><a href="{{ h.parent_site_url() }}/add-dataset/" class="link">Add dataset</a></div>
-		    
+			<ul>
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}" class="link">Home</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/community/" class="link">Community</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.url_for(controller="package", action="search") }}" class="link">Datasets</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/blog/" class="link">Blog</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/standards-and-guidance/" class="link">Standards &amp; guidance</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/request-data/" class="link">Request dataset</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/case-studies/" class="link">Case studies</a></li>
+				
+				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/add-dataset/" class="link">Add dataset</a></li>
+			</ul>
 		</div>
 	    </div>
 	    <div class="span3">
 		<h2 class="footcolheader">Using this website</h2>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/terms-of-use/" class="link">Terms of use</a></div>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/privacy-policy/" class="link">Privacy policy</a></div>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/copyright/" class="link">Copyright</a></div>
-		
-		<div class="footlink"><a href="{{ h.parent_site_url() }}/developers/" class="link">Developers</a></div>
-		
-		<div class="footlink"><a href="{{ h.url_for(controller="user", action="login") }}" class="link">Publisher login</a></div>
-		
+			<ul>
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/terms-of-use/" class="link">Terms of use</a></li>
+
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/privacy-policy/" class="link">Privacy policy</a></li>
+
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/copyright/" class="link">Copyright</a></li>
+
+				<li class="footlink"><a href="{{ h.parent_site_url() }}/developers/" class="link">Developers</a></li>
+
+				<li class="footlink"><a href="{{ h.url_for(controller="user", action="login") }}" class="link">Publisher login</a></li>
+			</ul>
 	    </div>
 	    <div class="footlink footright">
 		<a href="#"><i class="fa icon-chevron-up"></i> &nbsp; Back to top</a>
@@ -58,7 +58,7 @@
 		<a href="https://www.govt.nz">
 		    <img src="/dia/images/AoG_logo_footer.png" alt="New Zealand Government" />
 		</a>
-		<p>Crown copyright © 2017</p>
+		<p>Crown copyright © 2018</p>
 	    </div>
 	    <div class="span2 footsubcol02">
 		<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
@@ -73,6 +73,7 @@
     </div>
 
   </div>
+
 
   {% block footer_debug %}
     {% if g.debug %}

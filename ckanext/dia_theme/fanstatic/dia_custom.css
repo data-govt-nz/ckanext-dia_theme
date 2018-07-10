@@ -8870,6 +8870,11 @@ div.not-authored {
   font-size: 0.85em;
   padding: 32px 0;
 }
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .site-footer,
 .site-footer label,
 .site-footer small {

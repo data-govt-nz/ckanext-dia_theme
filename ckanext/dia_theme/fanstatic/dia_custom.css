@@ -8515,6 +8515,11 @@ div.not-authored {
   color: #fff;
   text-shadow: none;
 }
+.masthead.navbar .sr-only {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
 .masthead.navbar .site-search-wrap {
   padding: 5px;
   background-color: #004a61;
@@ -8713,6 +8718,11 @@ div.not-authored {
 .site-footer .nav > .active > a:focus {
   color: #fff;
   text-shadow: none;
+}
+.site-footer.navbar .sr-only {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
 }
 .site-footer.navbar .site-search-wrap {
   padding: 5px;

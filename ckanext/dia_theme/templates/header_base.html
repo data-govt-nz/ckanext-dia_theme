@@ -93,21 +93,25 @@
                     <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
                         <div class="field">
                             <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
-                            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" class="search" />
+                            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('E.g. environment') }}" class="search" aria-label="Search term"/>
                             <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-                            <button class="btn-search" type="submit" role="presentation" tabindex="-1"><i class="fa fa-search icon-search"></i></button>
+                            <button class="btn-search" type="submit">
+                                <i class="fa fa-search icon-search"></i>
+                                <span class="sr-only">Search</span>
+                            </button>
                         </div>
                     </form>
-                    <div class="context-switch">
-                        <label for="search-for-website-content">
-                            <input type="radio" class="search-form-context" name="header-search-context" value="content" id="search-for-website-content">
-                            Website
-                        </label>
-                        <label for="search-for-datasets">
-                            <input type="radio" class="search-form-context" name="header-search-context" value="datasets" checked="checked" id="search-for-datasets">
-                            Datasets
-                        </label>
-                    </div>
+                    <fieldset class="fieldset">
+                        <legend class="hide">Search for</legend>
+                        <div class="context-switch">
+                            <input type="radio" class="search-form-context" name="header-search-context" value="datasets" id="search-for-datasets">
+                            <label for="search-for-datasets">Datasets</label>
+                        </div>
+                        <div class="context-switch">
+                            <input type="radio" class="search-form-context" name="header-search-context" value="content" checked="checked" id="search-for-website-content">
+                            <label for="search-for-website-content">Website</label>
+                        </div>
+                    </fieldset>
                 </div>
             {% endblock %}
 
@@ -115,6 +119,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+                <span class="sr-only">Main navigation</span>
             </button>
 
             <div id="collapseDiv" class="nav-collapse collapse" role="navigation" aria-label="Main menu">

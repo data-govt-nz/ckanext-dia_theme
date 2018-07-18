@@ -78,9 +78,12 @@
 
 {% block secondary_content %}
 
+<a href="#filters" class="visuallyhidden focusable skip-to-content">Skip map</a>
+
 {% snippet "spatial/snippets/spatial_query.html", default_extent="[[-35, 167], [-47, 180]]" %}
 
-<div class="filters">
+
+<div id="filters" class="filters">
   <div>
     {% for facet in c.facet_titles %}
       {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}

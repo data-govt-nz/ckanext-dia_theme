@@ -34,6 +34,40 @@
     background-color: @navItemActiveBackgroundColor;
   }
 }
+
+.visuallyhidden {
+  border:0;
+  clip:rect(0 0 0 0);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px
+}
+
+.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus {
+  clip:auto;
+  height:auto;
+  margin:0;
+  overflow:visible;
+  position:static;
+  width:auto
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: underline solid black;
+  padding: .4em;
+  display: inline-block;
+  margin-bottom: 3px !important;
+  margin-top: 3px !important;
+  margin-left: 3px !important;
+}
+
 @media (min-width: 768px) {
   .nav-item.active > a:before,
   .nav-aside li.active a:before {

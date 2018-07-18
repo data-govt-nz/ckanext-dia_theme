@@ -10605,6 +10605,82 @@ aside.secondary .module.module-narrow.social .nav-simple > li > a:hover {
 aside.secondary .module.module-narrow.license a {
   font-size: 13px;
 }
+@media print {
+  header,
+  nav,
+  footer,
+  aside,
+  .search-result-heading,
+  .tags {
+    display: none !important;
+  }
+  body {
+    margin-top: 40px;
+  }
+  body:before {
+    content: 'data.govt.nz';
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 20px;
+  }
+  .wrapper {
+    padding-top: 0 !important;
+  }
+  .wrapper .primary {
+    width: auto !important;
+  }
+  .module-content {
+    width: auto;
+    border: 0;
+    float: none !important;
+  }
+  .module-content a {
+    word-wrap: break-word;
+  }
+  .module-content a[href^="https://"]:after,
+  .module-content a[href^="http://"]:after {
+    content: " (" attr(href) ")";
+  }
+  .module-content a[href^="/"]:after {
+    content: " (https://data.govt.nz" attr(href) ") ";
+  }
+  .module-content a#link-next:after,
+  .module-content a#link-prev:after {
+    display: none;
+  }
+  .module-content a:after {
+    font-size: 90%;
+  }
+  .toolbar .breadcrumb:before {
+    content: 'You are here:';
+    float: left;
+    padding-right: .5em;
+    padding-top: 12px;
+  }
+  .toolbar {
+    padding-top: 1em;
+    margin-top: 30px !important;
+  }
+  .toolbar .breadcrumb {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: outside none none;
+    position: relative;
+  }
+  .toolbar .breadcrumb li {
+    float: left;
+  }
+  .toolbar .breadcrumb li:not(:last-child):after {
+    content: ">";
+    padding: 0 .25em;
+  }
+  .toolbar .breadcrumb li a {
+    border-bottom: none;
+    display: inline-block;
+    text-decoration: none;
+  }
+}
 header a:focus,
 .account-masthead a:focus,
 .breadcrumb a:focus,

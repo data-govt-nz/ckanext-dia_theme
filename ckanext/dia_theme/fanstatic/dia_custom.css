@@ -10644,10 +10644,6 @@ aside.secondary .module.module-narrow.license a {
   .module-content a[href^="/"]:after {
     content: " (https://data.govt.nz" attr(href) ") ";
   }
-  .module-content a#link-next:after,
-  .module-content a#link-prev:after {
-    display: none;
-  }
   .module-content a:after {
     font-size: 90%;
   }

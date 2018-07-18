@@ -1,0 +1,91 @@
+@media print {
+
+  header,
+  nav,
+  footer,
+  aside,
+  .search-result-heading,
+  .tags {
+    display: none !important;
+  }
+
+  body {
+    margin-top: 40px;
+  }
+
+  body:before {
+    content: 'data.govt.nz';
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 20px;
+  }
+
+  .wrapper {
+    padding-top: 0 !important;
+    .primary {
+      width: auto !important;
+    }
+  }
+
+  .module-content {
+    width: auto;
+    border: 0;
+    float: none !important;
+
+    a {
+      word-wrap: break-word; // make long links wrap and not break layout
+
+      // for external links
+      &[href^="https://"]:after,
+      &[href^="http://"]:after {
+        content: " (" attr(href) ")";
+      }
+
+      // and internal links
+      &[href^="/"]:after {
+        content: " (https://data.govt.nz" attr(href) ") ";
+      }
+
+      &:after{
+        font-size: 90%;
+      }
+    }
+  }
+
+  // Add title 'You are here' to breadcrumbs
+  .toolbar {
+    .breadcrumb:before{
+      content: 'You are here:';
+      float: left;
+      padding-right: .5em;
+      padding-top: 12px;
+    }
+  }
+
+  // Keep breadcrumbs on one line
+  .toolbar{
+    padding-top: 1em;
+    margin-top: 30px !important;
+
+    .breadcrumb{
+      margin: 0;
+      padding: 0;
+      float:left;
+      list-style: outside none none;
+      position:relative;
+      li {
+        float:left;
+        &:not(:last-child):after {
+          content: ">";
+          padding: 0 .25em;
+        }
+        a {
+          border-bottom:none;
+          display:inline-block;
+          text-decoration:none;
+        }
+      }
+    }
+  }
+
+}

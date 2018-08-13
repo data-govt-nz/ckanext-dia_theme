@@ -46,6 +46,10 @@
 
   {% if query %}
     {% set link_href = _('{site}/search/SearchForm?Search={query}') %}
-    <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}" title="Search for website content instead" id="search-context-switch" class="search-context-switch">Were you looking for website content?</a>
+    Can't find it?
+    <div class="search-alt-actions">
+      <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}" title="Search for data.govt.nz website content instead" id="search-context-switch" class="btn btn-primary search-context-switch">Search for website content</a>
+      <a href="{{ h.parent_site_url() }}/request-data/" title="Search for requested datasets or create a new request" class="btn btn-secondary dataset-request">Request a dataset</a>
+    </div>
   {%- endif -%}
 </form>

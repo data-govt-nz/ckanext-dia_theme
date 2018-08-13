@@ -76,6 +76,16 @@
 {% endblock %}
 
 
+{# Add a link to add datasets below search results #}
+{% block package_search_results_api_inner %}
+  <a href="{{ h.parent_site_url() }}/request-data/" title="Search for requested datasets or create a new request" class="btn btn-secondary dataset-request">Request a dataset</a>
+  <div class="search-result-api-message">
+    <span class="fa fa-lightbulb-o"></span>
+    {{ super() }}
+  </div>
+{% endblock %}
+
+
 {% block secondary_content %}
 
 <a href="#filters" class="visuallyhidden focusable skip-to-content">Skip map</a>

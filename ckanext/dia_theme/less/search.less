@@ -7,7 +7,7 @@
   // Normal search box
   .search-input {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   	input {
       .box-sizing(border-box);
       margin: 0;
@@ -53,6 +53,8 @@
     }
   }
   .control-order-by {
+    margin-top: 10px;
+
     label,
     select {
       display: inline;
@@ -126,14 +128,55 @@
     }
   }
 }
-a.search-context-switch {
-  margin-bottom: 20px;
-  display: inline-block;
-  border-bottom: 2px solid #dddddd;
-  color: #333;
 
-  &:hover {
-    text-decoration: none;
-    border-bottom: 2px solid #075D79;
+.search-alt-actions {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+a.search-context-switch,
+a.dataset-request {
+  font-weight: normal;
+  margin-left: 5px;
+  padding: 10px 20px;
+  border: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover, &:focus {
+    text-decoration: underline;
   }
+}
+
+a.search-context-switch {
+  color: #fff;
+  border-bottom: 2px solid #0a3e4e;
+}
+
+a.dataset-request {
+  border-bottom: 2px solid #ab7701;
+
+  &:hover, &:focus {
+    background-color: #e8a200;
+  }
+}
+
+.search-result-api-message {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background-color: #ceecf6;
+  border-bottom: 2px solid #b2cbd4;
+  margin-left: 5px;
+
+  span {
+    font-size: 1.3em;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+.request-data {
+  margin-top: 40px;
 }

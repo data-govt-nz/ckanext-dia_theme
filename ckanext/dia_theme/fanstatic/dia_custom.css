@@ -7257,7 +7257,7 @@ textarea {
 }
 .search-form .search-input {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .search-form .search-input input {
   -webkit-box-sizing: border-box;
@@ -7304,6 +7304,9 @@ textarea {
 .search-form .search-input.search-giant button i {
   font-size: 28px;
   width: 28px;
+}
+.search-form .control-order-by {
+  margin-top: 10px;
 }
 .search-form .control-order-by label,
 .search-form .control-order-by select {
@@ -7371,15 +7374,52 @@ textarea {
     margin: 0;
   }
 }
-a.search-context-switch {
-  margin-bottom: 20px;
+.search-alt-actions {
   display: inline-block;
-  border-bottom: 2px solid #dddddd;
-  color: #333;
+  margin-left: 10px;
 }
-a.search-context-switch:hover {
-  text-decoration: none;
-  border-bottom: 2px solid #075D79;
+a.search-context-switch,
+a.dataset-request {
+  font-weight: normal;
+  margin-left: 5px;
+  padding: 10px 20px;
+  border: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  -webkit-font-smoothing: antialiased;
+}
+a.search-context-switch:hover,
+a.dataset-request:hover,
+a.search-context-switch:focus,
+a.dataset-request:focus {
+  text-decoration: underline;
+}
+a.search-context-switch {
+  color: #fff;
+  border-bottom: 2px solid #0a3e4e;
+}
+a.dataset-request {
+  border-bottom: 2px solid #ab7701;
+}
+a.dataset-request:hover,
+a.dataset-request:focus {
+  background-color: #e8a200;
+}
+.search-result-api-message {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background-color: #ceecf6;
+  border-bottom: 2px solid #b2cbd4;
+  margin-left: 5px;
+}
+.search-result-api-message span {
+  font-size: 1.3em;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.request-data {
+  margin-top: 40px;
 }
 .group .media-vertical .image {
   margin: 0 -5px 5px;
@@ -7464,7 +7504,7 @@ a.search-context-switch:hover {
   display: none;
 }
 .toolbar .breadcrumb a {
-  color: #505050;
+  color: #333;
 }
 @media (max-width: 767px) {
   .toolbar .breadcrumb {
@@ -8366,7 +8406,7 @@ div.masthead {
   background-image: none;
   color: #fff;
   min-height: 55px;
-  margin-top: 20px;
+  margin-top: 45px;
 }
 div.masthead a {
   border-bottom: none;
@@ -8828,7 +8868,7 @@ div.not-authored {
   height: 20px;
 }
 .site-footer .nav > li > a:hover {
-  background-color: #529db6;
+  background-color: #FFB100;
 }
 .site-footer .simple-input {
   height: 30px;
@@ -9643,7 +9683,7 @@ header.account-masthead .account ul li a {
   padding: 5px 15px;
 }
 header.account-masthead .account ul li a:hover {
-  background-color: #529db6;
+  background-color: #FFB100;
 }
 .masthead {
   background-image: none;
@@ -9654,7 +9694,7 @@ header.account-masthead .account ul li a:hover {
   height: 20px;
 }
 .masthead .nav > li > a:hover {
-  background-color: #529db6;
+  background-color: #FFB100;
 }
 .masthead .simple-input {
   height: 30px;
@@ -10252,15 +10292,32 @@ header.account-masthead .account ul li a:hover {
 .simple-input .field .btn-search .icon-search {
   font-size: 20px;
 }
+.btn-secondary {
+  color: #333;
+  background-color: #ffc645;
+  background-image: -moz-linear-gradient(top, #ffc645, #e8a200);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffc645), to(#e8a200));
+  background-image: linear-gradient(to bottom, #ffc645, #e8a200);
+  text-shadow: none;
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.btn-secondary.disabled,
+.btn-secondary[disabled] {
+  background-color: #ffb100;
+  color: #333;
+}
 .toolbar {
-  background-color: #0c536b;
-  color: #FFFFFF;
+  background-color: #FFB100;
+  color: #333;
   /* add back negative margin value */
   padding: 0.25rem 9999rem;
   margin: -10px -9999rem 0;
 }
 .toolbar .breadcrumb > li > a {
-  color: #FFFFFF;
+  color: #333;
   font-size: 14px;
   text-shadow: none;
 }
@@ -10765,7 +10822,7 @@ header textarea:focus,
 .breadcrumb textarea:focus,
 .site-footer textarea:focus {
   outline: none !important;
-  box-shadow: 0 0 0 2px #f5f3f3 !important;
+  box-shadow: 0 0 0 2px #FFFFFF !important;
   text-decoration: none !important;
 }
 #field-sitewide-search:focus {

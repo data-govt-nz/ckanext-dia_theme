@@ -18,8 +18,8 @@
 @layoutTrimBackgroundColor: #FFFFFF;
 @layoutTrimBorderColor: #CCCCCC;
 @layoutTagBackgroundColor: #BADAE2;
-@layoutToolbarColor: #FFFFFF;
-@layoutToolbarBackgroundColor: #529db6;
+@layoutToolbarColor: #333;
+@layoutToolbarBackgroundColor: #FFB100;
 @layoutNumsBackgroundColor: #EDF9FD;
 
 @mastheadTextColor: #FFFFFF;
@@ -40,6 +40,7 @@
 @footerTextColor: #FFFFFF;
 @footerBackgroundColor: #0c536b;
 @footerLinkColor: @footerTextColor;
+@focusOnBlueBg: @footerTextColor;
 
 //Tab Navigation
 @tabBackgroundColor: #117799;
@@ -354,6 +355,7 @@ header.account-masthead {
       background-color: @layoutToolbarBackgroundColor;
     }
   }
+
 
   .simple-input {
     height: 30px;
@@ -670,8 +672,22 @@ header.account-masthead {
   font-size: 20px;
 }
 
+.btn-secondary {
+  color: #333;
+  background-color: #ffc645;
+  background-image: -moz-linear-gradient(top, #ffc645, #e8a200);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffc645), to(#e8a200));
+  background-image: linear-gradient(to bottom, #ffc645, #e8a200);
+  text-shadow: none;
+
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    background-color: #ffb100;
+    color: #333;
+  }
+}
+
 .toolbar {
-  background-color: @footerBackgroundColor;
+  background-color: @layoutToolbarBackgroundColor;
   color: @layoutToolbarColor;
 
   /* add back negative margin value */
@@ -1134,7 +1150,3 @@ aside.secondary {
   }
 
 }
-
-
-
-

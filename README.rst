@@ -8,7 +8,7 @@ Frontend CKAN theme for data.govt.nz written in LESS
 Requirements
 ------------
 
-CKAN 2.6.x
+CKAN 2.7.x
 
 ------------
 Installation

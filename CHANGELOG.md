@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+ - a11y enhancements
+ - print styles
+ - FIX locale attribute to en-nz
+ - updated IA
+
 ## 1.2.0
  - Update the search header layout
  - Add one click jump to other search

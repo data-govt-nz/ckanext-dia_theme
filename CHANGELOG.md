@@ -1,4 +1,6 @@
 # Changelog
+## 1.4.0
+ - Include only RDF for content negotiation
 
 ## 1.3.0
  - a11y enhancements

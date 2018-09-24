@@ -1,6 +1,11 @@
 {% ckan_extends %}
 
 
+{% block links %}
+    <!-- see DATA-390 Copied from the global theme, because we do not want to include the override of the links block done by the ckanext-dcat plugin-->
+    <link rel="shortcut icon" href="{{ g.favicon }}" />
+{% endblock %}
+
 {# Show the search form at the very top instead (with a heading added) #}
 {% block pre_primary %}
   <section class="search-result-heading">

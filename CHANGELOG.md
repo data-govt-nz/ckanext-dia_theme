@@ -1,4 +1,7 @@
 # Changelog
+## 1.4.1
+ - Hide the rel=alternative link tags that are added to the head from the ckanext-dcat plugin
+
 ## 1.4.0
  - Include only RDF for content negotiation
 

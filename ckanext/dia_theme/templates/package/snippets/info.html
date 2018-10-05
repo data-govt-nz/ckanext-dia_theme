@@ -1,7 +1,7 @@
 {% ckan_extends %}
     {% block nums %}
         {%if pkg.spatial %}
-            {% snippet "spatial/snippets/dataset_map_base.html", extent=pkg.spatial %}
+            {% snippet "spatial/snippets/dataset_map_base.html", extent=h.modify_geojson(pkg.spatial) %}
         {% endif %}
     {% endblock %}
     

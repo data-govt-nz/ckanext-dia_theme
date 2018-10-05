@@ -17,5 +17,6 @@ class Dia_ThemePlugin(plugins.SingletonPlugin):
 
     def get_helpers(self):
         return {
-            'parent_site_url': helpers.parent_site_url
+            'parent_site_url': helpers.parent_site_url,
+            'modify_geojson': helpers.modify_geojson,
         }

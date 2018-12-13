@@ -839,6 +839,7 @@ header.account-masthead {
 
     li {
       margin-right: -10px;
+      line-height: 20px;
     }
 
     &.well {
@@ -989,6 +990,7 @@ aside.secondary {
     }
 
     .context-info {
+      position: relative;
 
       &:after {
         content: "";
@@ -999,8 +1001,8 @@ aside.secondary {
         border-width: 10px 0 10px 15px;
         border-color: transparent transparent transparent @masterheadLoginBackgroundColor;
         display: block;
-        top: 65px;
-        left: 220px;
+        top: 5px;
+        right: -15px;
         @media (min-width: @media-tablet) and (max-width: @media-desktop) {
           left: 166px;
         }

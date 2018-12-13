@@ -6260,7 +6260,7 @@ nav .breadcrumbs li {
   line-height: unset;
 }
 .row.wrapper {
-  padding-top: 0;
+  padding-top: 10px;
 }
 .js .js-hide {
   display: none;
@@ -7297,6 +7297,10 @@ textarea {
 }
 .resource-view {
   margin-top: 20px;
+}
+/* override for rua styling */
+.tag-list li .tag {
+  line-height: 20px;
 }
 .search-form {
   margin-bottom: 20px;
@@ -10513,6 +10517,7 @@ header.account-masthead .account ul li a:hover {
 }
 .primary .tag-list li {
   margin-right: -10px;
+  line-height: 20px;
 }
 .primary .tag-list.well {
   background-color: #FFFFFF;
@@ -10641,6 +10646,9 @@ aside.secondary .module.module-narrow .nums dd {
   font-weight: normal;
   margin-top: 10px;
 }
+aside.secondary .module.module-narrow .context-info {
+  position: relative;
+}
 aside.secondary .module.module-narrow .context-info:after {
   content: "";
   position: absolute;
@@ -10650,8 +10658,8 @@ aside.secondary .module.module-narrow .context-info:after {
   border-width: 10px 0 10px 15px;
   border-color: transparent transparent transparent #004A61;
   display: block;
-  top: 65px;
-  left: 220px;
+  top: 5px;
+  right: -15px;
 }
 @media (min-width: 768px) and (max-width: 980px) {
   aside.secondary .module.module-narrow .context-info:after {

@@ -127,18 +127,24 @@ To publish a new version to PyPI follow these steps:
        git tag 0.0.2
        git push --tags
 
-       
+
 ----------------------------------------
 CSS Styling of dia_theme
 ----------------------------------------
 
 Any CSS styling changes to the dia_theme should be done in the LESS files and NOT directly in the CSS files.
 
-Follow these steps:
+We'll be replacing these styles with the rua pattern library, however for now we have both.
+
+You can use npm to install and build the LESS files with `npm i` and `npm run css`
+
+You can use npm to update the rua pattern library styles with `npm run rua`
+
+Alternatively the LESS files were previously compiled with these steps:
 
  - Install LESS Compiler
  - Make changes in LESS files as required
  - Open console and cd to /path/to/ckanext-dia_theme
  - Compile the LESS files by running " lessc less/main.less fanstatic/dia_custom.css "
  - The CSS changes will now show up in the browser
- 
+

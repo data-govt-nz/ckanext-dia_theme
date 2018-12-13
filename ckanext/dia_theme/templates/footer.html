@@ -1,75 +1,159 @@
-<footer class="site-footer" role="contentinfo">
-    <div class="container">
-        <div class="row">
-	    <div class="span3">
-		<h2 class="footcolheader">Get in touch</h2>
-			<ul>
-				<li class="footlink"><a href="{{ h.parent_site_url() }}/contact-us/" class="link">Contact us</a></li>
+<footer class="site-footer">
+	<div class="site-footer__style-1"></div>
+	<div class="site-footer__navigation">
+		<div class="site-footer__inner">
+			<div class="site-footer__col-1">
+				<h2>
+					What are you looking for?
+				</h2>
+				<hr class="margin-t-sm margin-b-sm">
+				<ul class="menu vertical md-2-column site-footer__menu">
 
-				<li class="footlink"><a href="{{ h.parent_site_url() }}/feedback/" class="link">Give us feedback</a></li>
-				<li class="footlink"><a href="https://github.com/data-govt-nz" class="link">Github</a></li>
-				<li class="footlink"><a href="{{ h.parent_site_url() }}/request-data/" class="link">Request a dataset</a></li>
-			</ul>
-	    </div>
-	    <div class="span6">
-		<h2 class="footcolheader">Sitemap</h2>
-		<div class="footcol02A">
-			<ul>
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}" class="link">Home</a></li>
+						<li>
+							<a href="{{ h.parent_site_url() }}/" class="link">
+								Home
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.url_for(controller="package", action="search") }}" class="link">Get datasets</a></li>
+						<li>
+							<a href="/dataset" class="link">
+								Get datasets
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/manage-data/" class="link">Manage data</a></li>
+						<li>
+							<a href="{{ h.parent_site_url() }}/manage-data/" class="link">
+								Manage data
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/use-data/" class="link">Use data</a></li>
+						<li>
+							<a href="{{ h.parent_site_url() }}/use-data/" class="link">
+								Use data
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/open-data/" class="link">Open data</a></li>
+						<li>
+							<a href="{{ h.parent_site_url() }}/open-data/" class="link">
+								Open data
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/events/" class="link">Events</a></li>
+						<li>
+							<a href="{{ h.parent_site_url() }}/events/" class="link">
+								Events
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/blog/" class="link">Blog</a></li>
+						<li>
+							<a href="{{ h.parent_site_url() }}/blog/" class="current">
+								Blog
+							</a>
+						</li>
 
-				<li class="footlink footlink50"><a href="{{ h.parent_site_url() }}/about/" class="link">About</a></li>
-			</ul>
+						<li>
+							<a href="{{ h.parent_site_url() }}/about/" class="link">
+								About
+							</a>
+						</li>
+
+				</ul>
+			</div>
+			<div class="site-footer__col-2">
+				<h2>
+					Using this website
+				</h2>
+				<hr class="margin-t-sm margin-b-sm">
+				<ul class="menu vertical site-footer__menu">
+
+						<li>
+							<a href="{{ h.parent_site_url() }}/terms-of-use/" class="link">
+								Terms of use
+							</a>
+						</li>
+
+						<li>
+							<a href="{{ h.parent_site_url() }}/privacy-policy/" class="link">
+								Privacy policy
+							</a>
+						</li>
+
+						<li>
+							<a href="{{ h.parent_site_url() }}/copyright/" class="link">
+								Copyright
+							</a>
+						</li>
+
+						<li>
+							<a href="/user/login" class="link">
+								Publisher login
+							</a>
+						</li>
+
+				</ul>
+			</div>
+			<div class="site-footer__col-3">
+				<h2>
+					Get in touch
+				</h2>
+				<hr class="margin-t-sm margin-b-sm">
+				<ul class="menu vertical site-footer__menu">
+
+						<li>
+							<a href="{{ h.parent_site_url() }}/contact-us/" class="link">
+								Contact us
+							</a>
+						</li>
+
+						<li>
+							<a href="{{ h.parent_site_url() }}/feedback/" class="link">
+								Give us feedback
+							</a>
+						</li>
+
+						<li>
+							<a href="https://github.com/data-govt-nz" class="link">
+								Github
+							</a>
+						</li>
+
+						<li>
+							<a href="{{ h.parent_site_url() }}/request-data/" class="link">
+								Request a dataset
+							</a>
+						</li>
+
+				</ul>
+				<ul class="social-menu">
+					<li>
+						<a href="https://twitter.com/data_govt_nz" class="ri ri-twitter"></a>
+					</li>
+				</ul>
+			</div>
 		</div>
-	    </div>
-	    <div class="span3">
-		<h2 class="footcolheader">Using this website</h2>
-			<ul>
-				<li class="footlink"><a href="{{ h.parent_site_url() }}/terms-of-use/" class="link">Terms of use</a></li>
-
-				<li class="footlink"><a href="{{ h.parent_site_url() }}/privacy-policy/" class="link">Privacy policy</a></li>
-
-				<li class="footlink"><a href="{{ h.parent_site_url() }}/copyright/" class="link">Copyright</a></li>
-
-				<li class="footlink"><a href="{{ h.url_for(controller="user", action="login") }}" class="link">Publisher login</a></li>
-			</ul>
-	    </div>
-	    <div class="footlink footright">
-		<a href="#"><i class="fa icon-chevron-up" aria-hidden="true"></i> &nbsp; Back to top</a>
-	    </div>
 	</div>
-	<div class="row footsub">
-	    <div class="span4 footsubcol01">
-		<a href="https://www.govt.nz">
-		    <img src="/dia/images/AoG_logo_footer.png" alt="New Zealand Government" />
-		</a>
-		<p>Crown copyright © 2018</p>
-	    </div>
-	    <div class="span2 footsubcol02">
-		<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-		    <img src="/dia/images/cc_icons.png" alt="CC BY 4.0" />
-		</a>
-	    </div>
-	    <div class="span6 footsubcol03">
-		<p>Unless indicated otherwise, all content on data.govt.nz is licensed for re-use under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 International Licence</a></p>
-	    </div>
+	<div class="site-footer__bottom">
+		<div class="site-footer__inner">
+			<div class="site-footer__col-copyright">
+				<div class="row">
+					<div class="col-md-3">
+						<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+							<img src="/dia/images/cc_icons.png" alt="CC BY 4.0" width="83">
+						</a>
+					</div>
+					<div class="col-md-9">
+						<small>Unless indicated otherwise, all content on data.govt.nz is licensed for re-use under a <a class="external" href="https://creativecommons.org/licenses/by/4.0/" rel="external license">Creative Commons 4.0 International Licence&nbsp;<span class="ri  ri-external-link" aria-label="(external site link)"></span></a></small><br>
+						<small>Crown copyright 2018</small>
+					</div>
+				</div>
+			</div>
+			<div class="site-footer__col-logo">
+				<a href="https://www.govt.nz">
+					<img src="/dia/images/footer-logo-govt.png" alt="New Zealand Government" width="179">
+				</a>
+			</div>
+		</div>
 	</div>
-    </div>
-    </div>
-
-  </div>
-
 
   {% block footer_debug %}
     {% if g.debug %}

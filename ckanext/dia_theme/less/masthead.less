@@ -243,12 +243,6 @@ div {
     }
   }
 
-  .debug {
-    position: absolute;
-    top: 37px;
-    left: 10px;
-    color: rgba(255, 255, 255, 0.5);
-  }
 }
 
 @media (min-width: 980px) {
@@ -321,3 +315,19 @@ div {
   }
 }
 
+/* override for rua styling */
+header .debug {
+  position: absolute;
+  top: 34px;
+  left: 10px;
+  z-index: 3;
+}
+
+@media only screen and (max-width: 1400px) {
+  header .debug {
+    position: absolute;
+    top: 56px;
+    left: 10px;
+    z-index: 3;
+  }
+}

@@ -1,8 +1,13 @@
 {# This is copied from the CKAN source, with header_site_search moved outside .nav-collapse, and accessibility changes as per wr267900 #}
 {% block header_wrapper %}
-    {% block header_account %}
-        <header class="account-masthead" role="banner">
-            <div class="container">
+    <header class="site-header" role="banner">
+        {% block header_debug %}
+            {% if g.debug and not g.debug_supress_header %}
+                <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
+            {% endif %}
+        {% endblock %}
+        {% block header_account %}
+            <div class="container site-header__nav-container">
                 {% block header_account_container_content %}
                     {% if c.userobj %}
                         <nav class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" role="navigation" aria-label="Add/request dataset">
@@ -64,23 +69,14 @@
                     {% endif %}
                 {% endblock %}
             </div>
-    {% endblock %}
-    <div class="navbar navbar-static-top masthead">
-        {% block header_debug %}
-            {% if g.debug and not g.debug_supress_header %}
-                <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
-            {% endif %}
         {% endblock %}
-        <div class="container">
-            <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button" role="presentation" tabindex="-1">
-                <span class="fa fa-bars"></span>
-            </button>
-            {# The .header-image class hides the main text and uses image replacement for the title #}
-            <div class="{{ g.header_class }} pull-left">
-
+        <div class="container site-header__nav-container">
+            <div class="site-header__inner">
                 {% block header_logo %}
                     {% if g.site_logo %}
-                        <a class="logo" href="{{ h.parent_site_url() }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+                        <a class="site-header__logo" href="{{ h.parent_site_url() }}">
+                            <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" width="164" />
+                        </a>
                     {% else %}
                         <h1>
                             <a href="{{ h.parent_site_url() }}">{{ g.site_title }}</a>
@@ -89,60 +85,86 @@
                     {% endif %}
                 {% endblock %}
 
-            </div>
-
-            {% block header_site_search %}
-                <div class="site-search-wrap">
-                    <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
-                        <div class="field">
-                            <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
-
-                            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('E.g. environment') }}" class="search" aria-label="Search term"/>
-                            <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-                            <button class="btn-search" type="submit">
-                                <i class="fa fa-search icon-search" aria-hidden="true"></i>
-                                <span class="sr-only">Search</span>
-                            </button>
-                        </div>
-                    </form>
-                    <fieldset class="fieldset">
-                        <legend class="hide">Search for</legend>
-                        <div class="context-switch">
-                            <input type="radio" class="search-form-context" name="header-search-context" value="datasets" checked="checked" id="search-for-datasets">
-                            <label for="search-for-datasets">Datasets</label>
-                        </div>
-                        <div class="context-switch">
-                            <input type="radio" class="search-form-context" name="header-search-context" value="content" id="search-for-website-content">
-                            <label for="search-for-website-content">Website</label>
-                        </div>
-                    </fieldset>
-                </div>
-            {% endblock %}
-
-            <button id="buttonCollapse" data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-                <span class="fa fa-bars"></span>
-                <span class="sr-only">Main navigation</span>
-            </button>
-
-            <div id="collapseDiv" class="nav-collapse collapse" role="navigation" aria-label="Main menu">
 
                 {% block header_site_navigation %}
-                    <nav class="section navigation">
-                        <ul class="nav nav-pills">
-                            {% block header_site_navigation_tabs %}
-                                {{ h.build_nav_main(
-                                    ('search', _('Datasets')),
-                                    ('organizations_index', _('Organizations')),
-                                    ('group_index', _('Groups')),
-                                    ('about', _('About'))
-                                ) }}
-                            {% endblock %}
+                    <nav aria-label="Main Menu" class="site-header__navigation">
+                        <ul class="menu">
+                            {% include 'snippets/header_navigation_items.html' %}
                         </ul>
                     </nav>
                 {% endblock %}
 
+                <div class="navigation-toggle navicon" data-toggle-state="false" data-click="trigger: #site-navigation; class: in-active, is-active">
+                    <span class="navicon-box">
+                        <span class="navicon-inner"></span>
+                    </span>
+                </div>
+                <div id="site-search-wrap" class="search-toggle" data-toggle-state="false" data-click="trigger: #site-search; class: in-active, active">
+                    <div class="search-toggle__search">
+                        <span class="ri ri-search"></span>
+                    </div>
+                    <div class="button search-toggle__in-active">
+                        <span class="ri ri-chevron-down"></span>
+                        <span>
+                            {% block header_site_search_label %}{{ _('Search') }}{% endblock %}
+                        </span>
+                    </div>
+                    <div class="button-icon search-toggle__active">
+                        <span class="ri ri-chevron-up"></span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+        {% block header_site_search %}
+            <div class="site-search">
+                <div class="site-search__visibility hidden" id="site-search" data-toggle="slide" style="display: none;" aria-expanded="false">
+                    <div class="container">
+                        <div class="site-search__inner">
+                            <form class="search-form" action="{% url_for controller='package', action='search' %}" method="get">
+                                <label for="{$LabelPrefix}-field-sitewide-search">
+                                    {{ _('Search for') }}:
+                                </label>
+                                <div class="context-switch">
+                                    <div class="field field--inline-label">
+                                        <input id="{$LabelPrefix}-search-for-website-content" type="radio" class="search-form-context" name="header-search-context" value="content" />
+                                        <label for="{$LabelPrefix}-search-for-website-content">
+                                            {{ _('Website content') }}
+                                        </label>
+                                    </div>
+                                    <div class="field field--inline-label">
+                                        <input id="{$LabelPrefix}-search-for-datasets" type="radio" class="search-form-context" name="header-search-context" value="datasets" checked="checked" />
+                                        <label for="{$LabelPrefix}-search-for-datasets">
+                                            {{ _('Datasets') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="field search-input">
+                                    <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
+                                    <input class="ckan-search-url" value="{% url_for controller='package', action='search' %}" type="hidden">
+                                    <input id="{$LabelPrefix}-field-sitewide-search" name="q" placeholder="E.g. environment" type="text" aria-label="Search term">
+                                </div>
+                                <button id="{$LabelPrefix}-search" class="button">
+                                    <span class="ri ri-search"></span>
+                                    <span>{{ _('Search') }}</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </header>
+    {% block header_site_navigation_mobile %}
+        <div class="site-navigation">
+            <div class="site-search__visibility hidden" id="site-navigation" data-toggle="slide" style="display: none;" aria-expanded="false">
+                <div class="container">
+                    <div class="site-search__inner">
+                        <ul class="menu vertical">
+                            {% include 'snippets/header_navigation_items.html' %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
 {% endblock %}

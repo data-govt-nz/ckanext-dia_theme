@@ -180,3 +180,22 @@ a.dataset-request {
 .request-data {
   margin-top: 40px;
 }
+
+/* override for rua styling */
+.site-search__inner .search-form {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.site-search__inner .search-form .search-input input {
+  margin: 0 20px 4px 0;
+  height: 2.5em;
+}
+.site-search__visibility.hidden {
+  display: block;
+  visibility: visible;
+}
+/* this should be pulled back to rua to fix on parent site too */
+.search-toggle__search {
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+{% block header_site_navigation_tabs %}
+    <li><a href="{{ h.url_for(controller="package", action="search") }}/" class="site-header__menu-item menu-item current" title="Search for datasets">Get datasets</a></li>
+    <li><a href="{{ h.parent_site_url() }}/manage-data/" class="site-header__menu-item menu-item" title="Go to the manage data page">Manage data</a></li>
+    <li><a href="{{ h.parent_site_url() }}/use-data/" class="site-header__menu-item menu-item" title="Go to the use data page">Use data</a></li>
+    <li><a href="{{ h.parent_site_url() }}/open-data/" class="site-header__menu-item menu-item" title="Go to the open data page">Open data</a></li>
+    <li><a href="{{ h.parent_site_url() }}/events/" class="site-header__menu-item menu-item" title="Go to the events page">Events</a></li>
+    <li><a href="{{ h.parent_site_url() }}/blog/" class="site-header__menu-item menu-item" title="Go to the blog page">Blog</a></li>
+    <li><a href="{{ h.parent_site_url() }}/about/" class="site-header__menu-item menu-item" title="Go to the about page">About</a></li>
+{% endblock %}

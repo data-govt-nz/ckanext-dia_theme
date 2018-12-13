@@ -6,15 +6,3 @@
 
 {% block header_account_notlogged %}
 {% endblock %}
-
-{% block header_site_navigation_tabs %}
-    {{ h.build_nav_main(
-        ('search', _('Get datasets')),
-    ) }}
-    <li><a href="{{ h.parent_site_url() }}/manage-data/">Manage data</a></li>
-    <li><a href="{{ h.parent_site_url() }}/use-data/">Use data</a></li>
-    <li><a href="{{ h.parent_site_url() }}/open-data/">Open data</a></li>
-    <li><a href="{{ h.parent_site_url() }}/events/">Events</a></li>
-    <li><a href="{{ h.parent_site_url() }}/blog/">Blog</a></li>
-    <li><a href="{{ h.parent_site_url() }}/about/">About</a></li>
-{% endblock %}

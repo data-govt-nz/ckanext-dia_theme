@@ -10,7 +10,7 @@
             <div class="container site-header__nav-container">
                 {% block header_account_container_content %}
                     {% if c.userobj %}
-                        <nav class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" role="navigation" aria-label="Add/request dataset">
+                        <nav class="account authed" data-module="me" data-me="{{ c.userobj.id }}" role="navigation" aria-label="Add/request dataset">
                             <ul class="unstyled">
                                 {% block header_account_logged %}
                                     {% if c.userobj.sysadmin %}
@@ -94,12 +94,12 @@
                     </nav>
                 {% endblock %}
 
-                <div class="navigation-toggle navicon" data-toggle-state="false" data-click="trigger: #site-navigation; class: in-active, is-active">
+                <div class="navigation-toggle navicon" data-rua-toggle-state="false" data-rua-click="trigger: #site-navigation; class: in-active, is-active">
                     <span class="navicon-box">
                         <span class="navicon-inner"></span>
                     </span>
                 </div>
-                <div id="site-search-wrap" class="search-toggle" data-toggle-state="false" data-click="trigger: #site-search; class: in-active, active">
+                <div id="site-search-wrap" class="search-toggle" data-rua-toggle-state="false" data-rua-click="trigger: #site-search; class: in-active, active">
                     <div class="search-toggle__search">
                         <span class="ri ri-search"></span>
                     </div>
@@ -117,7 +117,7 @@
         </div>
         {% block header_site_search %}
             <div class="site-search">
-                <div class="site-search__visibility hidden" id="site-search" data-toggle="slide" style="display: none;" aria-expanded="false">
+                <div class="site-search__visibility hidden" id="site-search" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
                     <div class="container">
                         <div class="site-search__inner">
                             <form class="search-form" action="{% url_for controller='package', action='search' %}" method="get">
@@ -153,18 +153,19 @@
                 </div>
             </div>
         {% endblock %}
-    </header>
-    {% block header_site_navigation_mobile %}
-        <div class="site-navigation">
-            <div class="site-search__visibility hidden" id="site-navigation" data-toggle="slide" style="display: none;" aria-expanded="false">
-                <div class="container">
-                    <div class="site-search__inner">
-                        <ul class="menu vertical">
-                            {% include 'snippets/header_navigation_items.html' %}
-                        </ul>
+
+        {% block header_site_navigation_mobile %}
+            <div class="site-navigation">
+                <div class="site-search__visibility hidden" id="site-navigation" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
+                    <div class="container">
+                        <div class="site-search__inner">
+                            <ul class="menu vertical">
+                                {% include 'snippets/header_navigation_items.html' %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endblock %}
+        {% endblock %}
+    </header>
 {% endblock %}

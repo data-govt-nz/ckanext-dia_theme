@@ -1,3 +1,5 @@
+window.ruaNamespace = 'rua-';
+
 (function ($) {
     $(document).ready(function() {
 
@@ -5,7 +7,7 @@
         function updateSearchContext ($form) {
             var dataOrContent = $form.find('.search-form-context:checked').val()
             $form.attr('action', dataOrContent === 'datasets' ? '/dataset' : $('.ss-search-url').first().val())
-            $form.find('input.search').attr('name', dataOrContent === 'datasets' ? 'q' : 'Search')
+            $form.find('input[type="text"]').attr('name', dataOrContent === 'datasets' ? 'q' : 'Search')
         }
 
         // Handle search form context switch
@@ -16,6 +18,11 @@
         // Initialise search form state
         $('.site-search-wrap').each(function () {
             updateSearchContext($(this))
+        })
+
+        $('form.search-form').on('submit', function (e) {
+            $(this).find('.search-form-context').attr('disabled', 'disabled')
+            return true
         })
 
 

@@ -7303,9 +7303,9 @@ textarea {
   line-height: 20px;
 }
 .search-form {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+  margin-bottom: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px dotted #ddd;
 }
 .search-form .search-input {
   position: relative;
@@ -7358,7 +7358,7 @@ textarea {
   width: 28px;
 }
 .search-form .control-order-by {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .search-form .control-order-by label,
 .search-form .control-order-by select {
@@ -7486,11 +7486,6 @@ a.dataset-request:focus {
 .site-search__visibility.hidden {
   display: block;
   visibility: visible;
-}
-.search-form-wrap {
-  margin-bottom: 20px;
-  padding-bottom: 25px;
-  border-bottom: 1px dotted #ddd;
 }
 /* this should be pulled back to rua to fix on parent site too */
 .search-toggle__search {
@@ -10851,6 +10846,16 @@ input[type='color'] {
   border: 2px solid #C3CED8;
   border-radius: 1.5em 1.5em 0 0;
   border-bottom: none;
+}
+body ul {
+  line-height: 1;
+  padding-left: 0;
+}
+body li {
+  padding-left: 0;
+}
+#dataset-search-form {
+  display: block;
 }
 @media print {
   header,

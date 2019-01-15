@@ -7040,6 +7040,15 @@ textarea {
   -moz-appearance: none;
   appearance: none;
 }
+.input-prepend input[type='text'] {
+  display: inline-block;
+}
+.input-prepend .add-on {
+  height: 2.5em;
+  font-size: 1rem;
+  line-height: 2em;
+  margin-right: 10px;
+}
 .dataset-item {
   border-bottom: 1px dotted #ddd;
   padding-bottom: 20px;

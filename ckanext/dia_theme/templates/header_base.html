@@ -11,7 +11,7 @@
                 {% block header_account_container_content %}
                     {% if c.userobj %}
                         <nav class="account authed" data-module="me" data-me="{{ c.userobj.id }}" role="navigation" aria-label="Add/request dataset">
-                            <ul class="unstyled">
+                            <ul class="unstyled bg-primary">
                                 {% block header_account_logged %}
                                     {% if c.userobj.sysadmin %}
                                         <li>

@@ -33,6 +33,14 @@
 {% endblock %}
 
 
+{% block page_primary_action %}
+  {% if h.check_access('package_create') %}
+    <div class="page_primary_action">
+      {% link_for _('Add Dataset'), controller='package', action='new', class_='button', icon='plus-square' %}
+    </div>
+  {% endif %}
+{% endblock %}
+
 {# Override where the form was to just show the result count part #}
 {% block form %}
 
@@ -84,10 +92,13 @@
 
 {# Add a link to add datasets below search results #}
 {% block package_search_results_api_inner %}
-  <a href="{{ h.parent_site_url() }}/request-data/" title="Search for requested datasets or create a new request" class="btn btn-secondary dataset-request">Request a dataset</a>
-  <div class="search-result-api-message">
+  <div class="search-result-api-message message">
     <span class="fa fa-lightbulb-o"></span>
     {{ super() }}
+  </div>
+  <div class="search-result-bottom-link">
+    Can't find it?
+    <a href="{{ h.parent_site_url() }}/request-data/" title="Search for requested datasets or create a new request" class="button">Request a dataset</a>
   </div>
 {% endblock %}
 

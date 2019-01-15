@@ -10788,6 +10788,13 @@ aside.secondary .module.module-narrow.social .nav-simple > li > a:hover {
 aside.secondary .module.module-narrow.license a {
   font-size: 13px;
 }
+.dataset-subheading {
+  display: block;
+  color: #666;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
 /* override for rua styling */
 @media screen and (min-width: 1200px) {
   body h2 {

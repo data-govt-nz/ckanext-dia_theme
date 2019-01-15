@@ -131,7 +131,10 @@
 
 .search-alt-actions {
   display: inline-block;
-  margin-left: 10px;
+
+  a.button {
+    margin-left: 10px;
+  }
 }
 
 a.search-context-switch,
@@ -162,19 +165,10 @@ a.dataset-request {
   }
 }
 
-.search-result-api-message {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 3px;
-  background-color: #ceecf6;
-  border-bottom: 2px solid #b2cbd4;
-  margin-left: 5px;
-
-  span {
-    font-size: 1.3em;
-    vertical-align: middle;
-    margin-right: 10px;
-  }
+.search-result-api-message span {
+  font-size: 1.3em;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .request-data {
@@ -194,6 +188,13 @@ a.dataset-request {
 .site-search__visibility.hidden {
   display: block;
   visibility: visible;
+}
+.search-result-bottom-link {
+  text-align: center;
+
+  a {
+    margin-left: 10px;
+  }
 }
 /* this should be pulled back to rua to fix on parent site too */
 .search-toggle__search {

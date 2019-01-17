@@ -1,4 +1,7 @@
 # Changelog
+## 1.5.0
+ - Implement the header & footer using the rua design language
+
 ## 1.4.1
  - Hide the rel=alternative link tags that are added to the head from the ckanext-dcat plugin
 

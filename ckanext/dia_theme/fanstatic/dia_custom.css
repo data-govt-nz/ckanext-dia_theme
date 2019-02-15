@@ -10888,6 +10888,11 @@ body li {
 #dataset-search-form {
   display: block;
 }
+@media (max-width: 991px) {
+  .col-md-9.primary {
+    float: unset;
+  }
+}
 @media print {
   header,
   nav,

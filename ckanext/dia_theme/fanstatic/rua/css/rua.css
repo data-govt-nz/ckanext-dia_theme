@@ -3855,7 +3855,7 @@ blockquote,
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   padding: 1.5em 2em;
-  background: #ECEFF2 url("../assets/tic-tac-toe.png"); }
+  background: #ECEFF2 url("/rua/assets/tic-tac-toe.png"); }
   blockquote h1,
   blockquote .h1,
   blockquote h2,
@@ -4089,7 +4089,7 @@ td {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  background-image: url("../assets/avatar-placeholder@2x.png");
+  background-image: url("/rua/assets/avatar-placeholder@2x.png");
   background-size: cover;
   overflow: hidden; }
 
@@ -4468,7 +4468,7 @@ td {
   color: #ed7218; }
 
 .site-banner {
-  background: #ECEFF2 url("../assets/tic-tac-toe.png");
+  background: #ECEFF2 url("/rua/assets/tic-tac-toe.png");
   padding: 20px;
   position: relative;
   overflow: hidden; }
@@ -4521,13 +4521,13 @@ td {
       top: 0;
       bottom: 0;
       left: 0;
-      background-image: url("../assets/blue-banner-edge.png");
+      background-image: url("/rua/assets/blue-banner-edge.png");
       background-repeat: no-repeat;
       width: 100%;
       max-width: 31.5625rem; }
     .site-banner__pattern:after {
       content: '';
-      background-image: url("../assets/blue-banner-repeat.png");
+      background-image: url("/rua/assets/blue-banner-repeat.png");
       position: absolute;
       top: 0;
       right: 0;
@@ -4538,52 +4538,52 @@ td {
   color: #01B3C4; }
 
 .secondary-one .site-banner__pattern:before {
-  background-image: url("../assets/blue-banner-edge.png"); }
+  background-image: url("/rua/assets/blue-banner-edge.png"); }
 
 .secondary-one .site-banner__pattern:after {
-  background-image: url("../assets/blue-banner-repeat.png"); }
+  background-image: url("/rua/assets/blue-banner-repeat.png"); }
 
 .secondary-two .site-banner__breadcrumbs .ri-home {
   color: #EE1846; }
 
 .secondary-two .site-banner__pattern:before {
-  background-image: url("../assets/red-banner-edge.png"); }
+  background-image: url("/rua/assets/red-banner-edge.png"); }
 
 .secondary-two .site-banner__pattern:after {
-  background-image: url("../assets/red-banner-repeat.png"); }
+  background-image: url("/rua/assets/red-banner-repeat.png"); }
 
 .secondary-three .site-banner__breadcrumbs .ri-home {
   color: #51AE32; }
 
 .secondary-three .site-banner__pattern:before {
-  background-image: url("../assets/green-banner-edge.png"); }
+  background-image: url("/rua/assets/green-banner-edge.png"); }
 
 .secondary-three .site-banner__pattern:after {
-  background-image: url("../assets/green-banner-repeat.png"); }
+  background-image: url("/rua/assets/green-banner-repeat.png"); }
 
 .secondary-four .site-banner__breadcrumbs .ri-home {
   color: #6F2B91; }
 
 .secondary-four .site-banner__pattern:before {
-  background-image: url("../assets/purple-banner-edge.png"); }
+  background-image: url("/rua/assets/purple-banner-edge.png"); }
 
 .secondary-four .site-banner__pattern:after {
-  background-image: url("../assets/purple-banner-repeat.png"); }
+  background-image: url("/rua/assets/purple-banner-repeat.png"); }
 
 .secondary-five .site-banner__breadcrumbs .ri-home {
   color: #ed7218; }
 
 .secondary-five .site-banner__pattern:before {
-  background-image: url("../assets/orange-banner-edge.png"); }
+  background-image: url("/rua/assets/orange-banner-edge.png"); }
 
 .secondary-five .site-banner__pattern:after {
-  background-image: url("../assets/orange-banner-repeat.png"); }
+  background-image: url("/rua/assets/orange-banner-repeat.png"); }
 
 .site-footer {
   position: relative;
   overflow: hidden; }
   .site-footer__navigation {
-    background: #ECEFF2 url("../assets/tic-tac-toe.png");
+    background: #ECEFF2 url("/rua/assets/tic-tac-toe.png");
     padding: 0; }
   .site-footer__title,
   .site-footer h1,

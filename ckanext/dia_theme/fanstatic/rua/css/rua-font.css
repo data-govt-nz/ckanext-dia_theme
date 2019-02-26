@@ -1,11 +1,11 @@
 @font-face {
   font-family: "rua-font";
-  src: url('../fonts/rua-font.eot');
-  src: url('../fonts/rua-font.eot?#iefix') format('eot'),
-    url('../fonts/rua-font.woff2') format('woff2'),
-    url('../fonts/rua-font.woff') format('woff'),
-    url('../fonts/rua-font.ttf') format('truetype'),
-    url('../fonts/rua-font.svg#rua-font') format('svg');
+  src: url('/rua/fonts/rua-font.eot');
+  src: url('/rua/fonts/rua-font.eot?#iefix') format('eot'),
+    url('/rua/fonts/rua-font.woff2') format('woff2'),
+    url('/rua/fonts/rua-font.woff') format('woff'),
+    url('/rua/fonts/rua-font.ttf') format('truetype'),
+    url('/rua/fonts/rua-font.svg#rua-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }

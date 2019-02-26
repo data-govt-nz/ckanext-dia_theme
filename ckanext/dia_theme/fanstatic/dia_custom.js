@@ -1,4 +1,4 @@
-window.ruaNamespace = 'rua-';
+window.dataTargetNamespace = 'rua-';
 
 (function ($) {
     $(document).ready(function() {

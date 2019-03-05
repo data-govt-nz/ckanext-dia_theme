@@ -1236,8 +1236,21 @@ body li {
 #dataset-search-form {
   display: block;
 }
+.dataset-map-expanded #dataset-map {
+  top: -636px;
+}
 @media (max-width: 991px) {
   .col-md-9.primary {
     float: unset;
+  }
+  .dataset-map-expanded #dataset-map {
+    width: 100%;
+    top: -405px;
+  }
+  .dataset-map-expanded .wrapper {
+    margin-top: 0;
+  }
+  .dataset-map-expanded .wrapper>.secondary {
+    margin-top: 420px;
   }
 }

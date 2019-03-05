@@ -1239,11 +1239,14 @@ body li {
 .dataset-map-expanded #dataset-map {
   top: -636px;
 }
-@media (max-width: 991px) {
+@media (max-width: 990px) {
   .col-md-9.primary {
     float: unset;
   }
-  .dataset-map-expanded #dataset-map {
+  #dataset-map {
+    display: none;
+  }
+  .dataset-map-expanded {
     width: 100%;
     top: -405px;
   }

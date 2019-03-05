@@ -61,10 +61,11 @@
   overflow:hidden;
 }
 .show-filters.btn,
+.show-filters.button,
 .hide-filters {
   display:none;
 }
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   .wrapper {
     margin: 0 -20px;
     border-width: 0;
@@ -79,7 +80,7 @@
     left:0;
     right:0;
     bottom:0;
-    z-index:1;
+    z-index:5;
     padding:10px;
     background-color:rgb(0,0,0);
     background-color:rgba(0,0,0,0.50);
@@ -93,6 +94,7 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
     overflow:hidden;
+    margin: 15px;
   }
   .js [role=main] .secondary .filters > div .module-footer {
     display:none;
@@ -100,13 +102,18 @@
   .js body.filters-modal .secondary .filters .hide-filters {
     display:inline-block;
     position:absolute;
-    top:14px;
-    right:17px;
+    top: 36px;
+    right: 40px;
     opacity:0.6;
     i {
+      display: none;
       font-size:18px;
     }
+    .text {
+      display: inline-block;
+    }
   }
+  .js .show-filters.button,
   .js .show-filters.btn {
     display:inline-block;
   }

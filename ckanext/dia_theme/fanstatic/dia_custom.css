@@ -10906,6 +10906,12 @@ body li {
     margin-top: 420px;
   }
 }
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 @media print {
   header,
   nav,

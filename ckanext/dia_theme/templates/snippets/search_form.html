@@ -71,7 +71,10 @@
         {% set link_href = _('{site}/search/SearchForm?Search={query}') %}
         Can't find it?
         <div class="search-alt-actions">
-          <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}" title="Search for data.govt.nz website content instead" id="search-context-switch" class="button">Search for website content</a>
+          <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}" title="Search for data.govt.nz website content instead" id="search-context-switch" class="button">
+            <span class="ri ri-search"></span>
+            <span>Search for website content</span>
+          </a>
           <a href="{{ h.parent_site_url() }}/request-data/" title="Search for requested datasets or create a new request" class="button secondary">Request a dataset</a>
         </div>
       {%- endif -%}

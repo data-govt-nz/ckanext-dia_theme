@@ -8,55 +8,47 @@
 				</h2>
 				<hr class="margin-t-sm margin-b-sm">
 				<ul class="menu vertical md-2-column site-footer__menu">
+					<li>
+						<a href="{{ h.parent_site_url() }}/" class="link">
+							Home
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/" class="link">
-								Home
-							</a>
-						</li>
+					<li>
+						<a href="/dataset" class="link">
+							Get datasets
+						</a>
+					</li>
 
-						<li>
-							<a href="/dataset" class="link">
-								Get datasets
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/catalogue-guide/" class="link">
+							Catalogue guide
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/manage-data/" class="link">
-								Manage data
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/toolkit/" class="link">
+							Data toolkit
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/use-data/" class="link">
-								Use data
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/leadership/" class="link">
+							Leadership
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/open-data/" class="link">
-								Open data
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/blog/" class="current">
+							Blog
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/events/" class="link">
-								Events
-							</a>
-						</li>
-
-						<li>
-							<a href="{{ h.parent_site_url() }}/blog/" class="current">
-								Blog
-							</a>
-						</li>
-
-						<li>
-							<a href="{{ h.parent_site_url() }}/about/" class="link">
-								About
-							</a>
-						</li>
-
+					<li>
+						<a href="{{ h.parent_site_url() }}/about/" class="link">
+							About
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="site-footer__col-2">
@@ -65,31 +57,29 @@
 				</h2>
 				<hr class="margin-t-sm margin-b-sm">
 				<ul class="menu vertical site-footer__menu">
+					<li>
+						<a href="{{ h.parent_site_url() }}/terms-of-use/" class="link">
+							Terms of use
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/terms-of-use/" class="link">
-								Terms of use
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/privacy-policy/" class="link">
+							Privacy policy
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/privacy-policy/" class="link">
-								Privacy policy
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/copyright/" class="link">
+							Copyright
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/copyright/" class="link">
-								Copyright
-							</a>
-						</li>
-
-						<li>
-							<a href="/user/login" class="link">
-								Publisher login
-							</a>
-						</li>
-
+					<li>
+						<a href="/user/login" class="link">
+							Publisher login
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="site-footer__col-3">
@@ -98,31 +88,29 @@
 				</h2>
 				<hr class="margin-t-sm margin-b-sm">
 				<ul class="menu vertical site-footer__menu">
+					<li>
+						<a href="{{ h.parent_site_url() }}/contact-us/" class="link">
+							Contact us
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/contact-us/" class="link">
-								Contact us
-							</a>
-						</li>
+					<li>
+						<a href="{{ h.parent_site_url() }}/feedback/" class="link">
+							Give us feedback
+						</a>
+					</li>
 
-						<li>
-							<a href="{{ h.parent_site_url() }}/feedback/" class="link">
-								Give us feedback
-							</a>
-						</li>
+					<li>
+						<a href="https://github.com/data-govt-nz" class="link">
+							Github
+						</a>
+					</li>
 
-						<li>
-							<a href="https://github.com/data-govt-nz" class="link">
-								Github
-							</a>
-						</li>
-
-						<li>
-							<a href="{{ h.parent_site_url() }}/request-data/" class="link">
-								Request a dataset
-							</a>
-						</li>
-
+					<li>
+						<a href="{{ h.parent_site_url() }}/request-data/" class="link">
+							Request a dataset
+						</a>
+					</li>
 				</ul>
 				<ul class="social-menu">
 					<li>
@@ -153,9 +141,9 @@
 		</div>
 	</div>
 
-  {% block footer_debug %}
-    {% if g.debug %}
-      {% include 'snippets/debug.html' %}
-    {% endif %}
-  {% endblock %}
+	{% block footer_debug %}
+		{% if g.debug %}
+			{% include 'snippets/debug.html' %}
+		{% endif %}
+	{% endblock %}
 </footer>

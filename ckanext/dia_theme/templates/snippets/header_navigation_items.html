@@ -1,5 +1,5 @@
 {% block header_site_navigation_tabs %}
-    <li><a href="{{ h.url_for(controller="package", action="search") }}/" class="site-header__menu-item menu-item current" title="Search for datasets">Get datasets</a></li>
+    <li><a href="{{ h.url_for(controller='resource' if h.ckan_version().split('.')[1] | int >= 9 else 'resource', action="search") }}/" class="site-header__menu-item menu-item current" title="Search for datasets">Get datasets</a></li>
     <li><a href="{{ h.parent_site_url() }}/catalogue-guide/" class="site-header__menu-item menu-item" title="Go to the Catalogue guide page">Catalogue guide</a></li>
     <li><a href="{{ h.parent_site_url() }}/toolkit/" class="site-header__menu-item menu-item" title="Go to the Data toolkit page">Data toolkit</a></li>
     <li><a href="{{ h.parent_site_url() }}/leadership/" class="site-header__menu-item menu-item" title="Go to the Leadership page">Leadership</a></li>

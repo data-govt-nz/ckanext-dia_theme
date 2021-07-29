@@ -120,7 +120,7 @@
                 <div class="site-search__visibility hidden" id="site-search" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
                     <div class="container">
                         <div class="site-search__inner">
-                            <form class="search-form" id="dataset-search" action="{% url_for controller='package', action='search' %}" method="get" data-module="select-switch">
+                            <form class="search-form" id="dataset-search" action="{% url_for controller='dataset' if h.ckan_version().split('.')[1] | int >= 9 else 'package', action='search' %}" method="get" data-module="select-switch">
                                 <label for="{$LabelPrefix}-field-sitewide-search">
                                     {{ _('Search for') }}:
                                 </label>
@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="field search-input">
                                     <input class="ss-search-url" value="{{ h.parent_site_url() }}/search/SearchForm" type="hidden">
-                                    <input class="ckan-search-url" value="{% url_for controller='package', action='search' %}" type="hidden">
+                                    <input class="ckan-search-url" value="{% url_for controller='dataset' if h.ckan_version().split('.')[1] | int >= 9 else 'package', action='search' %}" type="hidden">
                                     <input id="{$LabelPrefix}-field-sitewide-search" name="q" placeholder="E.g. environment" type="text" aria-label="Search term">
                                 </div>
                                 <button id="{$LabelPrefix}-search" class="button">

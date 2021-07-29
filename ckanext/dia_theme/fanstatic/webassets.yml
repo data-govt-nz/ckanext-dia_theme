@@ -1,0 +1,12 @@
+dia_custom_script:
+  output: dia_theme/dia_custom.js
+  contents:
+    - dia_custom.js
+    - rua/js/rua.js
+
+dia_custom_style:
+  output: dia_theme/dia_custom.css
+  contents:
+    - dia_custom.css
+    - rua/css/rua-font.css
+    - rua/css/rua.css

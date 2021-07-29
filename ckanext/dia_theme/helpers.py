@@ -16,9 +16,10 @@ def parent_site_url():
 def modify_geojson(geojson_string):
     """
     Returns 'fixed' geojson if the input is a Polygon or MultiPolygon type.
-    Valid geojson should be within the -180, 180 range, but for most datasets this will render a very zoomed out view of
-    the map. Instead, we map latitudes under 0th meridian to be +360, which makes the map look a lot nicer for most
-    polygons that span the 180th meridian.
+    Valid geojson should be within the -180, 180 range, but for most datasets
+    this will render a very zoomed out view of the map. Instead, we map
+    latitudes under 0th meridian to be +360, which makes the map look a lot
+    nicer for most polygons that span the 180th meridian.
 
     :param geojson_string:
     :return:

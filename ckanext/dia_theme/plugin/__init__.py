@@ -19,4 +19,5 @@ class Dia_ThemePlugin(plugins.SingletonPlugin):
         return {
             'parent_site_url': helpers.parent_site_url,
             'modify_geojson': helpers.modify_geojson,
+            'check_ckan_version': toolkit.check_ckan_version,
         }

@@ -15,6 +15,8 @@ class Dia_ThemePlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, '../public')
         toolkit.add_resource('../fanstatic', 'dia_theme')
 
+    # ITemplateHelpers
+
     def get_helpers(self):
         return {
             'parent_site_url': helpers.parent_site_url,

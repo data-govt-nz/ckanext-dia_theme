@@ -9,10 +9,14 @@
             I can't find a way to detect what the original controller was
             before it gets bounced to the error controller.
             #}
-            {% if "Unauthorized to register" in c.content %}
+
+            {% if "Unauthorized to register" in content %}
                 {% snippet "snippets/user_reg_disabled.html" %}
             {% else %}
-                {{ c.content}}
+                {% if name %}
+                    <h1>{{ code }} {{ name }}</h1>
+                {% endif %}
+                {{ content }}
             {% endif %}
         </div>
     </article>

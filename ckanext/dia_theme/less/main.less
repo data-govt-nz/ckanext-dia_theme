@@ -1,63 +1,12 @@
+// CKAN Base
+//@import "../../../../ckan-core/ckan/public/base/less/main.less";
+@import "../../../../ckan-core/ckan/public/base/less/variables.less";
+@import "../../../../ckan-core/ckan/public/base/less/bootstrap-variables.less";
 
-// Bootstrap imports
+// New extracted modifications from 2.7 core less modifications.
+@import "dia_new.less";
 
-// CSS Reset
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/reset.less";
-
-// Core variables and mixins
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/mixins.less";
-
-// Mixin to fix issue of less 2 compile fail on bootstrap 2. See https://stackoverflow.com/questions/26628309/less-v2-does-not-compile-twitters-bootstrap-2-x
-@import "fix.less";
-
-// Grid system and page structure
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/scaffolding.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/grid.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/layouts.less";
-
-// Base CSS
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/type.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/code.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/forms.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/tables.less";
-
-// Components: common
-// @import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/sprites.less"; // Replaced by font-awesome.less
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/dropdowns.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/wells.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/component-animations.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/close.less";
-
-// Components: Buttons & Alerts
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/buttons.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/button-groups.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
-
-// Components: Nav
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/navs.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/navbar.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/breadcrumbs.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/pagination.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/pager.less";
-
-// Components: Popovers
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/modals.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/tooltip.less";
-
-// Components: Misc
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/thumbnails.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/labels-badges.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/progress-bars.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/accordion.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/carousel.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/hero-unit.less";
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/popovers.less";
-
-// Utility classes
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/utilities.less"; // Has to be last to override when necessary
-
-@import "../../../../ckan-core/ckan/public/base/vendor/bootstrap/less/responsive.less";
-
-// CKAN
-@import "ckan.less";
+// Original DIA modifications.
+@import "diamixins.less";
+@import "dia_custom.less";
+@import "focus.less";

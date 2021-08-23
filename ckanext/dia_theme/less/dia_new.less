@@ -1,0 +1,613 @@
+@breadcrumbTextColor: #333;
+@footerTextColor: #fff;
+@footerLinkColor: @footerTextColor;
+@white: #fff;
+
+.embedded-content h1 {
+  font-size: 1.4em;
+}
+
+@media (min-width: 980px) {
+  .form-horizontal .info-block {
+    padding: 6px 0 6px 25px;
+  }
+}
+
+.js .image-upload {
+  #field-image-url {
+    padding-right: 29px;
+  }
+}
+
+.btn-remove-url {
+  padding: 0 4px;
+}
+
+.module-content {
+  .wide .media-grid {
+      margin-left: initial;
+  }
+}
+
+.module .pagination {
+  height: 34px;
+  margin-bottom: 0;
+  border-top: 1px solid @moduleHeadingBorderColor;
+}
+
+.module .pagination li a {
+  border-top: none;
+  border-bottom: none;
+}
+
+.module .pagination li:first-child a {
+  border-left-width: 0;
+}
+
+.module .pagination li:last-child a {
+  border-right-width: 0;
+}
+
+.module .pagination li.active a {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+.module .pagination li a {
+  border-top: none;
+  border-bottom: none;
+}
+
+.module .pagination li:first-child a {
+  border-left-width: 0;
+}
+
+.module .pagination li:last-child a {
+  border-right-width: 0;
+}
+
+.module .pagination li.active a {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+.ckanext-datapreview {
+  & > iframe {
+    min-height: 400px;
+  }
+}
+
+.search-form {
+  // Normal search box
+  .search-input {
+    &.search-giant {
+      button {
+        margin-top: -15px;
+      }
+    }
+  }
+}
+
+
+.label[data-format=html],
+.label[data-format*=html],
+.label[data-format=json],
+.label[data-format*=json],
+.label[data-format=xml],
+.label[data-format*=xml],
+.label[data-format=text],
+.label[data-format*=text],
+.label[data-format=csv],
+.label[data-format*=csv],
+.label[data-format=xls],
+.label[data-format*=xls],
+.label[data-format=zip],
+.label[data-format*=zip],
+.label[data-format=api],
+.label[data-format*=api],
+.label[data-format=pdf],
+.label[data-format*=pdf],
+.label[data-format=rdf],
+.label[data-format*=rdf],
+.label[data-format*=nquad],
+.label[data-format*=ntriples],
+.label[data-format*=turtle] {
+  background-color: none;
+}
+
+/* override for rua styling */
+.tag-list li .tag {
+  line-height: 20px
+}
+
+.site-footer {
+  .masthead();
+  padding: 20px 0;
+  box-shadow: 0 500px 0 500px @footerBackgroundColor;
+
+  a:hover {
+    color: @white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    [class*="span"] {
+      clear: both;
+    }
+  }
+
+  .span3,
+  .span6 {
+    padding-top: 15px;
+  }
+
+  h2.footcolheader {
+    left: 0;
+    border-top: 1px solid @white;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 16px 0 8px;
+    position: relative;
+    color: @white;
+  }
+
+
+  .footlink {
+    margin: 8px 0;
+    font-size: 18px;
+    line-height: 1.5;
+
+    &.footlink50 {
+      float: left;
+      margin-bottom: 0;
+      width: 100%;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+      }
+    }
+  }
+
+  .footsub p {
+    color: @white;
+  }
+
+  .footsubcol01 p {
+    margin-top: 16px;
+    padding: 0;
+  }
+
+  .footsubcol02 img {
+    width: 102px;
+  }
+
+  .footsubcol03 p {
+    text-align: left;
+    padding: 0;
+  }
+
+  .footright {
+    border-bottom: 1px solid @white;
+    clear: both;
+    padding: 32px 0;
+    text-align: right;
+  }
+
+  .footsub {
+    font-size: 0.85em;
+    padding: 32px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* override for rua styling */
+footer.site-footer {
+  background: #fff;
+  padding: 0;
+
+  .site-footer__col-3 h2 {
+    color: #fff;
+  }
+}
+
+
+/* override for rua styling */
+.site-search__inner input[type=radio] {
+  top: 0px;
+}
+
+.site-search__inner label:after {
+  content: "";
+}
+
+.site-search__inner input[type="text"] {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 0.9em;
+  border: 2px solid #C3CED8;
+  border-radius: 1.5em;
+  background-color: #fff;
+  -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
+  transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
+  -o-transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.42857;
+  color: #182B46;
+  padding: 0 0.9em;
+  height: 2.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input-prepend input[type='text'] {
+  display: inline-block;
+}
+
+.input-prepend .add-on {
+  height: 2.5em;
+  font-size: 1rem;
+  line-height: 2em;
+  margin-right: 10px;
+}
+
+//Fix to display geojson icon
+.format-label[data-format=geojson],
+.format-label[data-format*=geojson] {
+  background-position: -128px -62px;
+}
+
+.show-filters.button {
+  display: none;
+}
+
+// Could be more work to do here to uset the 768px stuff.
+@media (max-width: 990px) {
+  .wrapper {
+    z-index: 5;
+    margin: 15px;
+  }
+  .js body.filters-modal .secondary .filters .hide-filters {
+    top: 36px;
+    right: 40px;
+    i {
+      display: none;
+    }
+    .text {
+      display: inline-block;
+    }
+  }
+  .js .show-filters.button {
+    display: inline-block;
+  }
+}
+
+div {
+  &.masthead {
+    background-color:#117799;
+    background-image: none;
+    color:#fff;
+    min-height: 55px;
+    margin-top: 45px;
+    a {
+      border-bottom:none;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .container{
+      position: relative;
+      width:940px;
+    }
+  }
+  &.not-authored {
+    width: 500px;
+  }
+}
+  
+.account-masthead {
+  .nav-collapse {
+    width: 100%;
+  }
+
+  &.navbar {
+    .sr-only {
+      position: absolute !important;
+      top: -9999px !important;
+      left: -9999px !important;
+    }
+    .site-search-wrap {
+      padding: 5px;
+      background-color: #004a61;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 3px;
+
+      .context-switch {
+        float: right;
+        padding: 0;
+        margin-top: 12px;
+        margin-left: 5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+
+        input {
+            float: none;
+            cursor: pointer;
+            top: 0;
+            margin: 3px 0.5ex;
+        }
+
+        label {
+          margin-left: 0;
+          margin-right: 10px;
+          display: inline-block;
+          font-size: 1em;
+          line-height: 1.5;
+          font-weight: 400;
+          cursor: pointer;
+          font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  .site-search {
+    margin: initial;
+    input {
+      width: initial;
+      padding: initial;
+    }
+  }
+}
+
+
+@media (min-width: 980px) {
+  .masthead  .nav-collapse {
+    float:left;
+    padding-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .nav-collapse {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 979px) {
+  #collapseDiv {
+    display: none;
+  }
+  .navbar {
+    .container {
+      width: 92%;
+      .btn-navbar {
+        position: absolute;
+        right: 15px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  .masthead {
+    .container {
+      padding-left:20px;
+      padding-right:20px;
+      width: 92% !important;
+    }
+    .site-search-wrap {
+      display:none;
+    }
+    .header-image {
+      padding-bottom: 5px;
+    }
+    .navigation {
+      margin: 2px;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .header-image {
+    margin-top: 45px !important;
+    padding-bottom: 15px !important;
+  }
+}
+
+/* override for rua styling */
+header .debug {
+  position: absolute;
+  top: 34px;
+  left: 10px;
+  z-index: 3;
+}
+
+@media only screen and (max-width: 1400px) {
+  header .debug {
+    position: absolute;
+    top: 56px;
+    left: 10px;
+    z-index: 3;
+  }
+}
+
+.module .pagination li.active a {
+  color: @layoutTextColor;
+}
+
+/* override for rua styling */
+.module .pagination {
+  li a {
+    width: unset;
+    border-radius: unset;
+  }
+}
+
+.visuallyhidden {
+  border:0;
+  clip:rect(0 0 0 0);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px
+}
+
+.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus {
+  clip:auto;
+  height:auto;
+  margin:0;
+  overflow:visible;
+  position:static;
+  width:auto
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: underline solid black;
+  padding: .4em;
+  display: inline-block;
+  margin-bottom: 3px !important;
+  margin-top: 3px !important;
+  margin-left: 3px !important;
+}
+
+/* override for rua styling */
+nav .breadcrumbs {
+  margin-top: 10px;
+  line-height: 1.5em;
+
+  a {
+    text-decoration: underline;
+  }
+  li {
+    line-height: inherit;
+  }
+}
+.row.wrapper {
+  padding-top: 10px;
+}
+
+.search-form {
+  .search-input {
+    margin-bottom: 10px;
+  }
+  .control-order-by {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-result-heading {
+    margin: 0 20px;
+  }
+}
+
+
+.search-alt-actions {
+  display: inline-block;
+
+  a.button {
+    margin-left: 10px;
+  }
+}
+
+a.search-context-switch,
+a.dataset-request {
+  font-weight: normal;
+  margin-left: 5px;
+  padding: 10px 20px;
+  border: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+a.search-context-switch {
+  color: #fff;
+  border-bottom: 2px solid #0a3e4e;
+}
+
+a.dataset-request {
+  border-bottom: 2px solid #ab7701;
+
+  &:hover, &:focus {
+    background-color: #e8a200;
+  }
+}
+
+.search-result-api-message span {
+  font-size: 1.3em;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.request-data {
+  margin-top: 40px;
+}
+
+/* override for rua styling */
+.site-search__inner .search-form {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.site-search__inner .search-form .search-input input {
+  margin: 0 20px 4px 0;
+  height: 2.5em;
+}
+.site-search__visibility.hidden {
+  display: block;
+  visibility: visible;
+}
+.search-result-bottom-link {
+  text-align: center;
+
+  a {
+    margin-left: 10px;
+  }
+}
+/* this should be pulled back to rua to fix on parent site too */
+.search-toggle__search {
+  cursor: pointer;
+}
+
+.form-horizontal .control-label {
+  width: 120px;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .controls {
+    margin-left: 130px;
+  }
+}

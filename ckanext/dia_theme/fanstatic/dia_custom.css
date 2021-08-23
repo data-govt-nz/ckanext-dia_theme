@@ -531,6 +531,9 @@ a.dataset-request:focus {
     margin-left: 130px;
   }
 }
+.context-info .image img {
+  width: unset;
+}
 .container::before,
 .container::after {
   content: "";

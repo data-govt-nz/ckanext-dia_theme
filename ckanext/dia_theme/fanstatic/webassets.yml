@@ -7,6 +7,6 @@ dia_custom_script:
 dia_custom_style:
   output: dia_theme/dia_custom.css
   contents:
-    - dia_custom.css
     - rua/css/rua-font.css
     - rua/css/rua.css
+    - dia_custom.css

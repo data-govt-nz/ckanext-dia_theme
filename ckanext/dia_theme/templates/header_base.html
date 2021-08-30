@@ -117,7 +117,7 @@
         </div>
         {% block header_site_search %}
             <div class="site-search">
-                <div class="site-search__visibility hidden" id="site-search" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
+                <div class="site-search__visibility" id="site-search" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
                     <div class="container">
                         <div class="site-search__inner">
                             <form class="search-form" id="dataset-search" action="{% url_for controller='dataset' if h.check_ckan_version('2.9') else 'package', action='search' %}" method="get" data-module="select-switch">
@@ -156,7 +156,7 @@
 
         {% block header_site_navigation_mobile %}
             <div class="site-navigation">
-                <div class="site-search__visibility hidden" id="site-navigation" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
+                <div class="site-search__visibility" id="site-navigation" data-rua-toggle="slide" style="display: none;" aria-expanded="false">
                     <div class="container">
                         <div class="site-search__inner">
                             <ul class="menu vertical">

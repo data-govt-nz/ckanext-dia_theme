@@ -3,7 +3,8 @@
 {% block styles %}
     {{ super()  }}
     {% if h.check_ckan_version('2.9') %}
-        {% asset 'dia_theme/dia_custom_style' %}
+        {% asset 'dia_theme/dia_style' %}
+        {% asset 'dia_theme/rua_style' %}
     {% else %}
         {% resource 'dia_theme/dia_custom.css' %}
         {% resource 'dia_theme/dia_custom.js' %}
@@ -15,5 +16,6 @@
 
 {% block scripts %}
     {{ super() }}
-    {% asset 'dia_theme/dia_custom_script' %}
+    {% asset 'dia_theme/dia_script' %}
+    {% asset 'dia_theme/rua_script' %}
 {% endblock scripts %}

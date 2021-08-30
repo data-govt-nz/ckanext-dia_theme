@@ -215,7 +215,6 @@ footer.site-footer .site-footer__col-3 h2 {
 }
 @media (max-width: 990px) {
   .wrapper {
-    z-index: 5;
     margin: 15px;
   }
   .js body.filters-modal .secondary .filters .hide-filters {
@@ -622,6 +621,11 @@ textarea {
 [data-diff] {
   margin-right: 5px;
   color: white;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 25px;
 }
 .container::before,
 .container::after {

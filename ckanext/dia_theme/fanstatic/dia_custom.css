@@ -555,6 +555,7 @@ a.dataset-request:focus {
   padding: 0 25px;
 }
 .main .secondary {
+  z-index: auto;
   padding-left: 18px;
   padding-right: 17px;
 }

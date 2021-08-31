@@ -586,9 +586,16 @@ a.dataset-request:focus {
 .nav-tabs .fa:last-child {
   margin-right: 0;
 }
+.wrapper.no-nav .module > .page-header {
+  padding-top: 20px;
+}
 .module-content {
   padding: 0 25px;
   margin: 20px 0;
+}
+.module-content:first-child {
+  margin-top: 0;
+  padding-top: 0;
 }
 .module > .module-content:nth-child(2n) {
   padding: 0 25px;
@@ -597,10 +604,6 @@ a.dataset-request:focus {
   z-index: auto;
   padding-left: 18px;
   padding-right: 17px;
-}
-.module-content:first-child {
-  margin-top: 0;
-  padding-top: 20px;
 }
 body {
   line-height: 20px;
@@ -627,8 +630,8 @@ legend {
   margin: 0;
   margin-bottom: 20px;
 }
-.module {
-  margin: 20px 0;
+section.search-result-heading {
+  margin-bottom: 40px;
 }
 .label,
 .badge {

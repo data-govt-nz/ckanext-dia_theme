@@ -230,6 +230,29 @@ footer.site-footer .site-footer__col-3 h2 {
   .js .show-filters.button {
     display: inline-block;
   }
+  .js .main .secondary .filters {
+    display: none;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 10px;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .js body.filters-modal .secondary .filters {
+    display: block;
+  }
+  .js .main .secondary .filters > div {
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 }
 div.masthead {
   background-color: #117799;

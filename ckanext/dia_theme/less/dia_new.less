@@ -408,6 +408,17 @@ div {
   }
 }
 
+@media (max-width: 991px) {
+  .stages li .highlight {
+    text-indent: 0;
+  }
+}
+@media (max-width: 768px) {
+  .stages li .highlight {
+    text-indent: -9999px;
+  }
+}
+
 @media (max-width: 979px) {
   .masthead {
     .container {
@@ -696,6 +707,10 @@ a.dataset-request {
   &:first-child {
     margin-top: 0;
     padding-top: 0;
+  }
+
+  .actions ul {
+    margin: 0;
   }
 }
 

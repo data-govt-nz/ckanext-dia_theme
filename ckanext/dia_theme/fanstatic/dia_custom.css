@@ -353,6 +353,16 @@ div.not-authored {
     margin-top: 15px;
   }
 }
+@media (max-width: 991px) {
+  .stages li .highlight {
+    text-indent: 0;
+  }
+}
+@media (max-width: 768px) {
+  .stages li .highlight {
+    text-indent: -9999px;
+  }
+}
 @media (max-width: 979px) {
   .masthead .container {
     padding-left: 20px;
@@ -596,6 +606,9 @@ a.dataset-request:focus {
 .module-content:first-child {
   margin-top: 0;
   padding-top: 0;
+}
+.module-content .actions ul {
+  margin: 0;
 }
 .module > .module-content:nth-child(2n) {
   padding: 0 25px;

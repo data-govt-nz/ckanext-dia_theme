@@ -237,22 +237,38 @@ footer.site-footer {
   display: none;
 }
 
+.js body.filters-modal .secondary .filters > div {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
 // Could be more work to do here to uset the 768px stuff.
 @media (max-width: 990px) {
   .wrapper {
     margin: 15px;
   }
+
   .js body.filters-modal .secondary .filters .hide-filters {
+    top: 36px;
+    right: 40px;
+    position: absolute;
+    display: inline-block;
+    opacity: 0.6;
+
     i {
       display: none;
     }
+
     .text {
       display: inline-block;
     }
   }
+
   .js .show-filters.button {
     display: inline-block;
   }
+
   .js .main .secondary .filters {
     display: none;
     position: fixed;
@@ -266,22 +282,9 @@ footer.site-footer {
     background-color: #000000;
     background-color: rgba(0, 0, 0, 0.5);
   }
+
   .js body.filters-modal .secondary .filters {
     display: block;
-  }
-  .js .main .secondary .filters > div {
-    background-color: #fff;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .js body.filters-modal .secondary .filters .hide-filters {
-    display: inline-block;
-    position: absolute;
-    top: 36px;
-    right: 40px;
-    opacity: 0.6;
   }
 }
 

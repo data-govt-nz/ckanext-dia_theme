@@ -213,9 +213,21 @@ footer.site-footer .site-footer__col-3 h2 {
 .show-filters.button {
   display: none;
 }
+.js body.filters-modal .secondary .filters > div {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+}
 @media (max-width: 990px) {
   .wrapper {
     margin: 15px;
+  }
+  .js body.filters-modal .secondary .filters .hide-filters {
+    top: 36px;
+    right: 40px;
+    position: absolute;
+    display: inline-block;
+    opacity: 0.6;
   }
   .js body.filters-modal .secondary .filters .hide-filters i {
     display: none;
@@ -241,20 +253,6 @@ footer.site-footer .site-footer__col-3 h2 {
   }
   .js body.filters-modal .secondary .filters {
     display: block;
-  }
-  .js .main .secondary .filters > div {
-    background-color: #fff;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .js body.filters-modal .secondary .filters .hide-filters {
-    display: inline-block;
-    position: absolute;
-    top: 36px;
-    right: 40px;
-    opacity: 0.6;
   }
 }
 div.masthead {

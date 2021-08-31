@@ -217,10 +217,6 @@ footer.site-footer .site-footer__col-3 h2 {
   .wrapper {
     margin: 15px;
   }
-  .js body.filters-modal .secondary .filters .hide-filters {
-    top: 36px;
-    right: 40px;
-  }
   .js body.filters-modal .secondary .filters .hide-filters i {
     display: none;
   }
@@ -252,6 +248,13 @@ footer.site-footer .site-footer__col-3 h2 {
     -moz-border-radius: 4px;
     border-radius: 4px;
     overflow: hidden;
+  }
+  .js body.filters-modal .secondary .filters .hide-filters {
+    display: inline-block;
+    position: absolute;
+    top: 36px;
+    right: 40px;
+    opacity: 0.6;
   }
 }
 div.masthead {

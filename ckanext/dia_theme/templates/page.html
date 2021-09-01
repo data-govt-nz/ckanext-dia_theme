@@ -25,7 +25,7 @@
 
   {# The content block allows you to replace the content of the page if needed #}
   {%- block content %}
-    {% block maintag %}<div role="main">{% endblock %}
+    {% block maintag %}<div class="main">{% endblock %}
       <div id="content" class="container">
         {% block main_content %}
           {% block flash %}
@@ -63,7 +63,7 @@
             {% endblock %}
 
             {% block primary %}
-              <div class="primary {% block primary_class %}col-md-9{% endblock %}">
+              <div class="primary {% block primary_class %}col-md-9{% endblock %}" role="main">
                 {#
                 The primary_content block can be used to add content to the page.
                 This is the main block that is likely to be used within a template.
@@ -137,10 +137,10 @@
 {%- endblock -%}
 
 {%- block scripts %}
-    {% resource 'base/main' %}
-    {% resource 'base/ckan' %}
-    {% if g.tracking_enabled %}
-      {% resource 'base/tracking.js' %}
-    {% endif %}
+  {% asset 'base/main' %}
+  {% asset 'base/ckan' %}
+  {% if g.tracking_enabled %}
+    {% asset 'base/tracking' %}
+  {% endif %}
   {{ super() }}
 {% endblock -%}

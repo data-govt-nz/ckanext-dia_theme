@@ -1,5 +1,5 @@
 {#
-  Displays a single of dataset.
+  Displays a single dataset.
 
   package        - A package to display.
   item_class     - The class name to use on the list item.
@@ -12,7 +12,7 @@
 
     {% snippet 'snippets/package_item.html', package=c.datasets[0] %}
 
-  #}
+#}
   {% set truncate = truncate or 360 %}
   {% set truncate_title = truncate_title or 80 %}
   {% set title = package.title or package.name %}
@@ -57,6 +57,10 @@
             {% else %}
               <p class="empty">{{ _("This dataset has no description") }}</p>
             {% endif %}
+            <span class='dataset-date'>
+              <span class='dataset-date-created'>Created {{ h.render_datetime(package.metadata_created) }}</span>
+              <span class='dataset-date-updated'>Updated {{ h.render_datetime(package.metadata_modified) }}</span>
+            </span>
           {% endblock %}
         </div>
         {% block resources %}

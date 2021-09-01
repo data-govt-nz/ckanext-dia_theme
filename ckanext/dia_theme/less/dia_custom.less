@@ -1153,13 +1153,49 @@ aside.secondary {
   }
 
 }
+
+.dataset-content .empty {
+  margin: 0;
+}
 .dataset-subheading {
+  margin-top: -8px;
+}
+
+.dataset-subheading,
+.dataset-date {
   display: block;
   color: #666;
   font-size: 14px;
-  margin-top: -8px;
   margin-bottom: 8px;
 }
+
+.dataset-date {
+  margin-top: 8px;
+  float: right;
+  text-align: right;
+}
+
+.dataset-date-created,
+.dataset-date-modified {
+  display: block;
+}
+.dataset-date-modified {
+  margin-left: 10px;
+}
+
+.dataset-item {
+  padding-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .dataset-date {
+    width: 100%;
+  }
+  .dataset-item {
+    padding-bottom: 20px;
+  }
+}
+
 /* override for rua styling */
 @media screen and (min-width: @media-widescreen) {
   body h2 {

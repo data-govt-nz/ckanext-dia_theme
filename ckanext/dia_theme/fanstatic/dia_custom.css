@@ -1948,11 +1948,24 @@ aside.secondary .module.module-narrow.license a {
   font-size: 13px;
 }
 .dataset-subheading {
+  margin-top: -8px;
+}
+.dataset-subheading,
+.dataset-modified-date {
   display: block;
   color: #666;
   font-size: 14px;
-  margin-top: -8px;
   margin-bottom: 8px;
+}
+.dataset-modified-date {
+  margin-top: 8px;
+  float: right;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .dataset-modified-date {
+    width: 100%;
+  }
 }
 /* override for rua styling */
 @media screen and (min-width: 1200px) {

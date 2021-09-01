@@ -31,6 +31,9 @@
           <label for="field-order-by">{{ _('Order by') }}</label>
           <select id="field-order-by" name="sort">
             {% for label, value in sorting %}
+              {% if form_id == 'dataset-search-form' and label == 'Last Modified' %}
+                {% set label = "Last Updated" %}
+              {% endif %}
               {% if label and value %}
                 <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
               {% endif %}

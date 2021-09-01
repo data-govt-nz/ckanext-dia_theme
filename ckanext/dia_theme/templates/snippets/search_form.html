@@ -49,7 +49,7 @@
 
     {% block search_facets %}
       {% if facets %}
-        <a class="show-filters button">Add Filter</a>
+        <a class="show-filters button">{{ _('Add Filter') }}</a>
         <p class="filter-list">
           {% for field in facets.fields %}
             {% set search_facets_items = facets.search.get(field)['items'] %}

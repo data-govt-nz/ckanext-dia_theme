@@ -1947,24 +1947,40 @@ aside.secondary .module.module-narrow.social .nav-simple > li > a:hover {
 aside.secondary .module.module-narrow.license a {
   font-size: 13px;
 }
+.dataset-content .empty {
+  margin: 0;
+}
 .dataset-subheading {
   margin-top: -8px;
 }
 .dataset-subheading,
-.dataset-modified-date {
+.dataset-date {
   display: block;
   color: #666;
   font-size: 14px;
   margin-bottom: 8px;
 }
-.dataset-modified-date {
+.dataset-date {
   margin-top: 8px;
   float: right;
   text-align: right;
 }
+.dataset-date-created,
+.dataset-date-modified {
+  display: block;
+}
+.dataset-date-modified {
+  margin-left: 10px;
+}
+.dataset-item {
+  padding-bottom: 40px;
+}
 @media (max-width: 768px) {
-  .dataset-modified-date {
+  .dataset-date {
     width: 100%;
+  }
+  .dataset-item {
+    padding-bottom: 20px;
   }
 }
 /* override for rua styling */

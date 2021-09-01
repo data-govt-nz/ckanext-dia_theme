@@ -57,7 +57,10 @@
             {% else %}
               <p class="empty">{{ _("This dataset has no description") }}</p>
             {% endif %}
-            <span class='dataset-modified-date'>Updated {{ h.render_datetime(package.metadata_modified) }}</span>
+            <span class='dataset-date'>
+              <span class='dataset-date-created'>Created {{ h.render_datetime(package.metadata_created) }}</span>
+              <span class='dataset-date-updated'>Updated {{ h.render_datetime(package.metadata_modified) }}</span>
+            </span>
           {% endblock %}
         </div>
         {% block resources %}

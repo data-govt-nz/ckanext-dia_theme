@@ -808,3 +808,33 @@ ol {
 .popover.right > .arrow {
   left: -9px;
 }
+
+@media (max-width: 991px) {
+  .page-header .nav-tabs {
+    margin: 0;
+    border: none;
+  }
+  .page-header .nav-tabs > li {
+    float: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header .nav-tabs {
+    margin: 5px 10px 10px -5px;
+    border: none;
+  }
+  .page-header .nav-tabs > li {
+    float: none;
+  }
+  .page-header .nav-tabs > li a {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+  .page-header .nav-tabs > .active > a,
+  .page-header .nav-tabs > .active > a:hover,
+  .page-header .nav-tabs > .active > a:focus {
+    border-bottom-color: #dddddd;
+  }
+}

@@ -221,6 +221,27 @@ footer.site-footer .site-footer__col-3 h2 {
   overflow: hidden;
   border-radius: 4px;
 }
+.search-form .control-order-by label {
+  margin-right: 5px;
+}
+.search-form .control-order-by select {
+  width: 200px;
+  margin: 0;
+}
+.search-form .filter-list {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.search-alt-actions {
+  display: inline-block;
+  margin-top: 0px;
+}
+.search-alt-actions a.button {
+  margin-left: 10px;
+  margin-top: 5px;
+}
 @media (max-width: 990px) {
   .wrapper {
     margin: 15px;
@@ -238,8 +259,25 @@ footer.site-footer .site-footer__col-3 h2 {
   .js body.filters-modal .secondary .filters .hide-filters .text {
     display: inline-block;
   }
+  .search-form .control-order-by {
+    float: left;
+  }
+  .search-form .control-order-by label {
+    margin-right: 5px;
+  }
+  .search-form .control-order-by select {
+    width: 180px;
+    font-size: 15px;
+  }
   .js .show-filters.button {
-    display: inline-block;
+    margin-bottom: 0;
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: right;
+  }
+  .js .show-filters.button::after {
+    clear: both;
   }
   .js .main .secondary .filters {
     display: none;
@@ -256,6 +294,27 @@ footer.site-footer .site-footer__col-3 h2 {
   }
   .js body.filters-modal .secondary .filters {
     display: block;
+  }
+  .js .main .secondary .filters > div {
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .js body.filters-modal .secondary .filters .hide-filters {
+    display: inline-block;
+    position: absolute;
+    top: 36px;
+    right: 40px;
+    opacity: 0.6;
+  }
+  .search-alt-actions {
+    margin-top: 15px;
+  }
+  .search-form .filter-list {
+    float: left;
+    margin-top: 25px;
   }
 }
 div.masthead {
@@ -328,6 +387,11 @@ div.not-authored {
 .account-masthead .site-search input {
   width: initial;
   padding: initial;
+}
+@media (max-width: 400px) {
+  .search-form .control-order-by label {
+    display: none;
+  }
 }
 @media (min-width: 980px) {
   .masthead .nav-collapse {
@@ -500,12 +564,6 @@ li {
     margin: 0 20px;
   }
 }
-.search-alt-actions {
-  display: inline-block;
-}
-.search-alt-actions a.button {
-  margin-left: 10px;
-}
 a.search-context-switch,
 a.dataset-request {
   font-weight: normal;
@@ -580,10 +638,6 @@ a.dataset-request:focus {
 .context-info .image img {
   width: auto;
   height: auto;
-}
-.search-form .control-order-by select {
-  width: 160px;
-  margin: 0;
 }
 .nav-tabs > li > a {
   padding-top: 8px;

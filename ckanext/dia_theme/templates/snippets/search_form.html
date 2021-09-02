@@ -49,6 +49,7 @@
 
     {% block search_facets %}
       {% if facets %}
+        <a class="show-filters button">{{ _('Add Filter') }}</a>
         <p class="filter-list">
           {% for field in facets.fields %}
             {% set search_facets_items = facets.search.get(field)['items'] %}
@@ -65,15 +66,14 @@
             {% endfor %}
           {% endfor %}
         </p>
-        <a class="show-filters button">{{ _('Filter Results') }}</a>
       {% endif %}
     {% endblock %}
 
     {% block search_form_bottom_links %}
       {% if query %}
         {% set link_href = _('{site}/search/SearchForm?Search={query}') %}
-        Can't find it?
         <div class="search-alt-actions">
+          Can't find it?
           <a href="{{ h.parent_site_url() }}/request-data/" title="Search for requested datasets or create a new request" id="search-request-dataset" class="button">Request a dataset</a>
           <a href="{{ link_href.format(site=h.parent_site_url(), query=query) }}" title="Search for data.govt.nz website content instead" id="search-context-switch" class="button secondary">
             <span class="ri ri-search"></span>

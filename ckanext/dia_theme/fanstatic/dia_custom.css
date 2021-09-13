@@ -1680,9 +1680,11 @@ header.account-masthead .account ul li a:hover {
 .primary .nav-tabs > li > a:hover {
   color: #ffffff;
   background-color: #117799;
+  border-color: #117799;
 }
 .primary .nav-tabs {
   border-bottom: 1px solid #117799;
+  margin-left: 0;
 }
 @media (max-width: 768px) {
   .primary .nav-tabs {
@@ -1695,9 +1697,6 @@ header.account-masthead .account ul li a:hover {
   -moz-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
   color: #117799;
-}
-.primary .nav-tabs > li > a:hover {
-  border: none;
 }
 .primary .resource-list .heading {
   color: #004a61;

@@ -550,6 +550,9 @@ li {
 .search-form .search-input {
   margin-bottom: 10px;
 }
+.search-form .search-input button {
+  height: 28px;
+}
 .search-form .control-order-by {
   margin-top: 5px;
 }

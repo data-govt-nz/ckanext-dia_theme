@@ -2000,6 +2000,7 @@ aside.secondary .module.module-narrow.social .nav-simple > li > a:hover {
 aside.secondary .module.module-narrow.license a {
   font-size: 13px;
 }
+.media-item .media-description,
 .context-info .description {
   word-wrap: initial;
   word-break: initial;

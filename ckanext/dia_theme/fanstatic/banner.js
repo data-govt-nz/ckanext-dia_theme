@@ -10,7 +10,7 @@
   var getBannerHost = function () {
     var local = window.location.host.startsWith('ckan-gateway')
     if (local) {
-      return 'http://ckan-gateway:8000'
+      return 'http://localhost:8000'
     }
 
     var production = window.location.host.startsWith('catalogue')

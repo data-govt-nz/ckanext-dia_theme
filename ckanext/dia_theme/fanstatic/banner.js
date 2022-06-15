@@ -3,7 +3,7 @@
 (function ($) {
   var showBanner = function (content) {
     if (content) {
-      $('header').after(content)
+      $('header.site-header').after(content)
     }
   }
 

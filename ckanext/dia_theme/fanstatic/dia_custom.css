@@ -1704,6 +1704,21 @@ header.account-masthead .account ul li a:hover {
 .primary .resource-list .heading {
   color: #004a61;
   text-decoration: underline;
+  max-width: 545px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .primary .resource-list .heading {
+    max-width: 485px;
+  }
+}
+@media (max-width: 980px) {
+  .primary .resource-list .heading {
+    max-width: 100%;
+  }
 }
 .primary .resource-list li.resource-item {
   border-top: 1px solid #cccccc;

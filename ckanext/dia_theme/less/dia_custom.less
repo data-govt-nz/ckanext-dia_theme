@@ -782,6 +782,19 @@ header.account-masthead {
     .heading {
       color: @layoutLinkColor;
       text-decoration: underline;
+      max-width: 545px;
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      @media (max-width: @media-widescreen) {
+        max-width: 485px;
+      }
+
+      @media (max-width: @media-desktop) {
+        max-width: 100%;
+      }
     }
 
     & li.resource-item {

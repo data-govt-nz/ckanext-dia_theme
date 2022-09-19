@@ -13,6 +13,6 @@
     "rua-pattern-library": "git+ssh://git@github.com/data-govt-nz/rua.git#master"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.19"
   }
 }

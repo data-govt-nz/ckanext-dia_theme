@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.1.0
+
+- Improve styling/truncation of resource titles
+
+## 3.0.2
+
+- Improve search result styling
+- Fix search icon cut off on iOS
+
+## 3.0.1
+
+- Improve search filter layout
+- Rationalise dates through the datasets/metadata
+- Increase truncation length of search results
+
 ## 3.0.0
 
 - Updates for CKAN 2.9.3 and Python 3 compatibility

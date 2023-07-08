@@ -1,7 +1,9 @@
 import ckan.plugins as plugins
+import ckan.lib.helpers as h
 import ckan.plugins.toolkit as toolkit
 
 from ckanext.dia_theme import helpers
+from ckanext.dia_theme.lib.pagination import DIAPage
 
 
 class Dia_ThemePlugin(plugins.SingletonPlugin):
@@ -11,6 +13,7 @@ class Dia_ThemePlugin(plugins.SingletonPlugin):
     # IConfigurer
 
     def update_config(self, config_):
+        h.Page = DIAPage
         toolkit.add_template_directory(config_, '../templates')
         toolkit.add_public_directory(config_, '../public')
         toolkit.add_resource('../fanstatic', 'dia_theme')

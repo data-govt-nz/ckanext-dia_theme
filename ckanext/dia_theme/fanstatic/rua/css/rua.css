@@ -2876,12 +2876,9 @@ a.tag {
     border-radius: 100px;
     font-size: 16px;
     padding: 0;
-    display: none; }
+    display: inline-block; }
     .pagination li.current {
       display: inline-block; }
-    @media screen and (min-width: 952px) {
-      .pagination li {
-        display: inline-block; } }
   .pagination a,
   .pagination button {
     display: block;

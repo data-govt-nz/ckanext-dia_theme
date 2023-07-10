@@ -8,14 +8,16 @@ from ckan.lib.pagination import Page
 # Override CKAN Page class to improve accessability
 class DIAPage(Page):
     def pager(self, *args, **kwargs):
-        wrapper = tags.div(cls='pagination-wrapper')
+        self.symbol_previous = '«'
+        self.symbol_next = '»'
+        wrapper = tags.nav(cls='pagination-wrapper')
         wrapper['aria-label'] = 'pagination'
         with wrapper:
             tags.ul('$link_previous ~2~ $link_next', cls='pagination')
         params = dict(
             format=text_type(wrapper),
-            symbol_previous='«',
-            symbol_next='»',
+            symbol_previous=self.symbol_previous,
+            symbol_next=self.symbol_next,
             curpage_attr={'class': 'active', 'aria-current': 'page'},
             link_attr={},
         )
@@ -28,9 +30,9 @@ class DIAPage(Page):
         anchor = super(Page, self)._pagerlink(page, text)
         extra_attributes = extra_attributes or {}
         # Add aria attributes
-        if page == self.previous_page:
+        if page == self.previous_page and text == self.symbol_previous:
             extra_attributes['aria-label'] = 'Previous page'
-        if page == self.next_page:
+        if page == self.next_page and text == self.symbol_next:
             extra_attributes['aria-label'] = 'Next page'
         return text_type(tags.li(anchor, **extra_attributes))
 

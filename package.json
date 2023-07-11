@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "less": "3.9.0",
-    "rua-pattern-library": "git+ssh://git@github.com/data-govt-nz/rua.git#v1.3.0"
+    "rua-pattern-library": "git+ssh://git@github.com/data-govt-nz/rua.git#v1.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

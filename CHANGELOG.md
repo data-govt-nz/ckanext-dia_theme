@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0
+
+- Improve accessibility via Rua updates and template/class overrides
+
 ## 3.1.0
 
 - Improve styling/truncation of resource titles

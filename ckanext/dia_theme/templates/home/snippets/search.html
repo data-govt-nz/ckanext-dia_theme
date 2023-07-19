@@ -6,9 +6,9 @@
     <h3 class="heading"><label for="searchbox">{{ _("Search data") }}</label></h3>
     <div class="search-input control-group search-giant">
       <input id="searchbox" type="text" class="search" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" />
-      <button type="submit" role="presentation" tabindex="-1">
-        <i class="icon-search"></i>
-        <span>{{ _('Search') }}</span>
+      <button type="submit">
+        <i class="icon-search" aria-hidden="true"></i>
+        <span class="sr-only">{{ _('Search') }}</span>
       </button>
     </div>
   </form>

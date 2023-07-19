@@ -72,6 +72,12 @@
         {% endblock %}
         <div class="container site-header__nav-container">
             <div class="site-header__inner">
+                <button class="button-icon navigation-toggle navicon" data-rua-toggle-state="false" aria-label="Open menu" data-rua-click="trigger: #site-navigation; class: in-active, is-active; arialabel: Open menu, Close menu; ariaexpanded: true, false" aria-expanded="false">
+                    <span class="navicon-box">
+                        <span class="navicon-inner"></span>
+                    </span>
+                </button>
+
                 {% block header_logo %}
                     {% if g.site_logo %}
                         <a class="site-header__logo" href="{{ h.parent_site_url() }}">
@@ -94,24 +100,17 @@
                     </nav>
                 {% endblock %}
 
-                <div class="navigation-toggle navicon" data-rua-toggle-state="false" data-rua-click="trigger: #site-navigation; class: in-active, is-active">
-                    <span class="navicon-box">
-                        <span class="navicon-inner"></span>
-                    </span>
-                </div>
-                <div id="site-search-wrap" class="search-toggle" data-rua-toggle-state="false" data-rua-click="trigger: #site-search; class: in-active, active">
-                    <div class="search-toggle__search">
+                <div id="site-search-wrap" class="search-toggle">
+                    <!-- Mobile only -->
+                    <button class="button-icon search-toggle__mob-search" data-rua-toggle-state="false" data-rua-click="trigger: #site-search; arialabel: 'Open search form', 'Close search form'; ariaexpanded: true, false" aria-label="Open search form" aria-controls="site-search" aria-expanded="false">
                         <span class="ri ri-search"></span>
-                    </div>
-                    <div class="button search-toggle__in-active">
-                        <span class="ri ri-chevron-down"></span>
-                        <span>
-                            {% block header_site_search_label %}{{ _('Search') }}{% endblock %}
-                        </span>
-                    </div>
-                    <div class="button-icon search-toggle__active">
-                        <span class="ri ri-chevron-up"></span>
-                    </div>
+                    </button>
+
+                    <!-- Desktop only -->
+                    <button class="button search-toggle__desk-search" data-rua-toggle-state="false" data-rua-click="trigger: #site-search, #search-toggle__icon, #search-toggle__text; arialabel: '', 'Close search form'; class: 'button', 'button-icon secondary'; ariaexpanded: true, false" aria-controls="site-search" aria-expanded="false">
+                        <span id="search-toggle__icon" class="ri ri-chevron-down" data-toggle="class: ri-chevron-down, ri-chevron-up"></span>
+                        <span id="search-toggle__text" data-rua-toggle="text: Search, ''">Search</span>
+                    </button>
                 </div>
             </div>
         </div>

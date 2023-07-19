@@ -179,16 +179,8 @@ footer.site-footer .site-footer__col-3 h2 {
   width: 100%;
   margin: 0 0 4px;
   padding: 0.9em;
-  border: 2px solid #c3ced8;
   border-radius: 1.5em;
   background-color: #fff;
-  -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
-  transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
-  -o-transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out;
-  transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out;
-  transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
-  -webkit-box-shadow: none;
-  box-shadow: none;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
@@ -2120,16 +2112,8 @@ input[type="color"] {
   width: 100%;
   margin: 0 0 4px;
   padding: 0.9em;
-  border: 2px solid #c3ced8;
   border-radius: 1.5em;
   background-color: #fff;
-  -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
-  transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
-  -o-transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out;
-  transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out;
-  transition: box-shadow 0.3s ease, box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.3s ease, -webkit-box-shadow 0.5s;
-  -webkit-box-shadow: none;
-  box-shadow: none;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
@@ -2146,7 +2130,7 @@ input[type="color"] {
   right: 12px;
 }
 .editor textarea {
-  border: 2px solid #c3ced8;
+  border: 2px solid #9192a1;
   border-radius: 1.5em 1.5em 0 0;
   border-bottom: none;
 }
@@ -2159,6 +2143,9 @@ body li {
 }
 .search-form-wrap form {
   display: block;
+}
+.search-form .search-input button i {
+  color: #666c7f;
 }
 .dataset-map-expanded #dataset-map {
   top: -636px;
@@ -2187,62 +2174,65 @@ body li {
     padding-right: 0;
   }
 }
-header a:focus,
 .account-masthead a:focus,
 .breadcrumb a:focus,
 .site-footer a:focus,
-header .accordion-expand:focus,
 .account-masthead .accordion-expand:focus,
 .breadcrumb .accordion-expand:focus,
 .site-footer .accordion-expand:focus,
-header input:focus,
 .account-masthead input:focus,
 .breadcrumb input:focus,
 .site-footer input:focus,
-header input.form-control:focus,
 .account-masthead input.form-control:focus,
 .breadcrumb input.form-control:focus,
 .site-footer input.form-control:focus,
-header input[type="checkbox"]:focus,
 .account-masthead input[type="checkbox"]:focus,
 .breadcrumb input[type="checkbox"]:focus,
 .site-footer input[type="checkbox"]:focus,
-header input[type="text"]:focus,
 .account-masthead input[type="text"]:focus,
 .breadcrumb input[type="text"]:focus,
 .site-footer input[type="text"]:focus,
-header input[type="email"]:focus,
 .account-masthead input[type="email"]:focus,
 .breadcrumb input[type="email"]:focus,
 .site-footer input[type="email"]:focus,
-header input[type="radio"]:focus,
 .account-masthead input[type="radio"]:focus,
 .breadcrumb input[type="radio"]:focus,
 .site-footer input[type="radio"]:focus,
-header input[type="password"]:focus,
 .account-masthead input[type="password"]:focus,
 .breadcrumb input[type="password"]:focus,
 .site-footer input[type="password"]:focus,
-header .btn:focus,
 .account-masthead .btn:focus,
 .breadcrumb .btn:focus,
 .site-footer .btn:focus,
-header button:focus,
 .account-masthead button:focus,
 .breadcrumb button:focus,
 .site-footer button:focus,
-header select:focus,
 .account-masthead select:focus,
 .breadcrumb select:focus,
 .site-footer select:focus,
-header summary:focus,
 .account-masthead summary:focus,
 .breadcrumb summary:focus,
 .site-footer summary:focus,
-header textarea:focus,
 .account-masthead textarea:focus,
 .breadcrumb textarea:focus,
 .site-footer textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #ffffff !important;
+  text-decoration: none !important;
+}
+header a:focus,
+header .accordion-expand:focus,
+header input:focus,
+header input.form-control:focus,
+header input[type="checkbox"]:focus,
+header input[type="text"]:focus,
+header input[type="email"]:focus,
+header input[type="radio"]:focus,
+header input[type="password"]:focus,
+header .btn:focus,
+header select:focus,
+header summary:focus,
+header textarea:focus {
   outline: none !important;
   box-shadow: 0 0 0 2px #ffffff !important;
   text-decoration: none !important;

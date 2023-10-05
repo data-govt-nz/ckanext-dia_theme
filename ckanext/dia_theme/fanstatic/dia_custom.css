@@ -2105,13 +2105,15 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-input[type="color"] {
+input[type="color"],
+.resource-upload-field input.form-control {
   display: block;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   margin: 0 0 4px;
   padding: 0.9em;
+  border: 2px solid #9192A1;
   border-radius: 1.5em;
   background-color: #fff;
   font-family: inherit;
@@ -2124,6 +2126,14 @@ input[type="color"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+.resource-upload-field .btn-remove-url {
+  top: 44px;
+  right: 11px;
+}
+input#field-resource-upload {
+  padding: 0.4em;
+  padding-left: 0.8em;
 }
 .js .image-upload .btn-remove-url {
   top: 9px;

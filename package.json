@@ -1,8 +1,5 @@
 {
   "private": true,
-  "engines": {
-    "node": "~18.0.0"
-  },
   "scripts": {
     "css-dev": "nodemon --watch **/*.less --ext less --exec npm run css",
     "css": "lessc ckanext/dia_theme/less/main.less ckanext/dia_theme/fanstatic/dia_custom.css",

@@ -1,18 +1,15 @@
 {
   "private": true,
-  "engines": {
-    "node": "~10.0.0"
-  },
   "scripts": {
     "css-dev": "nodemon --watch **/*.less --ext less --exec npm run css",
     "css": "lessc ckanext/dia_theme/less/main.less ckanext/dia_theme/fanstatic/dia_custom.css",
     "rua": "npm update rua-pattern-library && cp -R node_modules/rua-pattern-library/dist/assets ckanext/dia_theme/public/rua/ && cp -R node_modules/rua-pattern-library/dist/fonts ckanext/dia_theme/public/rua/ && cp -R node_modules/rua-pattern-library/dist/css ckanext/dia_theme/fanstatic/rua/ && cp -R node_modules/rua-pattern-library/dist/js ckanext/dia_theme/fanstatic/rua/ && sed -i'' -e 's|../assets/|/rua/assets/|g' ckanext/dia_theme/fanstatic/rua/css/* && sed -i'' -e 's|../fonts/|/rua/fonts/|g' ckanext/dia_theme/fanstatic/rua/css/*"
   },
   "dependencies": {
-    "less": "3.9.0",
+    "less": "4.2.0",
     "rua-pattern-library": "git+ssh://git@github.com/data-govt-nz/rua.git#v1.3.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.0.1"
   }
 }

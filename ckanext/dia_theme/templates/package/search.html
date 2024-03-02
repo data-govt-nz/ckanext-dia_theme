@@ -1,9 +1,7 @@
 {% ckan_extends %}
 
-
 {% block links %}
-
-{# see DATA-390 Copied from the global theme, because we do not want to include the override of the links block done by the ckanext-dcat plugin #}
+    {# see DATA-390 Copied from the global theme, because we do not want to include the override of the links block done by the ckanext-dcat plugin #}
     <link rel="shortcut icon" href="{{ g.favicon }}" />
 {% endblock %}
 
@@ -36,7 +34,7 @@
 {% block page_primary_action %}
   {% if h.check_access('package_create') %}
     <div class="page_primary_action">
-      {% link_for _('Add Dataset'), controller='dataset' if h.check_ckan_version('2.9') else 'package', action='new', class_='button', icon='plus-square' %}
+      {% link_for _('Add Dataset'), controller='dataset', action='new', class_='button', icon='plus-square' %}
     </div>
   {% endif %}
 {% endblock %}
@@ -83,17 +81,15 @@
 {% block secondary_content %}
 
 <a href="#filters" class="visuallyhidden focusable skip-to-content">Skip map</a>
-
 {% snippet "spatial/snippets/spatial_query.html", default_extent="[[-35, 167], [-47, 180]]" %}
 
-
-<div id="filters" class="filters">
+<div class="filters">
   <div>
-    {% for facet in c.facet_titles %}
-      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
+    {% for facet in facet_titles %}
+      {{ h.snippet('snippets/facet_list.html', title=facet_titles[facet], name=facet, search_facets=search_facets) }}
     {% endfor %}
   </div>
-  <a class="close no-text hide-filters"><i class="fa fa-remove-sign"></i><span class="text">close</span></a>
+  <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
 </div>
 {% endblock %}
 

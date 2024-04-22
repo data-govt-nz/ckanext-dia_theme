@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{% block basic_fields %}
+    {{ super() }}
+
+    <script>
+        // Don't allow the browser to validate the form, should be done by server.
+        var formEl = document.getElementById('resource-edit')
+        formEl.setAttribute('novalidate', '')
+    </script>
+{% endblock %}
+

@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.0.1
+
+- Disable browser form validation in resource edit form
+
+## 4.0.0
+
+- Support for CKAN 2.10.x (tested against 2.10.1)
+- Drops support for CKAN below 2.9.x
+
 ## 3.2.0
 
 - Improve accessibility via Rua updates and template/class overrides

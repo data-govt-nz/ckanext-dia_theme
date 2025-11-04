@@ -942,6 +942,9 @@ body a:hover {
 body p {
   padding: 15px;
 }
+body .shared-banner p {
+  padding: 0;
+}
 body .context-info h1.heading,
 body h2,
 body h3,

@@ -14,7 +14,7 @@
     }
 
     var production = window.location.host.startsWith('catalogue')
-    return production ? '//data.govt.nz' : '//diadata-uat.cwp.govt.nz'
+    return production ? '//data.govt.nz' : '//diadata2-uat.sites.silverstripe.com'
   }
 
   var getBanner = function () {

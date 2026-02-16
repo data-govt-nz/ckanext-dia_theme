@@ -51,29 +51,29 @@
   }
 }
 
-.label[data-format="html"],
-.label[data-format*="html"],
-.label[data-format="json"],
-.label[data-format*="json"],
-.label[data-format="xml"],
-.label[data-format*="xml"],
-.label[data-format="text"],
-.label[data-format*="text"],
-.label[data-format="csv"],
-.label[data-format*="csv"],
-.label[data-format="xls"],
-.label[data-format*="xls"],
-.label[data-format="zip"],
-.label[data-format*="zip"],
-.label[data-format="api"],
-.label[data-format*="api"],
-.label[data-format="pdf"],
-.label[data-format*="pdf"],
-.label[data-format="rdf"],
-.label[data-format*="rdf"],
-.label[data-format*="nquad"],
-.label[data-format*="ntriples"],
-.label[data-format*="turtle"] {
+.badge[data-format="html"],
+.badge[data-format*="html"],
+.badge[data-format="json"],
+.badge[data-format*="json"],
+.badge[data-format="xml"],
+.badge[data-format*="xml"],
+.badge[data-format="text"],
+.badge[data-format*="text"],
+.badge[data-format="csv"],
+.badge[data-format*="csv"],
+.badge[data-format="xls"],
+.badge[data-format*="xls"],
+.badge[data-format="zip"],
+.badge[data-format*="zip"],
+.badge[data-format="api"],
+.badge[data-format*="api"],
+.badge[data-format="pdf"],
+.badge[data-format*="pdf"],
+.badge[data-format="rdf"],
+.badge[data-format*="rdf"],
+.badge[data-format*="nquad"],
+.badge[data-format*="ntriples"],
+.badge[data-format*="turtle"] {
   background-color: none;
 }
 
@@ -93,13 +93,13 @@
   }
 
   @media (max-width: 767px) {
-    [class*="span"] {
+    [class*="col-"] {
       clear: both;
     }
   }
 
-  .span3,
-  .span6 {
+  .col-3,
+  .col-6 {
     padding-top: 15px;
   }
 
@@ -179,6 +179,23 @@ footer.site-footer {
   margin: 0;
 }
 
+.site-header__inner a:hover {
+  text-decoration: none;
+}
+
+// BS5 sets opacity:0.25 and height:1px on hr. Restore footer hr appearance.
+.site-footer__inner hr {
+  opacity: 1;
+  height: auto;
+}
+
+// Clearfix for account nav container (has floated content inside)
+.site-header .site-header__nav-container::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 /* override for rua styling */
 .site-search__inner input[type="radio"] {
   top: 0px;
@@ -190,7 +207,6 @@ footer.site-footer {
 
 .site-search__inner input[type="text"] {
   display: block;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   margin: 0 0 4px;
@@ -204,8 +220,6 @@ footer.site-footer {
   color: #182b46;
   padding: 0 0.9em;
   height: 2.5em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
@@ -316,8 +330,6 @@ footer.site-footer {
   }
   .js .main .secondary .filters > div {
     background-color: #fff;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;
     overflow: hidden;
   }
@@ -365,7 +377,7 @@ div {
   }
 
   &.navbar {
-    .sr-only {
+    .visually-hidden {
       position: absolute !important;
       top: -9999px !important;
       left: -9999px !important;
@@ -615,6 +627,23 @@ li {
   padding-top: 0;
 }
 
+// Override CKAN core BS5 sidebar divider line on .wrapper::before
+.wrapper::before {
+  display: none;
+}
+
+// BS5 .row uses display:flex which prevents margin collapsing between
+// child elements, causing extra vertical spacing compared to BS3.
+// Tighten up margins on key elements inside the wrapper.
+.wrapper {
+  .module {
+    margin-top: 0;
+  }
+  .page-header {
+    margin-bottom: 0;
+  }
+}
+
 .search-form {
   .search-input {
     margin-bottom: 10px;
@@ -798,10 +827,14 @@ legend {
 }
 
 section.search-result-heading {
-  margin-bottom: 40px;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
-.label,
+.primary h2 {
+  margin-top: 0;
+}
+
 .badge {
   padding: 2px 4px;
   font-size: 11.844px;
@@ -832,7 +865,6 @@ textarea.form-control {
   padding: 0;
 }
 
-.label-important,
 .badge-important {
   background-color: #b55457;
 }
@@ -871,8 +903,6 @@ ol {
     float: none;
   }
   .page-header .nav-tabs > li a {
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;
   }
   .page-header .nav-tabs > .active > a,

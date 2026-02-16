@@ -14,13 +14,13 @@
           <p class="text-error">
             <i class="fa fa-info-circle"></i>
             {{ _('This resource view is not available at the moment.') }}
-            <a href="#" data-toggle="collapse" data-target="#data-view-error">
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#data-view-error">
               {{ _('Click here for more information.') }}
             </a>
           </p>
           <p id="data-view-error" class="collapse"></p>
           <p>
-            <a href="{{ resource.url }}" class="btn btn-large resource-url-analytics" target="_blank">
+            <a href="{{ resource.url }}" class="btn btn-lg resource-url-analytics" target="_blank">
               <i class="fa fa-lg fa-arrow-circle-o-down"></i>
               {{ _('Download resource') }}
             </a>

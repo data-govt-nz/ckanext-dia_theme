@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "less": "4.2.0",
-    "rua-pattern-library": "git+ssh://git@github.com/data-govt-nz/rua.git#v1.3.1"
+    "rua-pattern-library": "git+ssh://git@github.com/data-govt-nz/rua.git#bs5_upgrade"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

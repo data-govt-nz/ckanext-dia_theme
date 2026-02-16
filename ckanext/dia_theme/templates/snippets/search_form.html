@@ -13,7 +13,7 @@
         {% block search_input_button %}
         <button type="submit" value="search">
           <i class="fa fa-search icon-search" aria-hidden="true"></i>
-          <span class="sr-only">{{ _('Submit') }}</span>
+          <span class="visually-hidden">{{ _('Submit') }}</span>
         </button>
         {% endblock %}
       </div>
@@ -27,7 +27,7 @@
 
     {% block search_sortby %}
       {% if sorting %}
-        <div class="form-select control-group control-order-by">
+        <div class="control-group control-order-by">
           <label for="field-order-by">{{ _('Order by') }}</label>
           <select id="field-order-by" name="sort">
             {% for label, value in sorting %}

@@ -601,16 +601,41 @@ li {
   }
 }
 
-// The resource page's pre_primary block (title/actions/preview) is a third
-// flex child of .wrapper alongside .primary and .secondary, but ckan-core's
-// mobile column-reverse layout (_layout.scss) only sets an explicit order
-// on .secondary. .module-resource and .primary then tie at the default
-// order 0 and fall back to DOM order, which puts the Additional Information
-// table above the resource title/actions on narrow screens. Give it the
-// highest order so it stays on top.
-@media (max-width: 767.98px) {
-  .wrapper > .module-resource {
-    order: 3;
+// ckan-core's _layout.scss stacks .wrapper's children (.primary/.secondary,
+// plus .module-resource on the resource page) as a single column below its
+// own "md" breakpoint, via flex-direction: column-reverse plus an explicit
+// order: 2 on .main .secondary (.primary and .module-resource are left at
+// the default order 0, relying on column-reverse to put them after
+// .secondary - i.e. visually *above* it).
+//
+// RUA rebuilds bootstrap with its own, larger breakpoints (its own "md" is
+// 975px, not bootstrap's stock 768px - see rua.css's compiled grid media
+// queries), and .primary/.secondary are RUA's .col-md-9/.col-md-3, so they
+// stack to full width at RUA's 975px, a good 200px above ckan-core's own
+// 767.98px column-reverse switch. In that gap, .wrapper is still
+// flex-direction: row, so the two full-width columns simply wrap onto their
+// own lines in plain DOM order (.secondary before .primary) rather than the
+// intended order, putting .secondary on top.
+//
+// Below 767.98px this also flips .primary and .secondary the "wrong" way
+// around from a content-first reading order: column-reverse plus
+// .secondary's order: 2 puts .secondary (order 2, later in the reversed
+// flow = towards the top) above .primary (default order 0, towards the
+// bottom) - i.e. sidebar before main content.
+//
+// Re-apply the layout as plain flex-direction: column (not reversed) all
+// the way up to RUA's actual 975px stacking point, closing the gap and
+// restoring main-content-first ordering in one rule: with column (not
+// reversed), ascending order places .secondary (order 2) after everything
+// else, while .module-resource and .primary - both left at the default
+// order 0 - fall back to DOM order between themselves, which already has
+// .module-resource (the resource title/actions/preview) first.
+@media (max-width: 974.98px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .main .secondary {
+    order: 2;
   }
 }
 

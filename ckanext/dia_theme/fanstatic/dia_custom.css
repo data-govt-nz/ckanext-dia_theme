@@ -520,9 +520,12 @@ li {
 .wrapper .page-header {
   margin-bottom: 0;
 }
-@media (max-width: 767.98px) {
-  .wrapper > .module-resource {
-    order: 3;
+@media (max-width: 974.98px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .main .secondary {
+    order: 2;
   }
 }
 body.dt-view #resize_wrapper {

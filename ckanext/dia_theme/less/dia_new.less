@@ -880,6 +880,18 @@ a.dataset-request {
   padding: 0 25px;
 }
 
+// On the resource data tab, ckanext-datastore prepends the Data Dictionary
+// table as a sibling .module-content before the (unmodified) Additional
+// Information one, both inside the same .module. That makes Additional
+// Information the 2nd child, so it picks up the nth-child(2n) padding
+// above and ends up indented relative to Data Dictionary. Zero it so the
+// two tables line up. (Needs the `.module >` qualifier to match the
+// nth-child rule's specificity - otherwise that rule wins regardless of
+// source order.)
+.module > .dictionary-view + .module-content {
+  padding: 0;
+}
+
 .module {
   margin: 20px 0;
 }

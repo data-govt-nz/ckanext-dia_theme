@@ -694,6 +694,9 @@ a.dataset-request:focus {
 .module > .module-content:nth-child(2n) {
   padding: 0 25px;
 }
+.module > .dictionary-view + .module-content {
+  padding: 0;
+}
 .module {
   margin: 20px 0;
 }

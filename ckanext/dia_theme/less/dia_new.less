@@ -962,14 +962,24 @@ section.search-result-heading {
   margin-top: 0;
 }
 
+// A 2021 rename (70308325) dropped `.label,` here on the assumption core
+// had fully renamed .label to .badge, but ckan-core still emits
+// `class="label label-default/-info/-danger"` in several templates (e.g.
+// organization/snippets/organization_item.html's role badge on
+// /dashboard/organizations, organization/bulk_process.html's
+// Draft/Deleted/Private tags) - those were rendering as plain unstyled
+// text with no styling at all. Restore it.
+.label,
 .badge {
-  padding: 2px 4px;
+  padding: 6px 4px 2px;
   font-size: 11.844px;
   font-weight: bold;
+  color: #fff;
   line-height: 14px;
   vertical-align: baseline;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #999;
+  border-radius: 0.25em;
 }
 
 .pill {

@@ -26,6 +26,7 @@
               {% for category, message in h.get_flashed_messages(with_categories=true) %}
                   <div class="alert alert-dismissible fade show {{ category }}">
                     {{ h.literal(message) }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ _('Close') }}"></button>
                   </div>
                 {% endfor %}
               {% endblock %}

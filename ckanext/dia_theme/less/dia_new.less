@@ -679,15 +679,22 @@ body.dt-view #resize_wrapper {
 // styling, so the (now correctly-sized, no longer oversized) search box
 // overlapped the buttons above it instead of sitting beside them.
 //
-// Float #dtprv_info left instead, so it stops acting as a full-width
-// floor: info, the search box and the buttons then line up as ordinary
-// sequential floats (left, then two right-floats stacking leftward from
-// the edge) whenever there's room, and wrap onto their own line the
-// normal CSS way - via content width, not a fixed breakpoint - when
-// there isn't. Cancel ckan-core's now-unneeded negative margin so it
-// doesn't pull the search box back out of its correct flow position.
+// A first attempt floated #dtprv_info left instead of overriding the
+// margin. That fixed the buttons overlap, but taking #dtprv_info out of
+// flow entirely also stopped it contributing to #resize_wrapper's height
+// the way an ordinary block does - so .dataTables_scroll (next in DOM,
+// not floated, doesn't clear the float) no longer waited for it either,
+// and rose up to cover the whole toolbar row instead, making the search
+// box and buttons unclickable.
+//
+// display: inline-block keeps #dtprv_info in normal flow (so
+// .dataTables_scroll still starts below it, same as before) while
+// shrinking its box to its actual (short) text width instead of the
+// full container - which leaves room on the same line for the
+// right-floated #dtprv_filter to rise up beside it with no margin hack
+// needed at all.
 #resize_wrapper #dtprv_info {
-  float: left;
+  display: inline-block;
 }
 #resize_wrapper #dtprv_filter {
   margin-top: 0;

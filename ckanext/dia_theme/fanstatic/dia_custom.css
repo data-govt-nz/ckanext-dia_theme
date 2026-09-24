@@ -548,7 +548,7 @@ body.dt-view #resize_wrapper {
   appearance: revert;
 }
 #resize_wrapper #dtprv_info {
-  float: left;
+  display: inline-block;
 }
 #resize_wrapper #dtprv_filter {
   margin-top: 0;

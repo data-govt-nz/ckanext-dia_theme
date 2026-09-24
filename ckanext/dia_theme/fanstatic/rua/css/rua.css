@@ -8353,37 +8353,37 @@ td {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.tooltip[x-placement^=top] {
+.tooltip[data-popper-placement^=top] {
   margin-bottom: 0.625rem;
 }
-.tooltip[x-placement^=top] .tooltip-arrow {
+.tooltip[data-popper-placement^=top] .tooltip-arrow {
   border-left: none;
   border-top: none;
   bottom: -0.375rem;
   left: calc(50% - 0.625rem);
 }
-.tooltip[x-placement^=right] {
+.tooltip[data-popper-placement^=right] {
   margin-left: 0.625rem;
 }
-.tooltip[x-placement^=right] .tooltip-arrow {
+.tooltip[data-popper-placement^=right] .tooltip-arrow {
   border-top: none;
   border-right: none;
   left: -0.375rem;
   top: calc(50% - 0.625rem);
 }
-.tooltip[x-placement^=bottom] {
+.tooltip[data-popper-placement^=bottom] {
   margin-top: 0.625rem;
 }
-.tooltip[x-placement^=bottom] .tooltip-arrow {
+.tooltip[data-popper-placement^=bottom] .tooltip-arrow {
   border-right: none;
   border-bottom: none;
   top: -0.375rem;
   left: calc(50% - 0.625rem);
 }
-.tooltip[x-placement^=left] {
+.tooltip[data-popper-placement^=left] {
   margin-right: 0.625rem;
 }
-.tooltip[x-placement^=left] .tooltip-arrow {
+.tooltip[data-popper-placement^=left] .tooltip-arrow {
   border-bottom: none;
   border-left: none;
   right: -0.375rem;

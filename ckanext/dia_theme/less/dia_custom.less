@@ -795,40 +795,16 @@ header.account-masthead {
     background: @tabBackgroundColor;
   }
 
-  // Styling of explore button
+  // Brand colour override for primary buttons in the main content column
+  // (e.g. the dataset "Explore" button). border-color follows the same
+  // colour so the border doesn't show bootstrap's default primary shade
+  // against this fill; everything else (border width, radius, box-shadow)
+  // is left to bootstrap's own .btn-primary so it stays consistent with
+  // .btn-danger and other .btn variants shown beside it.
   .btn.btn-primary {
     color: @layoutTrimBackgroundColor;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: @layoutLinkColor;
-    border: 0;
-    background-image: -moz-linear-gradient(
-      top,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    background-image: -webkit-gradient(
-      linear,
-      0 0,
-      0 100%,
-      from(@layoutLinkColor),
-      to(@layoutLinkColor)
-    );
-    background-image: -webkit-linear-gradient(
-      top,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    background-image: -o-linear-gradient(
-      top,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    background-image: linear-gradient(
-      to bottom,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    border-radius: 0;
+    border-color: @layoutLinkColor;
   }
   ul.dropdown-menu {
     border-radius: 0;

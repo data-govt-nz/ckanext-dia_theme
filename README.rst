@@ -8,8 +8,9 @@ Frontend CKAN theme for data.govt.nz written in LESS
 Requirements
 ------------
 
-CKAN 2.9.x or 2.10.x
+CKAN 2.11.x
 
+If using CKAN 2.9.x or 2.10.x, checkout this repo at tag 4.0.1
 If using CKAN 2.8.x, checkout this repo at tag 3.2.0
 If using CKAN 2.7.x, checkout this repo at tag 2.1.1
 

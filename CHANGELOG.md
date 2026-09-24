@@ -1,5 +1,12 @@
 # Changelog
 
+## 5.0.0
+
+- Migrate from Bootstrap 3 to Bootstrap 5, for CKAN 2.11 compatibility
+- Upgrade rua-pattern-library dependency to v2.0.0
+- Add close button to flash message alerts
+- Replace footer image with new govt logo
+
 ## 4.0.1
 
 - Disable browser form validation in resource edit form

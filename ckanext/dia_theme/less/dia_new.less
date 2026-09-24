@@ -7,7 +7,7 @@
   font-size: 1.4em;
 }
 
-@media (min-width: 980px) {
+@media (min-width: @media-desktop) {
   .form-horizontal .info-block {
     padding: 6px 0 6px 25px;
   }
@@ -92,7 +92,7 @@
     text-decoration: underline;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: @media-tablet) {
     [class*="col-"] {
       clear: both;
     }
@@ -122,7 +122,7 @@
       float: left;
       margin-bottom: 0;
       width: 100%;
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: @media-tablet) {
         width: 50%;
       }
     }
@@ -269,8 +269,7 @@ footer.site-footer {
   }
 }
 
-// Could be more work to do here to uset the 768px stuff.
-@media (max-width: 990px) {
+@media (max-width: @media-desktop) {
   .wrapper {
     margin: 15px;
   }
@@ -439,20 +438,20 @@ div {
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width: @media-desktop) {
   .masthead .nav-collapse {
     float: left;
     padding-top: 15px;
   }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: @media-tablet) {
   .nav-collapse {
     padding: 0;
   }
 }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: @media-desktop) {
   #collapseDiv {
     display: none;
   }
@@ -468,18 +467,18 @@ div {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: @media-desktop) {
   .stages li .highlight {
     text-indent: 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .stages li .highlight {
     text-indent: -9999px;
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: @media-desktop) {
   .masthead {
     .container {
       padding-left: 20px;
@@ -656,7 +655,7 @@ li {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .search-result-heading {
     margin: 0 20px;
   }
@@ -910,7 +909,7 @@ ol {
   left: -9px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: @media-desktop) {
   .page-header .nav-tabs {
     margin: 0;
     border: none;
@@ -920,7 +919,7 @@ ol {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .page-header .nav-tabs {
     margin: 5px 10px 10px -5px;
     border: none;

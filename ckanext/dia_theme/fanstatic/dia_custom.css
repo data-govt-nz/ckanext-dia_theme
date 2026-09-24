@@ -2,7 +2,7 @@
 .embedded-content h1 {
   font-size: 1.4em;
 }
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .form-horizontal .info-block {
     padding: 6px 0 6px 25px;
   }
@@ -92,7 +92,7 @@
   color: #fff;
   text-decoration: underline;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .site-footer [class*="col-"] {
     clear: both;
   }
@@ -237,7 +237,7 @@ footer.site-footer .site-footer__col-3 h2 {
   margin-left: 10px;
   margin-top: 5px;
 }
-@media (max-width: 990px) {
+@media (max-width: 992px) {
   .wrapper {
     margin: 15px;
   }
@@ -386,18 +386,18 @@ div.not-authored {
     display: none;
   }
 }
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .masthead .nav-collapse {
     float: left;
     padding-top: 15px;
   }
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 768px) {
   .nav-collapse {
     padding: 0;
   }
 }
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 992px) {
   #collapseDiv {
     display: none;
   }
@@ -410,7 +410,7 @@ div.not-authored {
     margin-top: 15px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .stages li .highlight {
     text-indent: 0;
   }
@@ -420,7 +420,7 @@ div.not-authored {
     text-indent: -9999px;
   }
 }
-@media (max-width: 979px) {
+@media (max-width: 992px) {
   .masthead .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -771,7 +771,7 @@ ol {
 .popover.right > .arrow {
   left: -9px;
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .page-header .nav-tabs {
     margin: 0;
     border: none;
@@ -850,7 +850,7 @@ body.home .categories {
     margin-left: 0;
   }
 }
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   body.home .categories {
     padding-bottom: 50px;
   }
@@ -927,7 +927,7 @@ body h1 {
   line-height: 1.2;
   color: #333333;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   body h1 {
     font-size: 30px;
   }
@@ -1061,7 +1061,7 @@ header.account-masthead .account ul li a:hover {
   width: 85%;
   padding: 0;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .hero .module-search {
     width: 96%;
   }
@@ -1169,7 +1169,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.land h3 {
     font-size: 16px;
   }
@@ -1209,7 +1209,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.health h3 {
     font-size: 16px;
   }
@@ -1249,7 +1249,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.government h3 {
     font-size: 16px;
   }
@@ -1289,7 +1289,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.environment h3 {
     font-size: 16px;
   }
@@ -1329,7 +1329,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.transport h3 {
     font-size: 16px;
   }
@@ -1369,7 +1369,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.education h3 {
     font-size: 16px;
   }
@@ -1409,7 +1409,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.state h3 {
     font-size: 16px;
   }
@@ -1449,7 +1449,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.population h3 {
     font-size: 16px;
   }
@@ -1489,7 +1489,7 @@ header.account-masthead .account ul li a:hover {
   font-weight: 700;
   padding: 10px;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .categories .module-content.arts h3 {
     font-size: 16px;
   }
@@ -1544,7 +1544,7 @@ header.account-masthead .account ul li a:hover {
   box-shadow: none;
   border-radius: 0;
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .homepage .box.stats {
     width: 690px;
   }
@@ -1661,7 +1661,7 @@ header.account-masthead .account ul li a:hover {
   margin-bottom: 60px;
   padding-top: 60px;
 }
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .primary .resource-item .btn-group {
     position: relative;
     padding-bottom: 15px;
@@ -1721,7 +1721,7 @@ header.account-masthead .account ul li a:hover {
     max-width: 485px;
   }
 }
-@media (max-width: 980px) {
+@media (max-width: 992px) {
   .primary .resource-list .heading {
     max-width: 100%;
   }
@@ -1854,7 +1854,7 @@ aside.secondary .module.module-narrow h1.heading {
     width: 100%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   aside.secondary .module.module-narrow h1.heading {
     width: 94%;
   }
@@ -1902,7 +1902,7 @@ aside.secondary .module.module-narrow .context-info:after {
   top: 5px;
   right: -15px;
 }
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 768px) and (max-width: 992px) {
   aside.secondary .module.module-narrow .context-info:after {
     left: 166px;
   }
@@ -1999,7 +1999,7 @@ aside.secondary .module.module-narrow.social .nav-simple {
 aside.secondary .module.module-narrow.social .nav-simple > li {
   padding: 15px 25px 5px;
 }
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 768px) and (max-width: 992px) {
   aside.secondary .module.module-narrow.social .nav-simple > li {
     padding: 15px 23px 0;
   }
@@ -2165,7 +2165,7 @@ body li {
 .dataset-map-expanded #dataset-map {
   top: -636px;
 }
-@media (max-width: 990px) {
+@media (max-width: 992px) {
   .col-md-9.primary {
     float: unset;
   }
@@ -2183,7 +2183,7 @@ body li {
     margin-top: 420px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   body {
     padding-left: 0;
     padding-right: 0;
@@ -2255,7 +2255,7 @@ header textarea:focus {
 #field-sitewide-search:focus {
   box-shadow: 0 0 0 3px white !important;
 }
-@media (max-width: 979px) {
+@media (max-width: 992px) {
   .masthead .nav > li > a:focus {
     background-color: #117799;
   }

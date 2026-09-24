@@ -520,6 +520,60 @@ li {
 .wrapper .page-header {
   margin-bottom: 0;
 }
+@media (max-width: 767.98px) {
+  .wrapper > .module-resource {
+    order: 3;
+  }
+}
+body.dt-view #resize_wrapper {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  height: 650px;
+  max-height: none;
+}
+#resize_wrapper input[type="search"] {
+  padding: revert;
+  border: revert;
+  border-radius: revert;
+  background-color: revert;
+  font-family: revert;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  color: revert;
+  height: revert;
+  appearance: revert;
+}
+#resize_wrapper #dtprv_info {
+  float: left;
+}
+#resize_wrapper #dtprv_filter {
+  margin-top: 0;
+}
+#resize_wrapper select {
+  margin: revert;
+  padding: revert;
+  border: revert;
+  border-radius: revert;
+  background-color: revert;
+  background-image: revert;
+  font-family: revert;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  color: revert;
+  height: revert;
+  appearance: revert;
+}
+#resize_wrapper .pagination li {
+  display: revert;
+}
+.resource-view .desc:empty {
+  display: none;
+}
 .search-form .search-input {
   margin-bottom: 10px;
 }

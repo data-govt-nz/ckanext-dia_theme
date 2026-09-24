@@ -601,6 +601,138 @@ li {
   }
 }
 
+// The resource page's pre_primary block (title/actions/preview) is a third
+// flex child of .wrapper alongside .primary and .secondary, but ckan-core's
+// mobile column-reverse layout (_layout.scss) only sets an explicit order
+// on .secondary. .module-resource and .primary then tie at the default
+// order 0 and fall back to DOM order, which puts the Additional Information
+// table above the resource title/actions on narrow screens. Give it the
+// highest order so it stays on top.
+@media (max-width: 767.98px) {
+  .wrapper > .module-resource {
+    order: 3;
+  }
+}
+
+// The resource page embeds the DataTables view in an <iframe> (see
+// package/resource_view.html), auto-sized by ckan-core's data-viewer.js
+// reading the iframe body's outerHeight(). ckan-core's own #resize_wrapper
+// (datatables_view.css) is position: absolute, which takes it out of
+// normal document flow entirely - so from the iframe body's perspective
+// there's almost no content to measure, and data-viewer.js falls back to
+// its hardcoded 400px + 30px padding minimum, regardless of how many rows
+// are actually in the table. Switch it back into normal flow with an
+// explicit height so the iframe can actually measure it.
+//
+// ckan-core's own datatables_view.css asset is only added to the page
+// when this view is active, so it loads (and its plain #resize_wrapper
+// rule cascades) after dia_theme's base CSS bundle - same specificity,
+// later source order wins. Qualify with body.dt-view (set by
+// datatables_view.html's bodytag block) to outrank it regardless of
+// asset load order.
+body.dt-view #resize_wrapper {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  height: 650px;
+  // ckan-core's own rule caps this at 100vh - relative to the *iframe's*
+  // own viewport, which is still whatever small height data-viewer.js
+  // last set it to (a circular dependency until it's resized). Remove
+  // the cap so our explicit height isn't clamped back down to it.
+  max-height: none;
+}
+
+// The DataTables view's search inputs (the toolbar "Search:" box and the
+// per-column filters, see ckanext-datatablesview's datatablesview.js) are
+// <input type="search">, which also matches RUA's global [type=search]
+// styling (2.5em height, 1.5em rounded pill border, block-level 100%
+// width) meant for CKAN's own forms. Revert only the decorative bloat -
+// not display/width/margin/box-sizing, which DataTables' own CSS
+// (div.dataTables_wrapper div.dataTables_filter input { width: auto;
+// display: inline-block; }) needs to size and lay out the toolbar; a
+// blanket revert would also undo that and let the box's native ~20-char
+// width push it onto its own line below the buttons.
+#resize_wrapper input[type="search"] {
+  padding: revert;
+  border: revert;
+  border-radius: revert;
+  background-color: revert;
+  font-family: revert;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  color: revert;
+  height: revert;
+  appearance: revert;
+}
+
+// #dtprv_info ("Showing X to Y of Z entries") is display:block/float:none
+// in ckan-core's own markup, so even though its text visually wraps
+// beside the right-floated .dt-buttons, its block box still spans the
+// full container width - and that full-width box's bottom edge becomes
+// the floor that #dtprv_filter (next in DOM, also float:right) can't
+// rise above in normal flow. ckan-core covers for this with
+// `#dtprv_filter { margin-top: -1.4em; }`, a fixed offset tuned for a
+// specific button-row height that doesn't match our own .dt-buttons
+// styling, so the (now correctly-sized, no longer oversized) search box
+// overlapped the buttons above it instead of sitting beside them.
+//
+// Float #dtprv_info left instead, so it stops acting as a full-width
+// floor: info, the search box and the buttons then line up as ordinary
+// sequential floats (left, then two right-floats stacking leftward from
+// the edge) whenever there's room, and wrap onto their own line the
+// normal CSS way - via content width, not a fixed breakpoint - when
+// there isn't. Cancel ckan-core's now-unneeded negative margin so it
+// doesn't pull the search box back out of its correct flow position.
+#resize_wrapper #dtprv_info {
+  float: left;
+}
+#resize_wrapper #dtprv_filter {
+  margin-top: 0;
+}
+
+// Same RUA styling also matches the "Show X entries" length-menu <select>
+// (padding/border-radius sized for a full-width form field), so its
+// custom arrow background (positioned assuming that padding) overlaps the
+// text in DataTables' narrow, auto-width select. Revert the decoration,
+// keep DataTables' own width: auto.
+#resize_wrapper select {
+  margin: revert;
+  padding: revert;
+  border: revert;
+  border-radius: revert;
+  background-color: revert;
+  background-image: revert;
+  font-family: revert;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  color: revert;
+  height: revert;
+  appearance: revert;
+}
+
+// RUA's own pagination component hides every <li> below 952px and only
+// reveals the current page via `.pagination li.current` - but DataTables
+// marks its active page with Bootstrap's `.active` class, not `.current`,
+// so at any narrower width every pagination item (page numbers, prev/next)
+// disappears entirely, leaving an empty/squashed control.
+#resize_wrapper .pagination li {
+  display: revert;
+}
+
+// ckan-core's resource_view.html always renders a <p class="desc"> for the
+// view description, even when there isn't one. RUA's `p` rule gives it a
+// line-height-driven height (and margin) even with no content - a block
+// element still establishes a line box when empty - so margin: 0 alone
+// still leaves a ~30px gap above "Add Filter". Remove it from layout
+// entirely instead.
+.resource-view .desc:empty {
+  display: none;
+}
+
 .search-form {
   .search-input {
     margin-bottom: 10px;

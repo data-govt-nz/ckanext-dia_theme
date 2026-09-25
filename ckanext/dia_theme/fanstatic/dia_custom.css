@@ -768,6 +768,10 @@ section.search-result-heading {
   background-color: #999;
   border-radius: 0.25em;
 }
+.module-narrow .nav-item > a .badge,
+.module-narrow .nav-aside li a .badge {
+  background-color: #999;
+}
 .pill {
   background-color: #6f8890;
 }

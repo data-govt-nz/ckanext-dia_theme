@@ -1014,6 +1014,16 @@ section.search-result-heading {
   border-radius: 0.25em;
 }
 
+// ckan-core's own main.css sets a different grey (#6e6e6e) for badges
+// specifically inside a sidebar nav item's link (e.g. the facet-count
+// badges in .nav-facet lists) - same specificity as the plain .label,
+// .badge rule above, so it's specificity, not source order, that lets it
+// win over dia_theme's #999. Match the selector to override it back.
+.module-narrow .nav-item > a .badge,
+.module-narrow .nav-aside li a .badge {
+  background-color: #999;
+}
+
 .pill {
   background-color: #6f8890;
 }

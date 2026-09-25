@@ -241,6 +241,9 @@ footer.site-footer .site-footer__col-3 h2 {
   .wrapper {
     margin: 15px;
   }
+  .wrapper > .primary {
+    width: 100%;
+  }
   .js body.filters-modal .secondary .filters .hide-filters {
     top: 36px;
     right: 40px;

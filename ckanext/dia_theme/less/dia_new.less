@@ -274,6 +274,18 @@ footer.site-footer {
     margin: 15px;
   }
 
+  // Below this breakpoint, .secondary's facet filters are hidden behind
+  // a "Show Filters"/"Add Filter" toggle (see .js .main .secondary
+  // .filters below) - but .primary keeps its fixed col-md-9 (75%) width
+  // regardless, since that's driven by RUA's own, wider grid breakpoint.
+  // Between here and .wrapper's own flex-direction: column switch
+  // (974.98px, see the primary/secondary ordering fix above), .secondary
+  // still reserves its 25% column even though there's nothing visible in
+  // it, leaving a dead gap next to .primary. Expand .primary to fill it.
+  .wrapper > .primary {
+    width: 100%;
+  }
+
   .js body.filters-modal .secondary .filters .hide-filters {
     top: 36px;
     right: 40px;

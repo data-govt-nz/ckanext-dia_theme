@@ -559,6 +559,9 @@ body.dt-view #resize_wrapper {
 #resize_wrapper #dtprv_filter {
   margin-top: 0;
 }
+#resize_wrapper .dataTables_scroll {
+  clear: both;
+}
 #resize_wrapper select {
   margin: revert;
   padding: revert;

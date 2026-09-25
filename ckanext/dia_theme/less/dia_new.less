@@ -737,6 +737,20 @@ body.dt-view #resize_wrapper {
   margin-top: 0;
 }
 
+// The inline-block fix above only keeps #dtprv_filter beside #dtprv_info
+// when there's enough width left on the line for both. At narrower
+// widths (a smaller browser window, or selecting a row - FixedColumns'
+// #dtfc-fixed-left/scrollbar recalculations can shrink the available
+// toolbar width slightly), the right-floated #dtprv_filter wraps onto
+// its own line below #dtprv_info instead - and since .dataTables_scroll
+// (next in DOM, not floated) still only waits for #dtprv_info's bottom,
+// not the wrapped float below it, it rises up to cover the now-wrapped
+// search box, same unclickable-toolbar symptom as before. Clearing the
+// float unconditionally fixes both cases without depending on width.
+#resize_wrapper .dataTables_scroll {
+  clear: both;
+}
+
 // Same RUA styling also matches the "Show X entries" length-menu <select>
 // (padding/border-radius sized for a full-width form field), so its
 // custom arrow background (positioned assuming that padding) overlaps the

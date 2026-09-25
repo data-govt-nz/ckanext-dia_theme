@@ -775,6 +775,23 @@ section.search-result-heading {
 .module-narrow .nav-aside li a .badge {
   background-color: #999;
 }
+.facet-close {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.facet-close .fa-circle-xmark {
+  display: inline-block;
+  vertical-align: middle;
+  color: #555;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+}
 .pill {
   background-color: #6f8890;
 }

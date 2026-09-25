@@ -1036,6 +1036,36 @@ section.search-result-heading {
   background-color: #999;
 }
 
+// The "remove this active facet" icon (fa-circle-xmark) in facet_list.html
+// is a single-colour glyph - the circle and its X cutout are the same
+// path, so with no background behind it the transparent X just shows
+// whatever's underneath (here, the row's own dark teal .active
+// background), and its default 14px size/baseline alignment sits a few
+// px above the row's vertical center. The pre-BS5 version was a plain
+// two-tone icon: a dark grey circle with a crisp white X.
+//
+// Recreate that by giving the icon itself a white background: the grey
+// glyph paints on top, and its X-shaped cutout reveals the white
+// background through the gap, rather than the current inverted look
+// (white circle, coloured cutout).
+.facet-close {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.facet-close .fa-circle-xmark {
+  display: inline-block;
+  vertical-align: middle;
+  color: #555;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+}
+
 .pill {
   background-color: #6f8890;
 }

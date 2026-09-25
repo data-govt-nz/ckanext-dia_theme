@@ -7,7 +7,7 @@
   font-size: 1.4em;
 }
 
-@media (min-width: 980px) {
+@media (min-width: @media-desktop) {
   .form-horizontal .info-block {
     padding: 6px 0 6px 25px;
   }
@@ -92,7 +92,7 @@
     text-decoration: underline;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: @media-tablet) {
     [class*="col-"] {
       clear: both;
     }
@@ -122,7 +122,7 @@
       float: left;
       margin-bottom: 0;
       width: 100%;
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: @media-tablet) {
         width: 50%;
       }
     }
@@ -269,10 +269,21 @@ footer.site-footer {
   }
 }
 
-// Could be more work to do here to uset the 768px stuff.
-@media (max-width: 990px) {
+@media (max-width: @media-desktop) {
   .wrapper {
     margin: 15px;
+  }
+
+  // Below this breakpoint, .secondary's facet filters are hidden behind
+  // a "Show Filters"/"Add Filter" toggle (see .js .main .secondary
+  // .filters below) - but .primary keeps its fixed col-md-9 (75%) width
+  // regardless, since that's driven by RUA's own, wider grid breakpoint.
+  // Between here and .wrapper's own flex-direction: column switch
+  // (974.98px, see the primary/secondary ordering fix above), .secondary
+  // still reserves its 25% column even though there's nothing visible in
+  // it, leaving a dead gap next to .primary. Expand .primary to fill it.
+  .wrapper > .primary {
+    width: 100%;
   }
 
   .js body.filters-modal .secondary .filters .hide-filters {
@@ -439,20 +450,20 @@ div {
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width: @media-desktop) {
   .masthead .nav-collapse {
     float: left;
     padding-top: 15px;
   }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: @media-tablet) {
   .nav-collapse {
     padding: 0;
   }
 }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: @media-desktop) {
   #collapseDiv {
     display: none;
   }
@@ -468,18 +479,18 @@ div {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: @media-desktop) {
   .stages li .highlight {
     text-indent: 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .stages li .highlight {
     text-indent: -9999px;
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: @media-desktop) {
   .masthead {
     .container {
       padding-left: 20px;
@@ -520,48 +531,6 @@ header .debug {
     left: 10px;
     z-index: 3;
   }
-}
-
-.pagination li a {
-  border-top: none;
-  border-bottom: none;
-  border-radius: 0;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  width: auto;
-  border-radius: 0;
-}
-
-.pagination li:first-child a {
-  border-left-width: 1px;
-  border-radius: 0;
-}
-
-.pagination li:last-child a {
-  border-radius: 0;
-}
-
-.pagination > li > a,
-.pagination > li > span {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-top: none;
-  border-bottom: none;
-  border-left-width: 0px;
-  border-right-width: 1px;
-}
-
-.pagination > li > a:hover,
-.pagination > li > a:focus,
-.pagination > .active > a,
-.pagination > .active > span {
-  background-color: #f5f5f5;
-  border-color: #ddd;
-  color: #000;
-}
-
-.pagination {
-  font-size: 0;
 }
 
 .visuallyhidden {
@@ -644,6 +613,184 @@ li {
   }
 }
 
+// ckan-core's _layout.scss stacks .wrapper's children (.primary/.secondary,
+// plus .module-resource on the resource page) as a single column below its
+// own "md" breakpoint, via flex-direction: column-reverse plus an explicit
+// order: 2 on .main .secondary (.primary and .module-resource are left at
+// the default order 0, relying on column-reverse to put them after
+// .secondary - i.e. visually *above* it).
+//
+// RUA rebuilds bootstrap with its own, larger breakpoints (its own "md" is
+// 975px, not bootstrap's stock 768px - see rua.css's compiled grid media
+// queries), and .primary/.secondary are RUA's .col-md-9/.col-md-3, so they
+// stack to full width at RUA's 975px, a good 200px above ckan-core's own
+// 767.98px column-reverse switch. In that gap, .wrapper is still
+// flex-direction: row, so the two full-width columns simply wrap onto their
+// own lines in plain DOM order (.secondary before .primary) rather than the
+// intended order, putting .secondary on top.
+//
+// Below 767.98px this also flips .primary and .secondary the "wrong" way
+// around from a content-first reading order: column-reverse plus
+// .secondary's order: 2 puts .secondary (order 2, later in the reversed
+// flow = towards the top) above .primary (default order 0, towards the
+// bottom) - i.e. sidebar before main content.
+//
+// Re-apply the layout as plain flex-direction: column (not reversed) all
+// the way up to RUA's actual 975px stacking point, closing the gap and
+// restoring main-content-first ordering in one rule: with column (not
+// reversed), ascending order places .secondary (order 2) after everything
+// else, while .module-resource and .primary - both left at the default
+// order 0 - fall back to DOM order between themselves, which already has
+// .module-resource (the resource title/actions/preview) first.
+@media (max-width: 974.98px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .main .secondary {
+    order: 2;
+  }
+}
+
+// The resource page embeds the DataTables view in an <iframe> (see
+// package/resource_view.html), auto-sized by ckan-core's data-viewer.js
+// reading the iframe body's outerHeight(). ckan-core's own #resize_wrapper
+// (datatables_view.css) is position: absolute, which takes it out of
+// normal document flow entirely - so from the iframe body's perspective
+// there's almost no content to measure, and data-viewer.js falls back to
+// its hardcoded 400px + 30px padding minimum, regardless of how many rows
+// are actually in the table. Switch it back into normal flow with an
+// explicit height so the iframe can actually measure it.
+//
+// ckan-core's own datatables_view.css asset is only added to the page
+// when this view is active, so it loads (and its plain #resize_wrapper
+// rule cascades) after dia_theme's base CSS bundle - same specificity,
+// later source order wins. Qualify with body.dt-view (set by
+// datatables_view.html's bodytag block) to outrank it regardless of
+// asset load order.
+body.dt-view #resize_wrapper {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  height: 650px;
+  // ckan-core's own rule caps this at 100vh - relative to the *iframe's*
+  // own viewport, which is still whatever small height data-viewer.js
+  // last set it to (a circular dependency until it's resized). Remove
+  // the cap so our explicit height isn't clamped back down to it.
+  max-height: none;
+}
+
+// The DataTables view's search inputs (the toolbar "Search:" box and the
+// per-column filters, see ckanext-datatablesview's datatablesview.js) are
+// <input type="search">, which also matches RUA's global [type=search]
+// styling (2.5em height, 1.5em rounded pill border, block-level 100%
+// width) meant for CKAN's own forms. Revert only the decorative bloat -
+// not display/width/margin/box-sizing, which DataTables' own CSS
+// (div.dataTables_wrapper div.dataTables_filter input { width: auto;
+// display: inline-block; }) needs to size and lay out the toolbar; a
+// blanket revert would also undo that and let the box's native ~20-char
+// width push it onto its own line below the buttons.
+#resize_wrapper input[type="search"] {
+  padding: revert;
+  border: revert;
+  border-radius: revert;
+  background-color: revert;
+  font-family: revert;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  color: revert;
+  height: revert;
+  appearance: revert;
+}
+
+// #dtprv_info ("Showing X to Y of Z entries") is display:block/float:none
+// in ckan-core's own markup, so even though its text visually wraps
+// beside the right-floated .dt-buttons, its block box still spans the
+// full container width - and that full-width box's bottom edge becomes
+// the floor that #dtprv_filter (next in DOM, also float:right) can't
+// rise above in normal flow. ckan-core covers for this with
+// `#dtprv_filter { margin-top: -1.4em; }`, a fixed offset tuned for a
+// specific button-row height that doesn't match our own .dt-buttons
+// styling, so the (now correctly-sized, no longer oversized) search box
+// overlapped the buttons above it instead of sitting beside them.
+//
+// A first attempt floated #dtprv_info left instead of overriding the
+// margin. That fixed the buttons overlap, but taking #dtprv_info out of
+// flow entirely also stopped it contributing to #resize_wrapper's height
+// the way an ordinary block does - so .dataTables_scroll (next in DOM,
+// not floated, doesn't clear the float) no longer waited for it either,
+// and rose up to cover the whole toolbar row instead, making the search
+// box and buttons unclickable.
+//
+// display: inline-block keeps #dtprv_info in normal flow (so
+// .dataTables_scroll still starts below it, same as before) while
+// shrinking its box to its actual (short) text width instead of the
+// full container - which leaves room on the same line for the
+// right-floated #dtprv_filter to rise up beside it with no margin hack
+// needed at all.
+#resize_wrapper #dtprv_info {
+  display: inline-block;
+}
+#resize_wrapper #dtprv_filter {
+  margin-top: 0;
+}
+
+// The inline-block fix above only keeps #dtprv_filter beside #dtprv_info
+// when there's enough width left on the line for both. At narrower
+// widths (a smaller browser window, or selecting a row - FixedColumns'
+// #dtfc-fixed-left/scrollbar recalculations can shrink the available
+// toolbar width slightly), the right-floated #dtprv_filter wraps onto
+// its own line below #dtprv_info instead - and since .dataTables_scroll
+// (next in DOM, not floated) still only waits for #dtprv_info's bottom,
+// not the wrapped float below it, it rises up to cover the now-wrapped
+// search box, same unclickable-toolbar symptom as before. Clearing the
+// float unconditionally fixes both cases without depending on width.
+#resize_wrapper .dataTables_scroll {
+  clear: both;
+}
+
+// Same RUA styling also matches the "Show X entries" length-menu <select>
+// (padding/border-radius sized for a full-width form field), so its
+// custom arrow background (positioned assuming that padding) overlaps the
+// text in DataTables' narrow, auto-width select. Revert the decoration,
+// keep DataTables' own width: auto.
+#resize_wrapper select {
+  margin: revert;
+  padding: revert;
+  border: revert;
+  border-radius: revert;
+  background-color: revert;
+  background-image: revert;
+  font-family: revert;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  color: revert;
+  height: revert;
+  appearance: revert;
+}
+
+// RUA's own pagination component hides every <li> below 952px and only
+// reveals the current page via `.pagination li.current` - but DataTables
+// marks its active page with Bootstrap's `.active` class, not `.current`,
+// so at any narrower width every pagination item (page numbers, prev/next)
+// disappears entirely, leaving an empty/squashed control.
+#resize_wrapper .pagination li {
+  display: revert;
+}
+
+// ckan-core's resource_view.html always renders a <p class="desc"> for the
+// view description, even when there isn't one. RUA's `p` rule gives it a
+// line-height-driven height (and margin) even with no content - a block
+// element still establishes a line box when empty - so margin: 0 alone
+// still leaves a ~30px gap above "Add Filter". Remove it from layout
+// entirely instead.
+.resource-view .desc:empty {
+  display: none;
+}
+
 .search-form {
   .search-input {
     margin-bottom: 10px;
@@ -656,7 +803,7 @@ li {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .search-result-heading {
     margin: 0 20px;
   }
@@ -791,6 +938,18 @@ a.dataset-request {
   padding: 0 25px;
 }
 
+// On the resource data tab, ckanext-datastore prepends the Data Dictionary
+// table as a sibling .module-content before the (unmodified) Additional
+// Information one, both inside the same .module. That makes Additional
+// Information the 2nd child, so it picks up the nth-child(2n) padding
+// above and ends up indented relative to Data Dictionary. Zero it so the
+// two tables line up. (Needs the `.module >` qualifier to match the
+// nth-child rule's specificity - otherwise that rule wins regardless of
+// source order.)
+.module > .dictionary-view + .module-content {
+  padding: 0;
+}
+
 .module {
   margin: 20px 0;
 }
@@ -861,14 +1020,64 @@ section.search-result-heading {
   margin-top: 0;
 }
 
+// A 2021 rename (70308325) dropped `.label,` here on the assumption core
+// had fully renamed .label to .badge, but ckan-core still emits
+// `class="label label-default/-info/-danger"` in several templates (e.g.
+// organization/snippets/organization_item.html's role badge on
+// /dashboard/organizations, organization/bulk_process.html's
+// Draft/Deleted/Private tags) - those were rendering as plain unstyled
+// text with no styling at all. Restore it.
+.label,
 .badge {
-  padding: 2px 4px;
+  padding: 6px 4px 2px;
   font-size: 11.844px;
   font-weight: bold;
+  color: #fff;
   line-height: 14px;
   vertical-align: baseline;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #999;
+  border-radius: 0.25em;
+}
+
+// ckan-core's own main.css sets a different grey (#6e6e6e) for badges
+// specifically inside a sidebar nav item's link (e.g. the facet-count
+// badges in .nav-facet lists) - same specificity as the plain .label,
+// .badge rule above, so it's specificity, not source order, that lets it
+// win over dia_theme's #999. Match the selector to override it back.
+.module-narrow .nav-item > a .badge,
+.module-narrow .nav-aside li a .badge {
+  background-color: #999;
+}
+
+// The "remove this active facet" icon (fa-circle-xmark) in facet_list.html
+// is a single-colour glyph - the circle and its X cutout are the same
+// path, so with no background behind it the transparent X just shows
+// whatever's underneath (here, the row's own dark teal .active
+// background), and its default 14px size/baseline alignment sits a few
+// px above the row's vertical center. The pre-BS5 version was a plain
+// two-tone icon: a dark grey circle with a crisp white X.
+//
+// Recreate that by giving the icon itself a white background: the grey
+// glyph paints on top, and its X-shaped cutout reveals the white
+// background through the gap, rather than the current inverted look
+// (white circle, coloured cutout).
+.facet-close {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px 10px;
+}
+.facet-close .fa-circle-xmark {
+  display: inline-block;
+  vertical-align: middle;
+  color: #555;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
 }
 
 .pill {
@@ -910,7 +1119,7 @@ ol {
   left: -9px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: @media-desktop) {
   .page-header .nav-tabs {
     margin: 0;
     border: none;
@@ -920,7 +1129,7 @@ ol {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .page-header .nav-tabs {
     margin: 5px 10px 10px -5px;
     border: none;

@@ -75,11 +75,13 @@
 @statsGroupsBackgroundColor: #004a61;
 @statsShowcaseBackgroundColor: #003648;
 
-// Responsive breakpoints
-@media-widescreen: 1200px;
-@media-desktop: 980px;
-@media-tablet: 768px;
-@media-phone: 480px;
+// Responsive breakpoints - aligned with CKAN core's Bootstrap 5 grid
+// breakpoints (ckan-core/ckan/public/base/scss/_bootstrap-variables.scss):
+// sm 576 / md 768 / lg 992 / xl 1200
+@media-widescreen: 1200px; // bs5 xl
+@media-desktop: 992px; // bs5 lg
+@media-tablet: 768px; // bs5 md
+@media-phone: 576px; // bs5 sm
 
 //==============================================
 // Base
@@ -705,7 +707,7 @@ header.account-masthead {
 }
 
 .primary {
-  @media (min-width: @media-tablet) and (max-width: 979px) {
+  @media (min-width: @media-tablet) and (max-width: @media-desktop) {
     .resource-item .btn-group {
       position: relative;
       padding-bottom: 15px;
@@ -793,40 +795,16 @@ header.account-masthead {
     background: @tabBackgroundColor;
   }
 
-  // Styling of explore button
+  // Brand colour override for primary buttons in the main content column
+  // (e.g. the dataset "Explore" button). border-color follows the same
+  // colour so the border doesn't show bootstrap's default primary shade
+  // against this fill; everything else (border width, radius, box-shadow)
+  // is left to bootstrap's own .btn-primary so it stays consistent with
+  // .btn-danger and other .btn variants shown beside it.
   .btn.btn-primary {
     color: @layoutTrimBackgroundColor;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: @layoutLinkColor;
-    border: 0;
-    background-image: -moz-linear-gradient(
-      top,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    background-image: -webkit-gradient(
-      linear,
-      0 0,
-      0 100%,
-      from(@layoutLinkColor),
-      to(@layoutLinkColor)
-    );
-    background-image: -webkit-linear-gradient(
-      top,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    background-image: -o-linear-gradient(
-      top,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    background-image: linear-gradient(
-      to bottom,
-      @layoutLinkColor,
-      @layoutLinkColor
-    );
-    border-radius: 0;
+    border-color: @layoutLinkColor;
   }
   ul.dropdown-menu {
     border-radius: 0;
@@ -1202,7 +1180,7 @@ aside.secondary {
   padding-bottom: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: @media-tablet) {
   .dataset-date {
     width: 100%;
   }
@@ -1302,7 +1280,7 @@ body li {
 .dataset-map-expanded #dataset-map {
   top: -636px;
 }
-@media (max-width: 990px) {
+@media (max-width: @media-desktop) {
   .col-md-9.primary {
     float: unset;
   }
@@ -1320,7 +1298,7 @@ body li {
     margin-top: 420px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: @media-tablet) {
   body {
     padding-left: 0;
     padding-right: 0;

@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+{# Drop the Members tab here too, to match read_base.html. Membership can
+   still be managed directly at the group_type+'.manage_members' route. #}
+{% block content_primary_nav %}
+    {{ h.build_nav_icon(group_type + '.edit', _('Edit'), id=group_dict.name, icon='pencil') }}
+    {{ h.build_nav_icon(group_type + '.bulk_process', h.humanize_entity_type('package', dataset_type, 'content tab') or _('Datasets'), id=group_dict.name, icon='sitemap') }}
+{% endblock %}

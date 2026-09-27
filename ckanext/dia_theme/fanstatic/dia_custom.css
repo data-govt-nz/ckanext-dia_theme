@@ -1968,31 +1968,6 @@ aside.secondary .module.module-narrow .nums dd {
   font-weight: normal;
   margin-top: 10px;
 }
-aside.secondary .module.module-narrow .context-info {
-  position: relative;
-}
-aside.secondary .module.module-narrow .context-info:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 10px 0 10px 15px;
-  border-color: transparent transparent transparent #004a61;
-  display: block;
-  top: 5px;
-  right: -15px;
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  aside.secondary .module.module-narrow .context-info:after {
-    left: 166px;
-  }
-}
-@media (max-width: 768px) {
-  aside.secondary .module.module-narrow .context-info:after {
-    border: none;
-  }
-}
 aside.secondary .module.module-narrow h2.module-heading {
   padding-left: 15px;
   border: none;

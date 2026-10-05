@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{# Only hide the Members tab for anonymous visitors, matching read_base.html
+   - this page itself already requires organization_update/sysadmin to reach
+   at all, so c.userobj is always truthy here, but kept for consistency. #}
+{% block content_primary_nav %}
+    {{ h.build_nav_icon(group_type + '.edit', _('Edit'), id=group_dict.name, icon='pencil') }}
+    {{ h.build_nav_icon(group_type + '.bulk_process', h.humanize_entity_type('package', dataset_type, 'content tab') or _('Datasets'), id=group_dict.name, icon='sitemap') }}
+    {% if c.userobj %}
+      {{ h.build_nav_icon(group_type + '.manage_members', _('Members'), id=group_dict.name, icon='users') }}
+    {% endif %}
+{% endblock %}

@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.1
+
+- Theme updates to fix styling issues found in testing of CKAN 2.11/BS5
+
 ## 5.0.0
 
 - Migrate from Bootstrap 3 to Bootstrap 5, for CKAN 2.11 compatibility
